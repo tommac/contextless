@@ -1,0 +1,104 @@
+{
+  "seeds": [
+    {
+      "seed": 42,
+      "lines": 12800,
+      "counter_keys": 18,
+      "raw_bytes": 1426785,
+      "source_reaccess": 698,
+      "reference_span_bytes": 25639522,
+      "exact_index": 24,
+      "exact_scan": 24,
+      "questions": 24,
+      "approx_tokens": 350329
+    },
+    {
+      "seed": 43,
+      "lines": 12800,
+      "counter_keys": 18,
+      "raw_bytes": 1427060,
+      "source_reaccess": 727,
+      "reference_span_bytes": 27131022,
+      "exact_index": 24,
+      "exact_scan": 24,
+      "questions": 24,
+      "approx_tokens": 350398
+    },
+    {
+      "seed": 44,
+      "lines": 12800,
+      "counter_keys": 18,
+      "raw_bytes": 1424835,
+      "source_reaccess": 783,
+      "reference_span_bytes": 26588234,
+      "exact_index": 24,
+      "exact_scan": 24,
+      "questions": 24,
+      "approx_tokens": 349842
+    },
+    {
+      "seed": 45,
+      "lines": 12800,
+      "counter_keys": 18,
+      "raw_bytes": 1427079,
+      "source_reaccess": 803,
+      "reference_span_bytes": 24051851,
+      "exact_index": 24,
+      "exact_scan": 24,
+      "questions": 24,
+      "approx_tokens": 350403
+    },
+    {
+      "seed": 46,
+      "lines": 12800,
+      "counter_keys": 18,
+      "raw_bytes": 1420244,
+      "source_reaccess": 674,
+      "reference_span_bytes": 25908173,
+      "exact_index": 24,
+      "exact_scan": 24,
+      "questions": 24,
+      "approx_tokens": 348694
+    },
+    {
+      "seed": 47,
+      "lines": 12800,
+      "counter_keys": 18,
+      "raw_bytes": 1424641,
+      "source_reaccess": 676,
+      "reference_span_bytes": 27479102,
+      "exact_index": 24,
+      "exact_scan": 24,
+      "questions": 24,
+      "approx_tokens": 349793
+    },
+    {
+      "seed": 48,
+      "lines": 12800,
+      "counter_keys": 18,
+      "raw_bytes": 1427259,
+      "source_reaccess": 660,
+      "reference_span_bytes": 25480082,
+      "exact_index": 24,
+      "exact_scan": 24,
+      "questions": 24,
+      "approx_tokens": 350448
+    },
+    {
+      "seed": 49,
+      "lines": 12800,
+      "counter_keys": 18,
+      "raw_bytes": 1422829,
+      "source_reaccess": 717,
+      "reference_span_bytes": 21523427,
+      "exact_index": 24,
+      "exact_scan": 24,
+      "questions": 24,
+      "approx_tokens": 349340
+    }
+  ],
+  "median_seconds": {
+    "index": 0.12005120800000002,
+    "repeated": 0.07503758399999994
+  }
+}

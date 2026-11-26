@@ -1,0 +1,77 @@
+{
+  "ratings_per_condition": {
+    "selected": 72,
+    "labeled": 72
+  },
+  "pooled_means": {
+    "selected": {
+      "originality": 2.667,
+      "feasibility": 3.375,
+      "test": 3.375
+    },
+    "labeled": {
+      "originality": 2.806,
+      "feasibility": 4,
+      "test": 3.986
+    }
+  },
+  "per_problem": {
+    "A": {
+      "selected": {
+        "originality": 2.611,
+        "feasibility": 3.333,
+        "test": 3.889
+      },
+      "labeled": {
+        "originality": 2.944,
+        "feasibility": 3.444,
+        "test": 4.167
+      }
+    },
+    "B": {
+      "selected": {
+        "originality": 2.778,
+        "feasibility": 3.278,
+        "test": 3.444
+      },
+      "labeled": {
+        "originality": 2.5,
+        "feasibility": 4.222,
+        "test": 3.778
+      }
+    },
+    "C": {
+      "selected": {
+        "originality": 2.5,
+        "feasibility": 3.667,
+        "test": 3.333
+      },
+      "labeled": {
+        "originality": 2.667,
+        "feasibility": 4.333,
+        "test": 4.333
+      }
+    },
+    "D": {
+      "selected": {
+        "originality": 2.778,
+        "feasibility": 3.222,
+        "test": 2.833
+      },
+      "labeled": {
+        "originality": 3.111,
+        "feasibility": 4,
+        "test": 3.667
+      }
+    }
+  },
+  "labeled_minus_selected_originality": {
+    "A": 0.333,
+    "B": -0.278,
+    "C": 0.167,
+    "D": 0.333
+  },
+  "labeled_wins": 3,
+  "selected_wins": 1,
+  "ties": 0
+}

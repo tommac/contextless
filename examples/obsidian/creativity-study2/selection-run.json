@@ -1,0 +1,67 @@
+{
+  "vault_size": 526,
+  "index_seconds": 0.15666145796421915,
+  "four_searches_seconds": 0.004854375030845404,
+  "search": {
+    "A": [
+      "sources/doc2query.md",
+      "sources/Cognition Dont Build Multi-Agents.md",
+      "ideas/Files are the truth for the conversation and SQLite for the machine.md"
+    ],
+    "B": [
+      "ideas/Catalog spine and epoch window make the prefix repeat.md",
+      "ideas/Excerpt readability is the main open question.md",
+      "results/Adding each atom's neighbors doubled the median cost.md"
+    ],
+    "C": [
+      "sources/Total Recall at What Cost.md",
+      "fields/Virtual memory paging.md",
+      "results/Selector choice mattered more than unit choice under a token budget.md"
+    ],
+    "D": [
+      "results/New release records changed 204 saved answers.md",
+      "ideas/Deterministic checks run before the reviewer.md",
+      "ideas/Facts supersede facts.md"
+    ]
+  },
+  "source_bytes": {
+    "question": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0
+    },
+    "search": {
+      "A": 1374,
+      "B": 1376,
+      "C": 1273,
+      "D": 1329
+    },
+    "selected": {
+      "A": 1078,
+      "B": 1714,
+      "C": 1562,
+      "D": 1624
+    },
+    "labeled": {
+      "A": 1078,
+      "B": 1714,
+      "C": 1562,
+      "D": 1624
+    }
+  },
+  "curator_elapsed_seconds": 93.191047,
+  "curator_start_unix_ns": 1795568613035666000,
+  "curator_end_unix_ns": 1795568706226713000,
+  "curator": "Kimi (orchestrating agent); round 1 used a Codex curator",
+  "reader_packets_sha256": {
+    "input0.json": "cfc0345c6520eac1f326d84fb1a3b8f4d1de9dccaaee47b8a75fd54853b73da0",
+    "input1.json": "16cf298a9b57af54313a389c04a422d714c7d8d783758d033a1ec3a595aa96a3",
+    "input2.json": "785db7300d47ec91b171815513a314a6213061601d2d2e4ef11ed2b561b6421c",
+    "input3.json": "b65b7b6828c92a6201e3356ecd1387ec90fe31a1595e50d08489fcbec2e22537",
+    "input4.json": "3b50393dd9fc6a00f904345edc6ef204834de90614439d2c08d688e8eebdf412",
+    "input5.json": "604f9cf1d217fb34fc95304f096cd3aeaea38f3ba3e797285158bf425fcbc33e",
+    "input6.json": "9566174c4c47ea51c8c4b2e83e2c8f2f274f00779d6451dfcbb5fafe23975843",
+    "input7.json": "ddd098fd94ed0570e08418c9cc7f995a85c9880394a576f23f52d0a2981fd778"
+  }
+}

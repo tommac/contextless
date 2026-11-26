@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+title: "ContextlessAI: a context compiler that keeps a conversation verbatim and builds each model call's packet by code"
+type: software
+authors:
+  - family-names: Maciejewski
+    given-names: Tom
+    orcid: "https://orcid.org/0009-0004-5702-5302"
+license: Apache-2.0
+repository-code: "https://github.com/tommac/contextless"
+date-released: 2026-11-25
+keywords:
+  - long-context
+  - agent memory
+  - retrieval
+  - context engineering
+  - large language models

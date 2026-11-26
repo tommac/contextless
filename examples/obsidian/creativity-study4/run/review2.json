@@ -1,0 +1,214 @@
+[
+  {
+    "problem": "Two street musicians play at opposite ends of a night market, drawing from the same wandering crowd. Each can see only their own instrument case. Listeners drift toward whichever end sounds livelier, and noise rules cap volume. The pair may agree on any plan beforehand but cannot signal during the night. Design how they keep both ends of the market alive.",
+    "designs": [
+      {
+        "id": "175",
+        "answer": "**Both-Loud vs Clock-Lease Relay.** Both-loud: both solo, check cases after, louder steals crowd. Relay: 15-min leases; :00 North holds crowd with solo while South drones low, :15 lease expires and roles swap at clock barrier, repeat. Holder must yield even if case full. Example: 8:00 South solos, crowd walks south; 8:15 South yields to chords, North solos, crowd migrates back. Test: tally cases every 10 min Relay Saturday vs Both-loud Friday; Relay should show smaller North-South gap and higher total."
+      },
+      {
+        "id": "174",
+        "answer": "**Leased Liveliness.** Option 1: both play full-out, check pooling late. Option 2: clock-synced leases. Chosen: leases. A holds crowd 0-20, B thins; B holds 20-40, A thins; barrier on the hour resets. Lease expires alone; numbered verse prevents overtime claim — louder stale player loses. Noise cap safe since one rests. Example: :00 A stomps verse 1-4, B fingerpicks; :20 swap without looking. Test: alternate lease nights versus both-full nights; log case counts every 10 minutes. Leases should show smaller A-B gap plus higher total; both-full collapses to one end."
+      },
+      {
+        "id": "272",
+        "answer": "**Alternating Beacon and Hearth.** Option 1: Both play best continuously and accept drift. Option 2: Clock-synced alternation — Beacon plays danceable set while Hearth plays quiet drone, swapping every 20 minutes past the hour. Chosen: Option 2 shepherds crowd without signaling. Example: At :00 A sparks singalong drawing drift; B keeps case visible with soft chords, collecting lingerers. At :20 they swap roles, crowd follows liveliness back. Noise cap never binds. Test: compare tip counts and headcounts at quiet end during its quiet slots versus a night both play full; alternation should raise quiet-end total."
+      },
+      {
+        "id": "459",
+        "answer": "Option 1 — Alternating loud leases: by market clock, east holds loud for 15 minutes while west plays quiet background, then swap; expired holder yields even with big crowd. Option 2 — Joint barrier sets: both play 20 minutes, both rest 5, restart together so drift resets. More promising: Option 1. Example: 8:00 east featured, west fingerpicking under cap; 8:15 swap. No signal needed, only clock. Test: compare coins per end per half-hour against an always-lively night; leases win if quiet end keeps at least a third of loud end without total drop."
+      },
+      {
+        "id": "368",
+        "answer": "**Leased Beacon and Barrier.** Option 1: both play full all night. Option 2: pre-agreed clock leases — Beacon plays lively while Hearth plays quiet, swapping every 20 minutes; loud right expires even if crowd stays, later slot outranks earlier. Each 20-minute superstep ends at barrier; case takings checkpoint crowd. Optimistic both-loud fails because clash is constant. Example: :00 A holds dance lease drawing drift; B keeps soft chords collecting lingerers. :20 leases flip, crowd follows liveliness back, cap never binds. Test: count heads and tips at quiet end during quiet leases versus both-full night; leases should raise quiet-end total."
+      },
+      {
+        "id": "725",
+        "answer": "**Two options:** Mirror energy vs Time-share. **Time-share wins.** Pre-agree clock slots: on quarter-hours one plays sparse drone under volume cap while other takes melody and crowd; roles swap every 15 minutes. Livelier end always pulls wanderers, then hands them back. Example: 8:00 Ana solos, Ben hums; 8:15 reverse. **Test:** tally minutes each case gains zero coins; time-share should halve simultaneous starvation versus both-busking, with total tips steady."
+      },
+      {
+        "id": "222",
+        "answer": "**Lease Rotation vs Both Full** Optimistic: both play full all night, check morning cases, adjust next night; loser’s work wastes. Rotation: agree 15-minute blocks by market clock; even blocks north leads, south thins to rhythm; odd blocks reverse. Lease expires alone — no peeking. If you pause, your number is stale, so rejoin quiet until next block. Choose Rotation to stop liveliness feedback loop. Example: 7:00 north solos melody, south taps chords; 7:15 swap, even if north case is fuller. Test: count coins per case per block for one night each system; Rotation wins if quiet-end takings rise and total stays level, not one case starved."
+      },
+      {
+        "id": "744",
+        "answer": "**Blast vs Baton.** Blast: both play lively all night. Baton: share crowd by clock. Agree 10-minute blocks on watches: holder plays chorus, dances, invites; yielder plays quiet drone below cap. Leadership passes automatically — no signals, slow side never waits past block. Number blocks sequentially so late starter knows whose turn holds after pause. Example: 7:00 North leads, South hushes; 7:10 swap. Test: count coins per half-hour at quiet end; if Baton quiet-end tips beat Blast quiet-end tips on matched Saturdays, yielding keeps both ends alive."
+      },
+      {
+        "id": "437",
+        "answer": "**Alternate Lively.** Option 1: Both play full-out. Option 2: Phase-shifted breathing. Chosen: synchronized watches, 30-minute cycle. A lively 0-20, thin 20-30; B opposite. Crowd shuttles instead of pooling. Noise cap never hit because one end always rests. Example: at :00 A stomps, B fingerpicks; at :20 they swap without looking. Test: versus both-full night, compare case counts every 10 minutes. Breathing should show smaller A-B gap and higher combined tips; both-full should collapse to one crowded end."
+      },
+      {
+        "id": "313",
+        "answer": "Two designs: (1) Crowd Lease: east holds lively set for ten minutes, then must soften and yield; numbered set-list rejects stale holds. (2) Barred Sets: wall-clock supersteps, both start and stop together, east lively on even steps, west lively on odd steps, quiet side sustains background. Prefer Barred Sets, since clock needs no signals and pause cannot overstay. Example: 6:00 east leads, west hushes; 6:10 reverse. Test: compare barred alternation against both-always-lively; count minutes either case stays empty."
+      },
+      {
+        "id": "571",
+        "answer": "**Both-busking vs Leased time-share. Time-share wins.** Pre-agree 15-minute slots synced to market clock as barriers; crowd-lease holder takes melody while other hums under cap, then yields automatically at bell even if crowd stays. Number slots rising; if clocks drift and both solo, higher number holds, other drops. Example: 8:00 Ana solos, Ben hums; 8:15 reverse. **Test:** tally minutes each case earns zero; time-share should halve joint starvation versus both-busking with totals steady, leases distinguishing it."
+      },
+      {
+        "id": "853",
+        "answer": "**Both-loud vs Relay.** Both-loud fails: louder end steals crowd, other empties, cap binds. Chosen: Clock Relay. Agree: :00-:15 North sparse drone, South featured melody; :15-:30 swap; :30 repeat. Crowd drifts to featured end, then roles reverse before far end dies, shuttling crowd back. Example: 8:00 North strums soft chords while South solos; latecomers walk south. 8:15 South drops to chords, North solos; crowd migrates north. Test: tally cases every 10 min Saturday vs both-loud Friday; Relay should show smaller North-South gap and higher total."
+      }
+    ]
+  },
+  {
+    "problem": "A neighborhood repair cafe runs two hours every Saturday. Each visitor brings one broken small appliance, watches the single volunteer electrician fix it, and leaves. The organizer wants regulars who can fix things they never brought. Design how the cafe runs so visitors leave more capable, with twelve chairs, one electrician, and no sign-up in advance.",
+    "designs": [
+      {
+        "id": "581",
+        "answer": "Option 1 — Greatest new-skill per minute: rank queue by unfamiliar steps divided by minutes, pick until two hours fill, fallback longest single demo if nothing fits. Option 2 — Failure board plus stranger check: list last failures on wall, next visitor hears them first, another visitor tests finished item. More promising: Option 1. Example: Saturday has six kettles, one lamp, one radio; fix one kettle fully, then lamp for wiring and radio for solder, defer other kettles. Test: following week hand regulars an unseen toaster; count independent diagnosis steps versus first-come Saturdays."
+      },
+      {
+        "id": "404",
+        "answer": "**Relay Bench and Break Station.** Option 1: Ticket queue where electrician fixes while visitors watch. Option 2: Two zones — four chairs at Repair Bench, eight at Break Station with dead appliances and tools. Arrivals without sign-up join Break Station first, diagnose junk with picture cards, then rotate to Bench as helpers. Chosen: Option 2 builds transferable skill. Example: Saturday visitor strips a dead kettle, tests fuse and continuity, then assists fixing another's toaster by checking its switch. Test: next week offer unfamiliar lamp fault; count Break-first visitors who attempt diagnosis versus Bench-only watchers."
+      },
+      {
+        "id": "408",
+        "answer": "**Watch Line vs Failure-Carry Circles.** Line: all 12 watch electrician fix. Circles: three fault tables of four; you never fix own device, only neighbor's with cue cards; each failure card travels with device so next table avoids repeats. Electrician assigns 20-min blocks by new-skills-per-minute. Example: Maya's dead kettle fails fuse test at Table 1; card steers Tran's lamp group to switch, learning she never needed. Test: give returners foreign device; Circles should show more distinct checks per device than Line."
+      },
+      {
+        "id": "577",
+        "answer": "Two designs: (1) Failure Wall: post each failed fix by symptom and cause, next visitor reads before touching tools. (2) Maker-Checker Chairs: visitor makes fix, different visitor checks, electrician only validates; twelve chairs allocated for most new skill per minute, keeping best single demo as fallback. Prefer Chairs. Example: regular fixes kettle switch, newcomer checks continuity and narrates steps. Test: alternate Saturdays between Wall-only and Chairs; count visitors who later fix an unseen fault type unaided."
+      },
+      {
+        "id": "212",
+        "answer": "**Solo queue vs Fault tables. Tables win.** Sort arrivals by symptom—dead, intermittent, mechanical—into three rings of four. Electrician spends 15 minutes per ring narrating highest skill-per-minute fix; failures stay on board as next ring's lesson. Visitors mirror steps on own items, then check a stranger's work, never their own. Example: dead ring tests fuses together, each meters neighbor's plug, failed readings guide next demo. **Test:** next Saturday count visitors diagnosing a stranger's item unaided; tables should double queue, failures-first distinguishing it."
+      },
+      {
+        "id": "825",
+        "answer": "**Failure Ledger and Stranger Check.** Option 1: numbered queue watches electrician fix. Option 2: eight chairs Trial Bay with dead appliances and cards listing prior failed diagnoses, plus four chairs Live Bench. Newcomers diagnose junk first, then assist and check a stranger's live repair, never their own. Electrician picks next live job by new-skill-per-minute. Example: after reading kettle-fuse failure, visitor tests toaster switch continuity and checks neighbor's work. Test: unfamiliar lamp fault; compare Trial-first vs watch-only visitors attempting a novel check."
+      },
+      {
+        "id": "394",
+        "answer": "**Two options:** Solo queue vs Fault Tables. **Tables win.** Sort arrivals by symptom—dead, intermittent, mechanical—into three chair rings of four; electrician rotates 15 minutes per ring, narrating one fix while three mirror steps on their own items. Example: dead-lamp ring tests fuses together, each visitor meters next person's plug. **Test:** next week count visitors who diagnose a stranger's item unaided; Tables should double queue's rate."
+      },
+      {
+        "id": "624",
+        "answer": "**Fix Trios vs Demo Row** Trio: one repair hosts owner + two watchers; watchers do hands, electrician coaches only. Checker: stranger verifies safety before plug-in, never fixer. Failures write one card that starts next same-fault repair. Row: electrician demos while twelve watch. Choose Trios, booked by skill-value per minute: each Saturday picks fixes covering most new skills in two hours. Example: toaster cord repair teaches stripping; two watchers strip, owner twists, stranger checks strain-relief. Test: next week offer broken kettle unseen; count trios visitors who attempt strip-and-check vs Row watchers."
+      },
+      {
+        "id": "482",
+        "answer": "**Demo vs Do-Check.** Demo: electrician narrates each fix. Do-Check: visitors fix. Each repair is logged with fault, failed tries, and trick used, building a visible failure wall so next table avoids repeats. Electrician picks next jobs for most new skill per minute, not queue order. Visitors work in threes: one opens, one checks stranger's work, one records. Example: toaster with dead cord teaches mains test reused on kettles. Test: after four Saturdays, give newcomers a never-seen lamp; if Do-Check group diagnoses live vs dead twice as often as Demo watchers, doing-plus-checking wins."
+      },
+      {
+        "id": "710",
+        "answer": "**Circles, Not Queue.** Option 1: Electrician fixes while twelve watch. Option 2: Peer-fix circles. Chosen: three chairs-of-four by fault — cords, heaters, switches. You fix another's item with owner watching. Electrician rotates 15 minutes per circle, touches only to demo. Example: kettle owner strips wire while lamp owner holds; next week roles swap. Test: following Saturday offer strangers a faulty toaster; count correct diagnosis steps by circle regulars versus watch-only visitors. Circles should double steps."
+      },
+      {
+        "id": "290",
+        "answer": "**Fixer-Checker Circles.** Option 1: electrician repairs while twelve watch. Option 2: three fault circles of four; you repair another's appliance while owner watches and tests. Chosen: circles. Each repair picks highest new-skill-per-minute under two hours; failures written on card taped to item for next fixer. Electrician rotates 15 minutes, demos only, never completes. Example: lamp owner strips kettle cord, kettle owner tests; failed splice card guides next Saturday's retry. Test: offer both groups unknown toaster; count correct diagnoses. Circles should double steps."
+      },
+      {
+        "id": "738",
+        "answer": "**Two models: Demo Line vs Fix Circles.** Line: electrician fixes while all watch. Circles: 3 tables of 4 chairs sorted by fault — no-power, intermittent, mechanical. Electrician spends 20 min per table; visitors attempt neighbor's device with cue cards. Example: Maya brought a dead kettle, helps diagnose Tran's dead lamp, learns fuse testing she never needed. Test: next week give each returner a foreign broken item; Circles should yield 2× attempted multimeter checks vs Line group."
+      }
+    ]
+  },
+  {
+    "problem": "A city will demolish a beloved old bridge in one year and replace it with a wider crossing. A small team has a modest budget and one public meeting per season. Design how the city says goodbye, so that people who cross daily shape what is kept and something of the old bridge survives in the new one.",
+    "designs": [
+      {
+        "id": "692",
+        "answer": "**Linked Salvage.** Option 1: one farewell festival and plaque. Option 2: four seasonal meetings — autumn walks ribbons mark valued spots, winter records light and sound, spring sorts bolts, lamps, planks, summer votes reuse. Each salvaged piece carries provenance card: where stood, whose story, when used and when recorded; cards linked as neighborhood atlas. Example: sunrise rail becomes overlook benches etched with commuter names and viewpoint story. Test: ask new-crossing users to name origin of one reused piece versus plaque bridge; linked reuse should score higher recall."
+      },
+      {
+        "id": "512",
+        "answer": "**Four Crossings.** Option 1: One farewell festival with commemorative plaque. Option 2: Four seasonal meetings tied to crossing rituals — autumn story walks, winter light and sound recording, spring sorting of salvaged bolts, lamps, and deck planks, summer vote on reuse. Daily crossers tag valued spots with ribbons that become salvage priority. Chosen: Option 2 embeds use into fabric. Example: Commuters mark sunrise viewpoint; its rail section becomes overlook benches on new crossing with etched names. Test: survey new-bridge users to name one reused element's origin versus plaque-only bridge; reuse should score higher recognition."
+      },
+      {
+        "id": "743",
+        "answer": "**Vault vs Weave.** Vault saves one grand girder in the new plaza by vote. Weave saves hundreds of small linked keepsakes. Each donor records a 30-second crossing memory tied to a specific rivet, cable cut, or paver — smallest worth linking — with when it happened and when recorded, so old stories aren't overwritten. Chosen cuts are stamped with their story codes and set into new railings. Example: runner's dawn-lap bolt #214 goes into mile-marker. Test: offer 20 anonymous replicas vs 20 storied cuts; if storied ones are claimed faster, lineage beats bigness."
+      },
+      {
+        "id": "336",
+        "answer": "**Gala vs Seasonal Salvage.** Gala: one farewell concert, experts pick relic. Chosen: Four Meetings. Summer Collect: booth on bridge logs crossings, stories. Fall Choose: daily crossers vote which 20 fragments — lamps, rivets, planks — to save. Winter Make: workshops clean and carve names. Spring Place: embed them as new-bridge railing inlay and riverside timeline. Example: commuter Ana nominates green lamp #3; it returns lit on new walkway. Test: survey 50 morning crossers after Fall; if <60% recognize ballot items, replace expert list with commuter nominations."
+      },
+      {
+        "id": "194",
+        "answer": "**Linked Fragments vs Expert Relics** Relics: engineers save two beams, mount with plaque. Fragments: at each seasonal meeting daily crossers nominate small pieces — rivet, lamp, plank — and attach one crossing memory with date crossed and date told. Keep cheapest high-link pieces; embed them in new railings and path, each tagged to its stories. Choose Fragments; provenance decides value. Example: bench slat crossed daily 1998-2024 becomes new pier seat; tag links to three commuter tales. Test: show newcomers slat plus tales vs plaque alone; Fragments wins if they retell one specific crossing story and name its donor, not just 'old bridge.'"
+      },
+      {
+        "id": "827",
+        "answer": "**Linked Salvage.** Option 1: expert plaque. Option 2: seasonal keepsake web. Chosen: web. Meet on bridge each season; winter gathers atomic crossing cards noting crossing-date plus telling-date; spring daily crossers vote rails/lamps/rivets to keep; each kept piece stamped with donor story-chain. Summer casts rivets into new railing plates; autumn walk carries pieces across, closing old span without erasing. Example: 1930 lamps relit, bolts into benches, each linked to cards. Test: versus plaque, survey daily crossers naming kept parts. Web should triple recall."
+      },
+      {
+        "id": "688",
+        "answer": "**Lone plaque vs Provenance salvage. Salvage wins.** Each season walk the bridge, nominate small keepable parts; daily crossers sticker-vote two weeks at both ends. Build winners into new crossing, each carrying provenance: old use, choosers' names, bridge-years plus vote season, with linked story card at its new spot. Retired nominees stay listed with both dates, never erased. Example: fall railings recast as new balusters, card links donor commutes. **Test:** trace final fabric: pieces should name commuter votes with both times; plaque or expert picks would lack chooser lineage and links."
+      },
+      {
+        "id": "223",
+        "answer": "**Two options:** Memorial plaque vs Seasonal salvage. **Salvage wins.** Each season's meeting walks the bridge, nominates keepable parts, then daily crossers vote for two weeks at both ends with stickers; winners are engineered into new crossing. Example: fall saves railings, cast as new balusters. **Test:** trace final fabric: salvaged parts should name commuter-chosen items, not expert picks; count sticker voters versus meeting attendees to prove daily users decided."
+      },
+      {
+        "id": "325",
+        "answer": "**Carry-Over.** Option 1: Expert plaque. Option 2: Seasonal salvage. Chosen: meet on bridge each season. Winter collects crossing stories; spring daily users vote which rails, lamps, rivets to keep; summer melts rivets into new railing plates stamped with donor names; autumn farewell walk carries pieces across. Example: commuter-voted 1930 lamps relit on new path, old bolts cast into benches. Test: versus plaque plan, survey daily crossers on names of kept parts and personal contribution. Salvage should triple recall and named contributions."
+      },
+      {
+        "id": "266",
+        "answer": "Two designs: (1) Provenance Salvage: tag each girder with teller and crossing era, keep pieces with most independent derivations. (2) Seasonal Link Archive: gather atomic cards each meeting, link related cards, stamp both true time and recorded time, close but never delete versions; embed top-linked cluster in new crossing. Prefer Archive. Example: rivet tied to three commuter cards from winter-spring becomes new rail plaque. Test: compare one-vote salvage versus seasonal archive; count daily-crosser stories surviving in final choice."
+      },
+      {
+        "id": "674",
+        "answer": "Option 1 — Linked keepsake cards: each season collect small cards tied to one spot, link cards sharing spots, save pieces carrying most independent stories. Option 2 — Two-time archive: record when memory happened and when told, close outdated versions without deleting. More promising: Option 1. Example: fall collects 80 rail, bench, fog cards; a rivet with five independent crossing stories outranks one official tale and is set into new rail with its story chain. Test: quiz new walkers on old bridge life for rivet with chain versus plain plaque; chain wins if recall doubles."
+      },
+      {
+        "id": "418",
+        "answer": "**One Gala vs Linked Salvage.** Gala: concert, experts pick relic. Salvage: Summer Collect stories on bridge; Fall Choose 20 fragments voted by daily crossers; Winter Make clean; Spring Place as railing inlay. Each piece carries provenance card with both times — when it served plus when story told — linked to donor note wall. Example: commuter Ana's green lamp #3 returns lit on new walkway with her crossing dates. Test: survey 50 morning crossers; if <60% recognize ballot items, replace expert list with commuter nominations."
+      }
+    ]
+  },
+  {
+    "problem": "A community radio station must fill three hours every night with nobody awake. Residents drop off unlabeled cassette tapes during the day. The station wants every voice aired eventually, no voice dominating, a wrong night's choices correctable the next night, and a way for a resident to learn whether their tape played. Design the system.",
+    "designs": [
+      {
+        "id": "411",
+        "answer": "**Two options:** Shuffle-bag random vs Numbered ledger. **Ledger wins.** Each drop gets sequential number, duplicate stub for dropper; tapes play oldest-first, max 10 minutes per tape nightly, played numbers chalked on station door each morning. Missed or overplayed numbers requeue next night. Example: #42 plays 12 minutes, remainder returns to front of queue. **Test:** audit one week: every stub number appears once posted; shuffle-bag would show repeats and gaps."
+      },
+      {
+        "id": "426",
+        "answer": "**Ledger Queue vs Shuffle Pile** Shuffle: play random tapes, lose track. Ledger: number each tape at drop-off, give resident matching slip. Log every intake and play as ordered events; post daily snapshot list outside station. Fill three hours with tiers: never-played first, then least-played; most-played drops first when full. Fix errors by next-night compensating play, log stays. Choose Ledger for fairness and correction. Example: tape #42 skipped Monday by jam; log shows gap, Tuesday opens with #42 plus its neighbors. Test: run one week each; Ledger wins if unplayed count falls to zero, max plays per tape stays ≤2, and five test slips find their numbers on snapshot."
+      },
+      {
+        "id": "584",
+        "answer": "**Replay Ledger.** Option 1: shuffle nightly. Option 2: numbered event log. Chosen: log. Number each tape, give stub, append length/voices to ordered log; post playlist snapshot outside station. Play oldest first, one per dropper nightly; recent voices waitlisted to block dominance. Unplayed tiers lead next night — oldest first, all named — replaying log corrects overload. Example: Monday plays #1-7; #8-10 open Tuesday despite 15 arrivals; stub #9 confirms airing. Test: versus shuffle two weeks, count tapes waiting over seven days. Ledger should near-zero starvation."
+      },
+      {
+        "id": "556",
+        "answer": "**Stack vs Ledger.** Stack: play tapes top-down. Ledger: log everything. Each drop gets numbered receipt copy; night's playlist is an appended log with tape numbers and minutes, posted on door, replayable to fix errors tomorrow by appending corrections not erasing. When tapes exceed three hours, drop order is fixed: repeats first, longest voices next, unplayed longest-waiting last to drop — never. Example: #47 plays 12:40-12:55 Tuesday; owner checks list Wednesday. Test: plant five 2-minute new voices; if all air within a week under Ledger vs two under Stack, queued fairness wins."
+      },
+      {
+        "id": "379",
+        "answer": "**Tape Ledger with Snapshot.** Option 1: play arrivals in order. Option 2: day volunteer numbers each tape, gives stub, logs duration plus one-line note; night draws blind without replacement to fill three hours, logging number plus start time as events. Least-played numbers start next night; overflow waits in tier order and is named on posted list. Weekly snapshot posts totals; unplayed rate is health metric. Example: #47 airs 2:14 Tuesday; owner matches stub to posted list Wednesday. Test: seed two marked equal-length tapes; drum should equalize weekly plays versus arrival order and expose misses."
+      },
+      {
+        "id": "407",
+        "answer": "**Shuffle vs Event-Log Loop.** Shuffle repeats voices, loses others. Log Loop: day numbers sleeves + stubs, appends to Unplayed log; night plays log order 2.5h, then 0.5h repeats; each play appended as event, wall snapshot lists played numbers; error replays next night from log, not overwriting. Full nights drop repeats first; played set held out so quiet voices fault in. Example: #42 airs Tuesday, stub-holder sees #42 on snapshot Wednesday. Test: plant 5 marked tapes; all air within week with none twice before all once."
+      },
+      {
+        "id": "243",
+        "answer": "**Numbered Drum with Ledger.** Option 1: Play drop-offs in arrival order. Option 2: Day volunteer sleeves each tape, issues numbered stub, logs duration and one-line description. Night plays blind draw without replacement across a multi-night cycle, filling three hours, logging numbers with start times. Ledger tracks plays per number; next night starts with least-played numbers, correcting imbalance. Chosen: Option 2. Example: Tape #47 plays 2:14 Tuesday; owner checks posted list Wednesday and hears description matches. Test: seed two identical-length marked tapes, compare play counts over a week versus arrival-order; drum-ledger should equalize counts and reveal misses."
+      },
+      {
+        "id": "200",
+        "answer": "Two designs: (1) Arrival Log: play in drop-off order, log each spin, post nightly snapshot for lookup. (2) Tiered Paging: assign tiers by past plays; when three hours fill, drop frequent voices first, never unheard; keep quiet tapes in working set, prefetch same-day neighbours, track unplayed rate; log allows replay to fix a bad night. Prefer Tiered Paging. Example: unheard tape stays queued while thrice-played waits; door snapshot lists Tuesday spins. Test: run one week each; compare unplayed count and worst repeat gap."
+      },
+      {
+        "id": "545",
+        "answer": "Option 1 — Play log plus snapshot: write each aired tape in order in a public book; each morning post one card listing last night and next queue. Errors are fixed by replaying tomorrow. Option 2 — Tiered waitlist with protection: when night is full, skip most-aired voices first, keep unplayed tapes pinned. More promising: Option 1 with tier rule. Example: Monday misfiles a tape; Tuesday log shows gap, card corrects order, resident finds number on card. Test: after two weeks count never-aired tapes versus pile-order nights; log wins if zero unheard and complaints resolved next night."
+      },
+      {
+        "id": "129",
+        "answer": "**Numbered Ledger.** Option 1: Shuffle nightly. Option 2: Ledger queue. Chosen: number each tape at drop, give stub, log length and voice-count. Play oldest first, max one tape per dropper nightly, publish handwritten playlist outside station. Unplayed front-load next night, correcting overloads. Example: Monday plays #1-7; #8-10 lead Tuesday even if 15 new arrive. A resident matches stub to list to confirm airing. Test: versus shuffle for two weeks, count unplayed tapes older than seven days and repeat voices nightly. Ledger should near-zero old tapes."
+      },
+      {
+        "id": "228",
+        "answer": "**Lottery tin vs Replay ledger. Ledger wins.** Number each drop, keep stub; log every drop, play and carryover as ordered events. Each dawn chalk a snapshot: played numbers plus queue order. Cap 10 min per tape nightly to fill three hours; remainder returns to front via corrective event, so a wrong night is fixed by replay, not erasure. Overflow waits in tiers: never-played first, unplayed longest next, recently played last. Example: #42 plays 10 of 12 min, 2 min requeued front; #43 missed by error re-enters top. **Test:** one-week stub audit: every number posted once, repeats only from caps; lottery would show gaps and doubles."
+      },
+      {
+        "id": "377",
+        "answer": "**Shuffle vs Ledger Loop.** Shuffle risks repeats and lost voices. Chosen: Numbered Sleeves. Day: each tape gets numbered sleeve + matching stub for resident; log number in Unplayed box. Night: play Unplayed in order for 2.5 hours, then 0.5 hour Repeat Request from Yesterday box. After airing, move sleeve to Yesterday box with date; next morning move to Archive wall list. Correction: if night overplayed one batch, next night starts at missed numbers. Example: #42 plays Tuesday, resident sees #42 on door list Wednesday, claims with stub. Test: plant 5 marked tapes; all should appear within week with no number twice before all once."
+      }
+    ]
+  }
+]

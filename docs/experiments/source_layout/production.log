@@ -1,0 +1,9 @@
+=== RUN   TestPhysicalStudyActualVault
+    physical_study_test.go:21: preseed=100 median_new_append_ms=0.29 all_turns_open_ms=4.65 turns_verified=107
+    physical_study_test.go:21: preseed=1000 median_new_append_ms=0.69 all_turns_open_ms=27.48 turns_verified=1007
+    physical_study_test.go:21: preseed=10000 median_new_append_ms=6.28 all_turns_open_ms=275.03 turns_verified=10007
+    physical_study_test.go:21: preseed=30000 median_new_append_ms=20.44 all_turns_open_ms=1298.73 turns_verified=30007
+    physical_study_test.go:32: seed_commit_ms=30486.767 single_git_commit_ms=167.936
+--- PASS: TestPhysicalStudyActualVault (39.98s)
+PASS
+ok  	contextless/internal/vault	40.211s

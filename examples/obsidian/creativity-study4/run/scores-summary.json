@@ -1,0 +1,95 @@
+{
+  "means": {
+    "question": {
+      "originality": 2.271,
+      "feasibility": 4.042,
+      "test": 3.312
+    },
+    "labeled": {
+      "originality": 3.146,
+      "feasibility": 3.729,
+      "test": 3.854
+    },
+    "combined": {
+      "originality": 3,
+      "feasibility": 4.042,
+      "test": 3.188
+    }
+  },
+  "by_problem": {
+    "A": {
+      "question": {
+        "originality": 2.25,
+        "feasibility": 4,
+        "test": 3.75
+      },
+      "labeled": {
+        "originality": 3.417,
+        "feasibility": 3.667,
+        "test": 3.75
+      },
+      "combined": {
+        "originality": 3.333,
+        "feasibility": 4,
+        "test": 3.25
+      }
+    },
+    "B": {
+      "question": {
+        "originality": 2,
+        "feasibility": 4,
+        "test": 3.5
+      },
+      "labeled": {
+        "originality": 2.667,
+        "feasibility": 4.167,
+        "test": 3.667
+      },
+      "combined": {
+        "originality": 2.75,
+        "feasibility": 4.083,
+        "test": 3.583
+      }
+    },
+    "C": {
+      "question": {
+        "originality": 2.583,
+        "feasibility": 4.333,
+        "test": 3.25
+      },
+      "labeled": {
+        "originality": 2.917,
+        "feasibility": 3.833,
+        "test": 4
+      },
+      "combined": {
+        "originality": 3,
+        "feasibility": 4.25,
+        "test": 3.25
+      }
+    },
+    "D": {
+      "question": {
+        "originality": 2.25,
+        "feasibility": 3.833,
+        "test": 2.75
+      },
+      "labeled": {
+        "originality": 3.583,
+        "feasibility": 3.25,
+        "test": 4
+      },
+      "combined": {
+        "originality": 2.917,
+        "feasibility": 3.833,
+        "test": 2.667
+      }
+    }
+  },
+  "originality_order": {
+    "agree": 330,
+    "disagree": 18,
+    "either_tied": 444
+  },
+  "word_cap_applied": 0
+}

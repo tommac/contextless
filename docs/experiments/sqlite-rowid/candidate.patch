@@ -1,0 +1,35 @@
+--- store.go
++++ store.go
+@@ -27,7 +27,8 @@
+ 
+ const schema = `
+ CREATE TABLE IF NOT EXISTS records (
+-  id TEXT PRIMARY KEY,
++  search_key INTEGER PRIMARY KEY,
++  id TEXT NOT NULL UNIQUE,
+   type TEXT NOT NULL,
+   path TEXT NOT NULL,
+   sha TEXT NOT NULL,
+@@ -173,16 +174,17 @@
+ 		return err
+ 	}
+ 	defer tx.Rollback()
+-	if _, err := tx.Exec(`INSERT INTO records(id,type,path,sha,bytes,seq) VALUES(?,?,?,?,?,?)
+-		ON CONFLICT(id) DO UPDATE SET type=excluded.type, path=excluded.path, sha=excluded.sha, bytes=excluded.bytes, seq=excluded.seq`,
+-		r.ID, r.Type, r.Path, r.SHA, r.Bytes, r.Seq); err != nil {
++	var key int64
++	if err := tx.QueryRow(`INSERT INTO records(id,type,path,sha,bytes,seq) VALUES(?,?,?,?,?,?)
++		ON CONFLICT(id) DO UPDATE SET type=excluded.type, path=excluded.path, sha=excluded.sha, bytes=excluded.bytes, seq=excluded.seq RETURNING search_key`,
++		r.ID, r.Type, r.Path, r.SHA, r.Bytes, r.Seq).Scan(&key); err != nil {
+ 		return err
+ 	}
+-	if _, err := tx.Exec(`DELETE FROM fts WHERE id=?`, r.ID); err != nil {
++	if _, err := tx.Exec(`DELETE FROM fts WHERE rowid=?`, key); err != nil {
+ 		return err
+ 	}
+ 	if r.Text != "" {
+-		if _, err := tx.Exec(`INSERT INTO fts(id,type,text) VALUES(?,?,?)`, r.ID, r.Type, r.Text); err != nil {
++		if _, err := tx.Exec(`INSERT INTO fts(rowid,id,type,text) VALUES(?,?,?,?)`, key, r.ID, r.Type, r.Text); err != nil {
+ 			return err
+ 		}
+ 	}

@@ -1,0 +1,85 @@
+{
+  "instructions": "Using only the supplied material, propose two meaningfully different designs. Develop the more promising one with a concrete example and a cheap test that could distinguish it from a simpler alternative. Maximize useful originality. Maximum 110 whitespace-delimited words, including headings, per problem. Treat each problem independently. Do not mention prompts, notes, or the study. Return only one JSON object mapping each problem letter to its answer string.",
+  "problems": {
+    "B": {
+      "problem": "Two street musicians play at opposite ends of a night market, drawing from the same wandering crowd. Each can see only their own instrument case. Listeners drift toward whichever end sounds livelier, and noise rules cap volume. The pair may agree on any plan beforehand but cannot signal during the night. Design how they keep both ends of the market alive.",
+      "material": [
+        {
+          "title": "Leases and fencing tokens",
+          "text": "A lease is a time-limited grant that expires on its own if the holder fails. A lease alone is unsafe, because a holder can pause past its expiry and then write, so the lock service issues a number that rises with every grant and the store rejects any write carrying a lower one. An LLM agent in the middle of a step is such a pause, lasting minutes, and it cannot be trusted to check itself, so the check must sit in the tool or store. No measurement of leases with fencing for LLM agents was found. The survey tells ContextlessAI not to build them, since nothing there needs a claim.",
+          "relationship": "Who holds the crowd, and when must they yield?"
+        },
+        {
+          "title": "Bulk synchronous parallel supersteps",
+          "text": "In the Pregel model every node triggered in a step runs concurrently, and all wait at a synchronization barrier before state is committed and the next step starts. LangGraph and Microsoft Agent Framework both use it and checkpoint at the barrier. Its cost is that a fast path cannot advance until the slowest node in the step completes, and work inside a long node is not recoverable. ContextlessAI's waves have the same shape: a simple barrier per wave, whose cost is waiting for the slowest unit and should be measured before anything more elaborate is considered.",
+          "relationship": "What can a clock synchronize?"
+        },
+        {
+          "title": "Optimistic concurrency control",
+          "text": "Work on private copies, check at commit that nothing read has changed, then write: no locks are held, and a failed check restarts the work. It is good when conflicts are rare and wastes the loser's work when they are not, which is expensive when a step costs minutes and dollars. Cursor found a version check at commit better than locks, but it did not remove confusion, and agents without ownership drifted to small safe changes. The survey's verdict on the optimistic version check is that it is good as a commit-time validation and not as a coordination scheme.",
+          "relationship": "Which conflict is worth detecting?"
+        }
+      ]
+    },
+    "A": {
+      "problem": "A neighborhood repair cafe runs two hours every Saturday. Each visitor brings one broken small appliance, watches the single volunteer electrician fix it, and leaves. The organizer wants regulars who can fix things they never brought. Design how the cafe runs so visitors leave more capable, with twelve chairs, one electrician, and no sign-up in advance.",
+      "material": [
+        {
+          "title": "Failed attempts teach the next attempt",
+          "text": "When a run fails on one provider, the failure is carried forward as data. The brief of the next attempt lists what failed, by profile and exit class, so the next provider is told what already went wrong. The idea comes from BookWriter's lastCritiques and MultiAIWorkspace's proposal 2.6.",
+          "relationship": "Whose mistake teaches the room?"
+        },
+        {
+          "title": "Maker-checker separation",
+          "text": "Maker-checker separation is the rule that whoever made a piece of work is not the one who checks it. MultiAIWorkspace calls it maker and checker, and BookWriter calls it judge independence. ContextlessAI applies it across providers: the reviewer can be any provider except the writer's, so an answer is never checked by the provider that wrote it.",
+          "relationship": "What can a stranger safely check?"
+        },
+        {
+          "title": "Submodular maximization under a knapsack budget",
+          "text": "Choosing spans under a token budget is, in optimization terms, maximizing a set function under a knapsack constraint. The research notes report that the only guarantee which transfers cleanly to a token budget is for a monotone submodular objective, selected by gain per token with a fallback to the best single item. Greedy on raw gain under a knapsack budget has an unbounded approximation ratio, so the common heuristic carries no guarantee.",
+          "relationship": "Which fix adds the most new skill?"
+        }
+      ]
+    },
+    "D": {
+      "problem": "A city will demolish a beloved old bridge in one year and replace it with a wider crossing. A small team has a modest budget and one public meeting per season. Design how the city says goodbye, so that people who cross daily shape what is kept and something of the old bridge survives in the new one.",
+      "material": [
+        {
+          "title": "Provenance and lineage",
+          "text": "Database provenance annotates each stored row with a variable and carries polynomials of those variables through queries, so a derived row records how it was derived. In LLM retrieval the measured data are thin: one position paper with preliminary numbers on provenance tokens, one lineage per evidence demand in LineageRAG, lineage used to stop double counting in AutoViewMem, and support sets in Stashbird. For this project the research note proposes recording, for each packed span, which lanes and query terms derived it, and scoring by the number of independent derivations. No measurement of provenance-based ranking or packing was found.",
+          "relationship": "What story must a salvaged piece carry?"
+        },
+        {
+          "title": "Zettelkasten",
+          "text": "Zettelkasten is a note-taking practice of small atomic notes joined by explicit links, popular in tools such as Obsidian. Several LLM memory systems borrow it, with a model writing both the notes and the links. The notes found measured support for linked notes on synthesis questions, but no study that isolates backlinks or note titles, no long test of an LLM wiki in real use, and no measurement of how fast model-maintained links rot.",
+          "relationship": "What is the smallest keepsake worth linking?"
+        },
+        {
+          "title": "Bitemporal data model",
+          "text": "A bitemporal store, a database idea, records for every fact both when it was true in the world and when the system learned it, and it closes old versions instead of deleting them. Zep's edges carry four such timestamps, and another store in the notes keeps an identity node unchanged while version nodes carry the two time intervals. For this project it is the model for letting one fact supersede another while the source turn stays untouched, though the notes found no benchmark that isolates it from the quality of extraction and retrieval.",
+          "relationship": "Which time does a memory belong to?"
+        }
+      ]
+    },
+    "C": {
+      "problem": "A community radio station must fill three hours every night with nobody awake. Residents drop off unlabeled cassette tapes during the day. The station wants every voice aired eventually, no voice dominating, a wrong night's choices correctable the next night, and a way for a resident to learn whether their tape played. Design the system.",
+      "material": [
+        {
+          "title": "Event sourcing",
+          "text": "Event sourcing records every state change as an ordered event, so the log allows a complete rebuild, temporal queries that reconstruct past states, and replay to correct mistakes; snapshots let a system start from a recent point instead of replaying everything. Agent papers that follow the pattern report reproducibility and consistency, not retrieval quality. The research note states that the target system is already event sourced, and that the transferable part is the snapshot: a periodic materialised state of the value ledger, so that a question about the state as of a given turn does not require a scan.",
+          "relationship": "How does tonight get corrected tomorrow?"
+        },
+        {
+          "title": "Drop tiers set the order in which records are left out",
+          "text": "Every selector that feeds a packet has a tier, and the tier is the drop order. Tier 0 is never dropped: the session record, the new message, recalled turns and active decisions. When a packet is still too big after a larger window has been tried, the engine drops catalog cards first (tier 1), then thread turns oldest first (tier 2), then ranked text least relevant first followed by facts and entities (tier 3), and recent turns last, again oldest first (tier 4). Every record dropped is named in the packet, so the order decides what leaves view first and nothing leaves silently.",
+          "relationship": "What waits when three hours are full?"
+        },
+        {
+          "title": "Virtual memory paging",
+          "text": "The design treats a recall request the way an operating system treats a page fault, and takes three mechanisms from paging. The working set keeps recently recalled or cited atoms in the next packets, which is temporal locality. Prefetch brings in the graph neighbours of a faulted atom, which is spatial locality, and the fault rate per call becomes a health metric.",
+          "relationship": "What keeps a quiet voice from starving?"
+        }
+      ]
+    }
+  }
+}

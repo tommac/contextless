@@ -1,0 +1,20 @@
+{
+  "turns": 4096,
+  "turns_git_tree": "651f621ffaaa34730473f42f6359e07a9e282787",
+  "seconds": {
+    "baseline": [
+      40.6748,
+      36.8672,
+      28.2212
+    ],
+    "candidate": [
+      13.3635,
+      19.0861,
+      27.6133
+    ]
+  },
+  "median_seconds": {
+    "baseline": 36.8672,
+    "candidate": 19.0861
+  }
+}

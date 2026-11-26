@@ -1,0 +1,101 @@
+{
+  "means": {
+    "selected": {
+      "originality": 2.979,
+      "feasibility": 3.896,
+      "test": 3.646
+    },
+    "labeled": {
+      "originality": 3.125,
+      "feasibility": 4.229,
+      "test": 4.042
+    }
+  },
+  "by_problem": {
+    "A": {
+      "selected": {
+        "originality": 3,
+        "feasibility": 4.083,
+        "test": 3.833
+      },
+      "labeled": {
+        "originality": 3.25,
+        "feasibility": 4,
+        "test": 4.5
+      }
+    },
+    "B": {
+      "selected": {
+        "originality": 2.667,
+        "feasibility": 3.5,
+        "test": 3.583
+      },
+      "labeled": {
+        "originality": 3,
+        "feasibility": 4.167,
+        "test": 3.833
+      }
+    },
+    "C": {
+      "selected": {
+        "originality": 2.917,
+        "feasibility": 4,
+        "test": 3.5
+      },
+      "labeled": {
+        "originality": 3.083,
+        "feasibility": 4.5,
+        "test": 4.333
+      }
+    },
+    "D": {
+      "selected": {
+        "originality": 3.333,
+        "feasibility": 4,
+        "test": 3.667
+      },
+      "labeled": {
+        "originality": 3.167,
+        "feasibility": 4.25,
+        "test": 3.5
+      }
+    }
+  },
+  "originality_order": {
+    "agree": 43,
+    "disagree": 5,
+    "either_tied": 288
+  },
+  "word_cap_applied": 0,
+  "calibration": {
+    "defect_metric": {
+      "generic": "originality",
+      "breaks-constraint": "feasibility",
+      "weak-test": "test"
+    },
+    "per_judge": [
+      {
+        "catch_rate": 1.0,
+        "catches": 12,
+        "seeds": 12,
+        "seed_mean_score": 1.833,
+        "real_mean_score": 3.708
+      },
+      {
+        "catch_rate": 1.0,
+        "catches": 12,
+        "seeds": 12,
+        "seed_mean_score": 1.583,
+        "real_mean_score": 3.781
+      },
+      {
+        "catch_rate": 1.0,
+        "catches": 12,
+        "seeds": 12,
+        "seed_mean_score": 1.472,
+        "real_mean_score": 3.469
+      }
+    ],
+    "mean_catch_rate": 1.0
+  }
+}

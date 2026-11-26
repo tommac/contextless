@@ -1,0 +1,4241 @@
+{
+  "dataset_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+  "frozen_selector_sha256": "028f9324af76918a3626c93e58c1856b2551b1d4ee510b9b17f5536e19971131",
+  "executed_selector_sha256": "85c921390dcc4c549713df65ab28dc1b16714588ade5583abd58b4c23e632e36",
+  "budget_bytes": 8000,
+  "eligibility_counts": {
+    "strict": 1527,
+    "no_labels": 4,
+    "reformatted": 6,
+    "adversarial": 446,
+    "unresolved": 3
+  },
+  "all": {
+    "questions": 1533,
+    "literal_eligible": 480,
+    "arms": {
+      "BM25_atoms_whole": {
+        "all_messages": {
+          "denominator": 1533,
+          "count": 890,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 332,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 330,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "median_bytes": 4032
+      },
+      "BM25_atoms_first_grow": {
+        "all_messages": {
+          "denominator": 1533,
+          "count": 890,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 332,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 330,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "median_bytes": 4032
+      },
+      "BM25_atoms_query_grow": {
+        "all_messages": {
+          "denominator": 1533,
+          "count": 890,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 332,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 330,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "median_bytes": 4032
+      },
+      "BM25_routed_whole": {
+        "all_messages": {
+          "denominator": 1533,
+          "count": 958,
+          "wins_from_atoms_whole": 84,
+          "losses_from_atoms_whole": 16
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 363,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 361,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "median_bytes": 4103
+      },
+      "BM25_routed_first_grow": {
+        "all_messages": {
+          "denominator": 1533,
+          "count": 958,
+          "wins_from_atoms_whole": 84,
+          "losses_from_atoms_whole": 16
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 363,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 361,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "median_bytes": 4103
+      },
+      "BM25_routed_query_grow": {
+        "all_messages": {
+          "denominator": 1533,
+          "count": 958,
+          "wins_from_atoms_whole": 84,
+          "losses_from_atoms_whole": 16
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 363,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 361,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "median_bytes": 4103
+      },
+      "Contextless_atoms_whole": {
+        "all_messages": {
+          "denominator": 1533,
+          "count": 890,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 332,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 330,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "median_bytes": 4037
+      },
+      "Contextless_atoms_first_grow": {
+        "all_messages": {
+          "denominator": 1533,
+          "count": 890,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 332,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 330,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "median_bytes": 4037
+      },
+      "Contextless_atoms_query_grow": {
+        "all_messages": {
+          "denominator": 1533,
+          "count": 890,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 332,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 330,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "median_bytes": 4037
+      },
+      "Contextless_routed_whole": {
+        "all_messages": {
+          "denominator": 1533,
+          "count": 958,
+          "wins_from_atoms_whole": 84,
+          "losses_from_atoms_whole": 16
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 363,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 361,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "median_bytes": 4113
+      },
+      "Contextless_routed_first_grow": {
+        "all_messages": {
+          "denominator": 1533,
+          "count": 958,
+          "wins_from_atoms_whole": 84,
+          "losses_from_atoms_whole": 16
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 363,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 361,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "median_bytes": 4113
+      },
+      "Contextless_routed_query_grow": {
+        "all_messages": {
+          "denominator": 1533,
+          "count": 958,
+          "wins_from_atoms_whole": 84,
+          "losses_from_atoms_whole": 16
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 363,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 361,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "median_bytes": 4113
+      }
+    },
+    "pools_fitting_budget": {
+      "BM25_atoms": 1533,
+      "BM25_routed": 1533,
+      "Contextless_atoms": 1533,
+      "Contextless_routed": 1533
+    }
+  },
+  "strict": {
+    "questions": 1527,
+    "literal_eligible": 480,
+    "arms": {
+      "BM25_atoms_whole": {
+        "all_messages": {
+          "denominator": 1527,
+          "count": 889,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 332,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 330,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "median_bytes": 4032
+      },
+      "BM25_atoms_first_grow": {
+        "all_messages": {
+          "denominator": 1527,
+          "count": 889,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 332,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 330,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "median_bytes": 4032
+      },
+      "BM25_atoms_query_grow": {
+        "all_messages": {
+          "denominator": 1527,
+          "count": 889,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 332,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 330,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "median_bytes": 4032
+      },
+      "BM25_routed_whole": {
+        "all_messages": {
+          "denominator": 1527,
+          "count": 957,
+          "wins_from_atoms_whole": 84,
+          "losses_from_atoms_whole": 16
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 363,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 361,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "median_bytes": 4103
+      },
+      "BM25_routed_first_grow": {
+        "all_messages": {
+          "denominator": 1527,
+          "count": 957,
+          "wins_from_atoms_whole": 84,
+          "losses_from_atoms_whole": 16
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 363,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 361,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "median_bytes": 4103
+      },
+      "BM25_routed_query_grow": {
+        "all_messages": {
+          "denominator": 1527,
+          "count": 957,
+          "wins_from_atoms_whole": 84,
+          "losses_from_atoms_whole": 16
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 363,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 361,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "median_bytes": 4103
+      },
+      "Contextless_atoms_whole": {
+        "all_messages": {
+          "denominator": 1527,
+          "count": 889,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 332,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 330,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "median_bytes": 4036
+      },
+      "Contextless_atoms_first_grow": {
+        "all_messages": {
+          "denominator": 1527,
+          "count": 889,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 332,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 330,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "median_bytes": 4036
+      },
+      "Contextless_atoms_query_grow": {
+        "all_messages": {
+          "denominator": 1527,
+          "count": 889,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 332,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 330,
+          "wins_from_atoms_whole": 0,
+          "losses_from_atoms_whole": 0
+        },
+        "median_bytes": 4036
+      },
+      "Contextless_routed_whole": {
+        "all_messages": {
+          "denominator": 1527,
+          "count": 957,
+          "wins_from_atoms_whole": 84,
+          "losses_from_atoms_whole": 16
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 363,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 361,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "median_bytes": 4113
+      },
+      "Contextless_routed_first_grow": {
+        "all_messages": {
+          "denominator": 1527,
+          "count": 957,
+          "wins_from_atoms_whole": 84,
+          "losses_from_atoms_whole": 16
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 363,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 361,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "median_bytes": 4113
+      },
+      "Contextless_routed_query_grow": {
+        "all_messages": {
+          "denominator": 1527,
+          "count": 957,
+          "wins_from_atoms_whole": 84,
+          "losses_from_atoms_whole": 16
+        },
+        "literal": {
+          "denominator": 480,
+          "count": 363,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "literal_absent_from_question": {
+          "denominator": 478,
+          "count": 361,
+          "wins_from_atoms_whole": 34,
+          "losses_from_atoms_whole": 3
+        },
+        "median_bytes": 4113
+      }
+    },
+    "pools_fitting_budget": {
+      "BM25_atoms": 1527,
+      "BM25_routed": 1527,
+      "Contextless_atoms": 1527,
+      "Contextless_routed": 1527
+    }
+  },
+  "by_dialogue": {
+    "conv-26": {
+      "questions": 150,
+      "literal_eligible": 28,
+      "arms": {
+        "BM25_atoms_whole": {
+          "all_messages": {
+            "denominator": 150,
+            "count": 88,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 28,
+            "count": 16,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 28,
+            "count": 16,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3830.0
+        },
+        "BM25_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 150,
+            "count": 88,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 28,
+            "count": 16,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 28,
+            "count": 16,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3830.0
+        },
+        "BM25_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 150,
+            "count": 88,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 28,
+            "count": 16,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 28,
+            "count": 16,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3830.0
+        },
+        "BM25_routed_whole": {
+          "all_messages": {
+            "denominator": 150,
+            "count": 91,
+            "wins_from_atoms_whole": 5,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 28,
+            "count": 18,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 28,
+            "count": 18,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4001.5
+        },
+        "BM25_routed_first_grow": {
+          "all_messages": {
+            "denominator": 150,
+            "count": 91,
+            "wins_from_atoms_whole": 5,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 28,
+            "count": 18,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 28,
+            "count": 18,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4001.5
+        },
+        "BM25_routed_query_grow": {
+          "all_messages": {
+            "denominator": 150,
+            "count": 91,
+            "wins_from_atoms_whole": 5,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 28,
+            "count": 18,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 28,
+            "count": 18,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4001.5
+        },
+        "Contextless_atoms_whole": {
+          "all_messages": {
+            "denominator": 150,
+            "count": 88,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 28,
+            "count": 16,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 28,
+            "count": 16,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3833.5
+        },
+        "Contextless_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 150,
+            "count": 88,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 28,
+            "count": 16,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 28,
+            "count": 16,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3833.5
+        },
+        "Contextless_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 150,
+            "count": 88,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 28,
+            "count": 16,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 28,
+            "count": 16,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3833.5
+        },
+        "Contextless_routed_whole": {
+          "all_messages": {
+            "denominator": 150,
+            "count": 91,
+            "wins_from_atoms_whole": 5,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 28,
+            "count": 18,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 28,
+            "count": 18,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4007.0
+        },
+        "Contextless_routed_first_grow": {
+          "all_messages": {
+            "denominator": 150,
+            "count": 91,
+            "wins_from_atoms_whole": 5,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 28,
+            "count": 18,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 28,
+            "count": 18,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4007.0
+        },
+        "Contextless_routed_query_grow": {
+          "all_messages": {
+            "denominator": 150,
+            "count": 91,
+            "wins_from_atoms_whole": 5,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 28,
+            "count": 18,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 28,
+            "count": 18,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4007.0
+        }
+      },
+      "pools_fitting_budget": {
+        "BM25_atoms": 150,
+        "BM25_routed": 150,
+        "Contextless_atoms": 150,
+        "Contextless_routed": 150
+      }
+    },
+    "conv-30": {
+      "questions": 81,
+      "literal_eligible": 18,
+      "arms": {
+        "BM25_atoms_whole": {
+          "all_messages": {
+            "denominator": 81,
+            "count": 55,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4051
+        },
+        "BM25_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 81,
+            "count": 55,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4051
+        },
+        "BM25_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 81,
+            "count": 55,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4051
+        },
+        "BM25_routed_whole": {
+          "all_messages": {
+            "denominator": 81,
+            "count": 58,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4000
+        },
+        "BM25_routed_first_grow": {
+          "all_messages": {
+            "denominator": 81,
+            "count": 58,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4000
+        },
+        "BM25_routed_query_grow": {
+          "all_messages": {
+            "denominator": 81,
+            "count": 58,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4000
+        },
+        "Contextless_atoms_whole": {
+          "all_messages": {
+            "denominator": 81,
+            "count": 55,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4051
+        },
+        "Contextless_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 81,
+            "count": 55,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4051
+        },
+        "Contextless_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 81,
+            "count": 55,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4051
+        },
+        "Contextless_routed_whole": {
+          "all_messages": {
+            "denominator": 81,
+            "count": 58,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4032
+        },
+        "Contextless_routed_first_grow": {
+          "all_messages": {
+            "denominator": 81,
+            "count": 58,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4032
+        },
+        "Contextless_routed_query_grow": {
+          "all_messages": {
+            "denominator": 81,
+            "count": 58,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 18,
+            "count": 12,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4032
+        }
+      },
+      "pools_fitting_budget": {
+        "BM25_atoms": 81,
+        "BM25_routed": 81,
+        "Contextless_atoms": 81,
+        "Contextless_routed": 81
+      }
+    },
+    "conv-41": {
+      "questions": 152,
+      "literal_eligible": 55,
+      "arms": {
+        "BM25_atoms_whole": {
+          "all_messages": {
+            "denominator": 152,
+            "count": 90,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 43,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 55,
+            "count": 43,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4178.0
+        },
+        "BM25_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 152,
+            "count": 90,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 43,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 55,
+            "count": 43,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4178.0
+        },
+        "BM25_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 152,
+            "count": 90,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 43,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 55,
+            "count": 43,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4178.0
+        },
+        "BM25_routed_whole": {
+          "all_messages": {
+            "denominator": 152,
+            "count": 99,
+            "wins_from_atoms_whole": 10,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 46,
+            "wins_from_atoms_whole": 3,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 55,
+            "count": 46,
+            "wins_from_atoms_whole": 3,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4274.0
+        },
+        "BM25_routed_first_grow": {
+          "all_messages": {
+            "denominator": 152,
+            "count": 99,
+            "wins_from_atoms_whole": 10,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 46,
+            "wins_from_atoms_whole": 3,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 55,
+            "count": 46,
+            "wins_from_atoms_whole": 3,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4274.0
+        },
+        "BM25_routed_query_grow": {
+          "all_messages": {
+            "denominator": 152,
+            "count": 99,
+            "wins_from_atoms_whole": 10,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 46,
+            "wins_from_atoms_whole": 3,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 55,
+            "count": 46,
+            "wins_from_atoms_whole": 3,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4274.0
+        },
+        "Contextless_atoms_whole": {
+          "all_messages": {
+            "denominator": 152,
+            "count": 90,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 43,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 55,
+            "count": 43,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4186.0
+        },
+        "Contextless_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 152,
+            "count": 90,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 43,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 55,
+            "count": 43,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4186.0
+        },
+        "Contextless_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 152,
+            "count": 90,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 43,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 55,
+            "count": 43,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4186.0
+        },
+        "Contextless_routed_whole": {
+          "all_messages": {
+            "denominator": 152,
+            "count": 99,
+            "wins_from_atoms_whole": 10,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 46,
+            "wins_from_atoms_whole": 3,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 55,
+            "count": 46,
+            "wins_from_atoms_whole": 3,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4244.0
+        },
+        "Contextless_routed_first_grow": {
+          "all_messages": {
+            "denominator": 152,
+            "count": 99,
+            "wins_from_atoms_whole": 10,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 46,
+            "wins_from_atoms_whole": 3,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 55,
+            "count": 46,
+            "wins_from_atoms_whole": 3,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4244.0
+        },
+        "Contextless_routed_query_grow": {
+          "all_messages": {
+            "denominator": 152,
+            "count": 99,
+            "wins_from_atoms_whole": 10,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 46,
+            "wins_from_atoms_whole": 3,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 55,
+            "count": 46,
+            "wins_from_atoms_whole": 3,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4244.0
+        }
+      },
+      "pools_fitting_budget": {
+        "BM25_atoms": 152,
+        "BM25_routed": 152,
+        "Contextless_atoms": 152,
+        "Contextless_routed": 152
+      }
+    },
+    "conv-42": {
+      "questions": 197,
+      "literal_eligible": 56,
+      "arms": {
+        "BM25_atoms_whole": {
+          "all_messages": {
+            "denominator": 197,
+            "count": 117,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 56,
+            "count": 39,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 56,
+            "count": 39,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3923
+        },
+        "BM25_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 197,
+            "count": 117,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 56,
+            "count": 39,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 56,
+            "count": 39,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3923
+        },
+        "BM25_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 197,
+            "count": 117,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 56,
+            "count": 39,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 56,
+            "count": 39,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3923
+        },
+        "BM25_routed_whole": {
+          "all_messages": {
+            "denominator": 197,
+            "count": 121,
+            "wins_from_atoms_whole": 7,
+            "losses_from_atoms_whole": 3
+          },
+          "literal": {
+            "denominator": 56,
+            "count": 41,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 56,
+            "count": 41,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3903
+        },
+        "BM25_routed_first_grow": {
+          "all_messages": {
+            "denominator": 197,
+            "count": 121,
+            "wins_from_atoms_whole": 7,
+            "losses_from_atoms_whole": 3
+          },
+          "literal": {
+            "denominator": 56,
+            "count": 41,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 56,
+            "count": 41,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3903
+        },
+        "BM25_routed_query_grow": {
+          "all_messages": {
+            "denominator": 197,
+            "count": 121,
+            "wins_from_atoms_whole": 7,
+            "losses_from_atoms_whole": 3
+          },
+          "literal": {
+            "denominator": 56,
+            "count": 41,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 56,
+            "count": 41,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3903
+        },
+        "Contextless_atoms_whole": {
+          "all_messages": {
+            "denominator": 197,
+            "count": 117,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 56,
+            "count": 39,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 56,
+            "count": 39,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3942
+        },
+        "Contextless_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 197,
+            "count": 117,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 56,
+            "count": 39,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 56,
+            "count": 39,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3942
+        },
+        "Contextless_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 197,
+            "count": 117,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 56,
+            "count": 39,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 56,
+            "count": 39,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3942
+        },
+        "Contextless_routed_whole": {
+          "all_messages": {
+            "denominator": 197,
+            "count": 121,
+            "wins_from_atoms_whole": 7,
+            "losses_from_atoms_whole": 3
+          },
+          "literal": {
+            "denominator": 56,
+            "count": 41,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 56,
+            "count": 41,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3903
+        },
+        "Contextless_routed_first_grow": {
+          "all_messages": {
+            "denominator": 197,
+            "count": 121,
+            "wins_from_atoms_whole": 7,
+            "losses_from_atoms_whole": 3
+          },
+          "literal": {
+            "denominator": 56,
+            "count": 41,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 56,
+            "count": 41,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3903
+        },
+        "Contextless_routed_query_grow": {
+          "all_messages": {
+            "denominator": 197,
+            "count": 121,
+            "wins_from_atoms_whole": 7,
+            "losses_from_atoms_whole": 3
+          },
+          "literal": {
+            "denominator": 56,
+            "count": 41,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 56,
+            "count": 41,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3903
+        }
+      },
+      "pools_fitting_budget": {
+        "BM25_atoms": 197,
+        "BM25_routed": 197,
+        "Contextless_atoms": 197,
+        "Contextless_routed": 197
+      }
+    },
+    "conv-43": {
+      "questions": 178,
+      "literal_eligible": 72,
+      "arms": {
+        "BM25_atoms_whole": {
+          "all_messages": {
+            "denominator": 178,
+            "count": 106,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 72,
+            "count": 48,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 72,
+            "count": 48,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4012.0
+        },
+        "BM25_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 178,
+            "count": 106,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 72,
+            "count": 48,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 72,
+            "count": 48,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4012.0
+        },
+        "BM25_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 178,
+            "count": 106,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 72,
+            "count": 48,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 72,
+            "count": 48,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4012.0
+        },
+        "BM25_routed_whole": {
+          "all_messages": {
+            "denominator": 178,
+            "count": 114,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 72,
+            "count": 52,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 72,
+            "count": 52,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4210.0
+        },
+        "BM25_routed_first_grow": {
+          "all_messages": {
+            "denominator": 178,
+            "count": 114,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 72,
+            "count": 52,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 72,
+            "count": 52,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4210.0
+        },
+        "BM25_routed_query_grow": {
+          "all_messages": {
+            "denominator": 178,
+            "count": 114,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 72,
+            "count": 52,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 72,
+            "count": 52,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4210.0
+        },
+        "Contextless_atoms_whole": {
+          "all_messages": {
+            "denominator": 178,
+            "count": 106,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 72,
+            "count": 48,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 72,
+            "count": 48,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4016.5
+        },
+        "Contextless_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 178,
+            "count": 106,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 72,
+            "count": 48,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 72,
+            "count": 48,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4016.5
+        },
+        "Contextless_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 178,
+            "count": 106,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 72,
+            "count": 48,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 72,
+            "count": 48,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4016.5
+        },
+        "Contextless_routed_whole": {
+          "all_messages": {
+            "denominator": 178,
+            "count": 114,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 72,
+            "count": 52,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 72,
+            "count": 52,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4191.0
+        },
+        "Contextless_routed_first_grow": {
+          "all_messages": {
+            "denominator": 178,
+            "count": 114,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 72,
+            "count": 52,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 72,
+            "count": 52,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4191.0
+        },
+        "Contextless_routed_query_grow": {
+          "all_messages": {
+            "denominator": 178,
+            "count": 114,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 72,
+            "count": 52,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 72,
+            "count": 52,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4191.0
+        }
+      },
+      "pools_fitting_budget": {
+        "BM25_atoms": 178,
+        "BM25_routed": 178,
+        "Contextless_atoms": 178,
+        "Contextless_routed": 178
+      }
+    },
+    "conv-44": {
+      "questions": 123,
+      "literal_eligible": 49,
+      "arms": {
+        "BM25_atoms_whole": {
+          "all_messages": {
+            "denominator": 123,
+            "count": 62,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 49,
+            "count": 31,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 49,
+            "count": 31,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4288
+        },
+        "BM25_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 123,
+            "count": 62,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 49,
+            "count": 31,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 49,
+            "count": 31,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4288
+        },
+        "BM25_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 123,
+            "count": 62,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 49,
+            "count": 31,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 49,
+            "count": 31,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4288
+        },
+        "BM25_routed_whole": {
+          "all_messages": {
+            "denominator": 123,
+            "count": 67,
+            "wins_from_atoms_whole": 7,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 49,
+            "count": 35,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 49,
+            "count": 35,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4321
+        },
+        "BM25_routed_first_grow": {
+          "all_messages": {
+            "denominator": 123,
+            "count": 67,
+            "wins_from_atoms_whole": 7,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 49,
+            "count": 35,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 49,
+            "count": 35,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4321
+        },
+        "BM25_routed_query_grow": {
+          "all_messages": {
+            "denominator": 123,
+            "count": 67,
+            "wins_from_atoms_whole": 7,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 49,
+            "count": 35,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 49,
+            "count": 35,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4321
+        },
+        "Contextless_atoms_whole": {
+          "all_messages": {
+            "denominator": 123,
+            "count": 62,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 49,
+            "count": 31,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 49,
+            "count": 31,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4288
+        },
+        "Contextless_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 123,
+            "count": 62,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 49,
+            "count": 31,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 49,
+            "count": 31,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4288
+        },
+        "Contextless_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 123,
+            "count": 62,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 49,
+            "count": 31,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 49,
+            "count": 31,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4288
+        },
+        "Contextless_routed_whole": {
+          "all_messages": {
+            "denominator": 123,
+            "count": 67,
+            "wins_from_atoms_whole": 7,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 49,
+            "count": 35,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 49,
+            "count": 35,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4321
+        },
+        "Contextless_routed_first_grow": {
+          "all_messages": {
+            "denominator": 123,
+            "count": 67,
+            "wins_from_atoms_whole": 7,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 49,
+            "count": 35,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 49,
+            "count": 35,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4321
+        },
+        "Contextless_routed_query_grow": {
+          "all_messages": {
+            "denominator": 123,
+            "count": 67,
+            "wins_from_atoms_whole": 7,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 49,
+            "count": 35,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 49,
+            "count": 35,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4321
+        }
+      },
+      "pools_fitting_budget": {
+        "BM25_atoms": 123,
+        "BM25_routed": 123,
+        "Contextless_atoms": 123,
+        "Contextless_routed": 123
+      }
+    },
+    "conv-47": {
+      "questions": 149,
+      "literal_eligible": 52,
+      "arms": {
+        "BM25_atoms_whole": {
+          "all_messages": {
+            "denominator": 149,
+            "count": 82,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 52,
+            "count": 35,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 52,
+            "count": 35,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3843
+        },
+        "BM25_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 149,
+            "count": 82,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 52,
+            "count": 35,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 52,
+            "count": 35,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3843
+        },
+        "BM25_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 149,
+            "count": 82,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 52,
+            "count": 35,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 52,
+            "count": 35,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3843
+        },
+        "BM25_routed_whole": {
+          "all_messages": {
+            "denominator": 149,
+            "count": 96,
+            "wins_from_atoms_whole": 14,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 52,
+            "count": 44,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 52,
+            "count": 44,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3853
+        },
+        "BM25_routed_first_grow": {
+          "all_messages": {
+            "denominator": 149,
+            "count": 96,
+            "wins_from_atoms_whole": 14,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 52,
+            "count": 44,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 52,
+            "count": 44,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3853
+        },
+        "BM25_routed_query_grow": {
+          "all_messages": {
+            "denominator": 149,
+            "count": 96,
+            "wins_from_atoms_whole": 14,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 52,
+            "count": 44,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 52,
+            "count": 44,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3853
+        },
+        "Contextless_atoms_whole": {
+          "all_messages": {
+            "denominator": 149,
+            "count": 82,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 52,
+            "count": 35,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 52,
+            "count": 35,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3843
+        },
+        "Contextless_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 149,
+            "count": 82,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 52,
+            "count": 35,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 52,
+            "count": 35,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3843
+        },
+        "Contextless_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 149,
+            "count": 82,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 52,
+            "count": 35,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 52,
+            "count": 35,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3843
+        },
+        "Contextless_routed_whole": {
+          "all_messages": {
+            "denominator": 149,
+            "count": 96,
+            "wins_from_atoms_whole": 14,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 52,
+            "count": 44,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 52,
+            "count": 44,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3896
+        },
+        "Contextless_routed_first_grow": {
+          "all_messages": {
+            "denominator": 149,
+            "count": 96,
+            "wins_from_atoms_whole": 14,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 52,
+            "count": 44,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 52,
+            "count": 44,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3896
+        },
+        "Contextless_routed_query_grow": {
+          "all_messages": {
+            "denominator": 149,
+            "count": 96,
+            "wins_from_atoms_whole": 14,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 52,
+            "count": 44,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 52,
+            "count": 44,
+            "wins_from_atoms_whole": 9,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3896
+        }
+      },
+      "pools_fitting_budget": {
+        "BM25_atoms": 149,
+        "BM25_routed": 149,
+        "Contextless_atoms": 149,
+        "Contextless_routed": 149
+      }
+    },
+    "conv-48": {
+      "questions": 191,
+      "literal_eligible": 51,
+      "arms": {
+        "BM25_atoms_whole": {
+          "all_messages": {
+            "denominator": 191,
+            "count": 113,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 51,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 51,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3898
+        },
+        "BM25_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 191,
+            "count": 113,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 51,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 51,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3898
+        },
+        "BM25_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 191,
+            "count": 113,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 51,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 51,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3898
+        },
+        "BM25_routed_whole": {
+          "all_messages": {
+            "denominator": 191,
+            "count": 124,
+            "wins_from_atoms_whole": 13,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 51,
+            "count": 40,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 51,
+            "count": 40,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 3952
+        },
+        "BM25_routed_first_grow": {
+          "all_messages": {
+            "denominator": 191,
+            "count": 124,
+            "wins_from_atoms_whole": 13,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 51,
+            "count": 40,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 51,
+            "count": 40,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 3952
+        },
+        "BM25_routed_query_grow": {
+          "all_messages": {
+            "denominator": 191,
+            "count": 124,
+            "wins_from_atoms_whole": 13,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 51,
+            "count": 40,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 51,
+            "count": 40,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 3952
+        },
+        "Contextless_atoms_whole": {
+          "all_messages": {
+            "denominator": 191,
+            "count": 113,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 51,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 51,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3906
+        },
+        "Contextless_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 191,
+            "count": 113,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 51,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 51,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3906
+        },
+        "Contextless_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 191,
+            "count": 113,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 51,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 51,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3906
+        },
+        "Contextless_routed_whole": {
+          "all_messages": {
+            "denominator": 191,
+            "count": 124,
+            "wins_from_atoms_whole": 13,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 51,
+            "count": 40,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 51,
+            "count": 40,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 3971
+        },
+        "Contextless_routed_first_grow": {
+          "all_messages": {
+            "denominator": 191,
+            "count": 124,
+            "wins_from_atoms_whole": 13,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 51,
+            "count": 40,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 51,
+            "count": 40,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 3971
+        },
+        "Contextless_routed_query_grow": {
+          "all_messages": {
+            "denominator": 191,
+            "count": 124,
+            "wins_from_atoms_whole": 13,
+            "losses_from_atoms_whole": 2
+          },
+          "literal": {
+            "denominator": 51,
+            "count": 40,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 51,
+            "count": 40,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 3971
+        }
+      },
+      "pools_fitting_budget": {
+        "BM25_atoms": 191,
+        "BM25_routed": 191,
+        "Contextless_atoms": 191,
+        "Contextless_routed": 191
+      }
+    },
+    "conv-49": {
+      "questions": 156,
+      "literal_eligible": 44,
+      "arms": {
+        "BM25_atoms_whole": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 85,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 44,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 43,
+            "count": 36,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3967.5
+        },
+        "BM25_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 85,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 44,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 43,
+            "count": 36,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3967.5
+        },
+        "BM25_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 85,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 44,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 43,
+            "count": 36,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3967.5
+        },
+        "BM25_routed_whole": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 89,
+            "wins_from_atoms_whole": 5,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 44,
+            "count": 38,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 43,
+            "count": 37,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4140.5
+        },
+        "BM25_routed_first_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 89,
+            "wins_from_atoms_whole": 5,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 44,
+            "count": 38,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 43,
+            "count": 37,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4140.5
+        },
+        "BM25_routed_query_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 89,
+            "wins_from_atoms_whole": 5,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 44,
+            "count": 38,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 43,
+            "count": 37,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4140.5
+        },
+        "Contextless_atoms_whole": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 85,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 44,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 43,
+            "count": 36,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3984.5
+        },
+        "Contextless_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 85,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 44,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 43,
+            "count": 36,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3984.5
+        },
+        "Contextless_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 85,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 44,
+            "count": 37,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 43,
+            "count": 36,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3984.5
+        },
+        "Contextless_routed_whole": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 89,
+            "wins_from_atoms_whole": 5,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 44,
+            "count": 38,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 43,
+            "count": 37,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4134.0
+        },
+        "Contextless_routed_first_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 89,
+            "wins_from_atoms_whole": 5,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 44,
+            "count": 38,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 43,
+            "count": 37,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4134.0
+        },
+        "Contextless_routed_query_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 89,
+            "wins_from_atoms_whole": 5,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 44,
+            "count": 38,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 43,
+            "count": 37,
+            "wins_from_atoms_whole": 1,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4134.0
+        }
+      },
+      "pools_fitting_budget": {
+        "BM25_atoms": 156,
+        "BM25_routed": 156,
+        "Contextless_atoms": 156,
+        "Contextless_routed": 156
+      }
+    },
+    "conv-50": {
+      "questions": 156,
+      "literal_eligible": 55,
+      "arms": {
+        "BM25_atoms_whole": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 92,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 34,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 54,
+            "count": 33,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4452.0
+        },
+        "BM25_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 92,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 34,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 54,
+            "count": 33,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4452.0
+        },
+        "BM25_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 92,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 34,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 54,
+            "count": 33,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4452.0
+        },
+        "BM25_routed_whole": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 99,
+            "wins_from_atoms_whole": 10,
+            "losses_from_atoms_whole": 3
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 37,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 54,
+            "count": 36,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4463.0
+        },
+        "BM25_routed_first_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 99,
+            "wins_from_atoms_whole": 10,
+            "losses_from_atoms_whole": 3
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 37,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 54,
+            "count": 36,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4463.0
+        },
+        "BM25_routed_query_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 99,
+            "wins_from_atoms_whole": 10,
+            "losses_from_atoms_whole": 3
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 37,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 54,
+            "count": 36,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4463.0
+        },
+        "Contextless_atoms_whole": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 92,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 34,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 54,
+            "count": 33,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4425.5
+        },
+        "Contextless_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 92,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 34,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 54,
+            "count": 33,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4425.5
+        },
+        "Contextless_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 92,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 34,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 54,
+            "count": 33,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4425.5
+        },
+        "Contextless_routed_whole": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 99,
+            "wins_from_atoms_whole": 10,
+            "losses_from_atoms_whole": 3
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 37,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 54,
+            "count": 36,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4478.0
+        },
+        "Contextless_routed_first_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 99,
+            "wins_from_atoms_whole": 10,
+            "losses_from_atoms_whole": 3
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 37,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 54,
+            "count": 36,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4478.0
+        },
+        "Contextless_routed_query_grow": {
+          "all_messages": {
+            "denominator": 156,
+            "count": 99,
+            "wins_from_atoms_whole": 10,
+            "losses_from_atoms_whole": 3
+          },
+          "literal": {
+            "denominator": 55,
+            "count": 37,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 54,
+            "count": 36,
+            "wins_from_atoms_whole": 4,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4478.0
+        }
+      },
+      "pools_fitting_budget": {
+        "BM25_atoms": 156,
+        "BM25_routed": 156,
+        "Contextless_atoms": 156,
+        "Contextless_routed": 156
+      }
+    }
+  },
+  "by_category": {
+    "1": {
+      "questions": 280,
+      "literal_eligible": 36,
+      "arms": {
+        "BM25_atoms_whole": {
+          "all_messages": {
+            "denominator": 280,
+            "count": 54,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 36,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 36,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4140.5
+        },
+        "BM25_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 280,
+            "count": 54,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 36,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 36,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4140.5
+        },
+        "BM25_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 280,
+            "count": 54,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 36,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 36,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4140.5
+        },
+        "BM25_routed_whole": {
+          "all_messages": {
+            "denominator": 280,
+            "count": 57,
+            "wins_from_atoms_whole": 8,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 36,
+            "count": 13,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 36,
+            "count": 13,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4156.5
+        },
+        "BM25_routed_first_grow": {
+          "all_messages": {
+            "denominator": 280,
+            "count": 57,
+            "wins_from_atoms_whole": 8,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 36,
+            "count": 13,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 36,
+            "count": 13,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4156.5
+        },
+        "BM25_routed_query_grow": {
+          "all_messages": {
+            "denominator": 280,
+            "count": 57,
+            "wins_from_atoms_whole": 8,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 36,
+            "count": 13,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 36,
+            "count": 13,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4156.5
+        },
+        "Contextless_atoms_whole": {
+          "all_messages": {
+            "denominator": 280,
+            "count": 54,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 36,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 36,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4145.5
+        },
+        "Contextless_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 280,
+            "count": 54,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 36,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 36,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4145.5
+        },
+        "Contextless_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 280,
+            "count": 54,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 36,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 36,
+            "count": 12,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4145.5
+        },
+        "Contextless_routed_whole": {
+          "all_messages": {
+            "denominator": 280,
+            "count": 57,
+            "wins_from_atoms_whole": 8,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 36,
+            "count": 13,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 36,
+            "count": 13,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4167.5
+        },
+        "Contextless_routed_first_grow": {
+          "all_messages": {
+            "denominator": 280,
+            "count": 57,
+            "wins_from_atoms_whole": 8,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 36,
+            "count": 13,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 36,
+            "count": 13,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4167.5
+        },
+        "Contextless_routed_query_grow": {
+          "all_messages": {
+            "denominator": 280,
+            "count": 57,
+            "wins_from_atoms_whole": 8,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 36,
+            "count": 13,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "literal_absent_from_question": {
+            "denominator": 36,
+            "count": 13,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "median_bytes": 4167.5
+        }
+      },
+      "pools_fitting_budget": {
+        "BM25_atoms": 280,
+        "BM25_routed": 280,
+        "Contextless_atoms": 280,
+        "Contextless_routed": 280
+      }
+    },
+    "2": {
+      "questions": 321,
+      "literal_eligible": 22,
+      "arms": {
+        "BM25_atoms_whole": {
+          "all_messages": {
+            "denominator": 321,
+            "count": 214,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 22,
+            "count": 8,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 22,
+            "count": 8,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3802
+        },
+        "BM25_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 321,
+            "count": 214,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 22,
+            "count": 8,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 22,
+            "count": 8,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3802
+        },
+        "BM25_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 321,
+            "count": 214,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 22,
+            "count": 8,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 22,
+            "count": 8,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3802
+        },
+        "BM25_routed_whole": {
+          "all_messages": {
+            "denominator": 321,
+            "count": 229,
+            "wins_from_atoms_whole": 20,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 22,
+            "count": 10,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 22,
+            "count": 10,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3885
+        },
+        "BM25_routed_first_grow": {
+          "all_messages": {
+            "denominator": 321,
+            "count": 229,
+            "wins_from_atoms_whole": 20,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 22,
+            "count": 10,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 22,
+            "count": 10,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3885
+        },
+        "BM25_routed_query_grow": {
+          "all_messages": {
+            "denominator": 321,
+            "count": 229,
+            "wins_from_atoms_whole": 20,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 22,
+            "count": 10,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 22,
+            "count": 10,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3885
+        },
+        "Contextless_atoms_whole": {
+          "all_messages": {
+            "denominator": 321,
+            "count": 214,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 22,
+            "count": 8,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 22,
+            "count": 8,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3809
+        },
+        "Contextless_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 321,
+            "count": 214,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 22,
+            "count": 8,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 22,
+            "count": 8,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3809
+        },
+        "Contextless_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 321,
+            "count": 214,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 22,
+            "count": 8,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 22,
+            "count": 8,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3809
+        },
+        "Contextless_routed_whole": {
+          "all_messages": {
+            "denominator": 321,
+            "count": 229,
+            "wins_from_atoms_whole": 20,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 22,
+            "count": 10,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 22,
+            "count": 10,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3896
+        },
+        "Contextless_routed_first_grow": {
+          "all_messages": {
+            "denominator": 321,
+            "count": 229,
+            "wins_from_atoms_whole": 20,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 22,
+            "count": 10,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 22,
+            "count": 10,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3896
+        },
+        "Contextless_routed_query_grow": {
+          "all_messages": {
+            "denominator": 321,
+            "count": 229,
+            "wins_from_atoms_whole": 20,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 22,
+            "count": 10,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 22,
+            "count": 10,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3896
+        }
+      },
+      "pools_fitting_budget": {
+        "BM25_atoms": 321,
+        "BM25_routed": 321,
+        "Contextless_atoms": 321,
+        "Contextless_routed": 321
+      }
+    },
+    "3": {
+      "questions": 92,
+      "literal_eligible": 4,
+      "arms": {
+        "BM25_atoms_whole": {
+          "all_messages": {
+            "denominator": 92,
+            "count": 22,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 4,
+            "count": 2,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 3,
+            "count": 1,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3941.5
+        },
+        "BM25_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 92,
+            "count": 22,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 4,
+            "count": 2,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 3,
+            "count": 1,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3941.5
+        },
+        "BM25_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 92,
+            "count": 22,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 4,
+            "count": 2,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 3,
+            "count": 1,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3941.5
+        },
+        "BM25_routed_whole": {
+          "all_messages": {
+            "denominator": 92,
+            "count": 23,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 4,
+            "count": 2,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 3,
+            "count": 1,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4043.0
+        },
+        "BM25_routed_first_grow": {
+          "all_messages": {
+            "denominator": 92,
+            "count": 23,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 4,
+            "count": 2,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 3,
+            "count": 1,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4043.0
+        },
+        "BM25_routed_query_grow": {
+          "all_messages": {
+            "denominator": 92,
+            "count": 23,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 4,
+            "count": 2,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 3,
+            "count": 1,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4043.0
+        },
+        "Contextless_atoms_whole": {
+          "all_messages": {
+            "denominator": 92,
+            "count": 22,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 4,
+            "count": 2,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 3,
+            "count": 1,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3957.5
+        },
+        "Contextless_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 92,
+            "count": 22,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 4,
+            "count": 2,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 3,
+            "count": 1,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3957.5
+        },
+        "Contextless_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 92,
+            "count": 22,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 4,
+            "count": 2,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 3,
+            "count": 1,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 3957.5
+        },
+        "Contextless_routed_whole": {
+          "all_messages": {
+            "denominator": 92,
+            "count": 23,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 4,
+            "count": 2,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 3,
+            "count": 1,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4068.0
+        },
+        "Contextless_routed_first_grow": {
+          "all_messages": {
+            "denominator": 92,
+            "count": 23,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 4,
+            "count": 2,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 3,
+            "count": 1,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4068.0
+        },
+        "Contextless_routed_query_grow": {
+          "all_messages": {
+            "denominator": 92,
+            "count": 23,
+            "wins_from_atoms_whole": 2,
+            "losses_from_atoms_whole": 1
+          },
+          "literal": {
+            "denominator": 4,
+            "count": 2,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 3,
+            "count": 1,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4068.0
+        }
+      },
+      "pools_fitting_budget": {
+        "BM25_atoms": 92,
+        "BM25_routed": 92,
+        "Contextless_atoms": 92,
+        "Contextless_routed": 92
+      }
+    },
+    "4": {
+      "questions": 840,
+      "literal_eligible": 418,
+      "arms": {
+        "BM25_atoms_whole": {
+          "all_messages": {
+            "denominator": 840,
+            "count": 600,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 418,
+            "count": 310,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 417,
+            "count": 309,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4072.5
+        },
+        "BM25_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 840,
+            "count": 600,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 418,
+            "count": 310,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 417,
+            "count": 309,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4072.5
+        },
+        "BM25_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 840,
+            "count": 600,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 418,
+            "count": 310,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 417,
+            "count": 309,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4072.5
+        },
+        "BM25_routed_whole": {
+          "all_messages": {
+            "denominator": 840,
+            "count": 649,
+            "wins_from_atoms_whole": 54,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 418,
+            "count": 338,
+            "wins_from_atoms_whole": 30,
+            "losses_from_atoms_whole": 2
+          },
+          "literal_absent_from_question": {
+            "denominator": 417,
+            "count": 337,
+            "wins_from_atoms_whole": 30,
+            "losses_from_atoms_whole": 2
+          },
+          "median_bytes": 4162.0
+        },
+        "BM25_routed_first_grow": {
+          "all_messages": {
+            "denominator": 840,
+            "count": 649,
+            "wins_from_atoms_whole": 54,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 418,
+            "count": 338,
+            "wins_from_atoms_whole": 30,
+            "losses_from_atoms_whole": 2
+          },
+          "literal_absent_from_question": {
+            "denominator": 417,
+            "count": 337,
+            "wins_from_atoms_whole": 30,
+            "losses_from_atoms_whole": 2
+          },
+          "median_bytes": 4162.0
+        },
+        "BM25_routed_query_grow": {
+          "all_messages": {
+            "denominator": 840,
+            "count": 649,
+            "wins_from_atoms_whole": 54,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 418,
+            "count": 338,
+            "wins_from_atoms_whole": 30,
+            "losses_from_atoms_whole": 2
+          },
+          "literal_absent_from_question": {
+            "denominator": 417,
+            "count": 337,
+            "wins_from_atoms_whole": 30,
+            "losses_from_atoms_whole": 2
+          },
+          "median_bytes": 4162.0
+        },
+        "Contextless_atoms_whole": {
+          "all_messages": {
+            "denominator": 840,
+            "count": 600,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 418,
+            "count": 310,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 417,
+            "count": 309,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4082.0
+        },
+        "Contextless_atoms_first_grow": {
+          "all_messages": {
+            "denominator": 840,
+            "count": 600,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 418,
+            "count": 310,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 417,
+            "count": 309,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4082.0
+        },
+        "Contextless_atoms_query_grow": {
+          "all_messages": {
+            "denominator": 840,
+            "count": 600,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal": {
+            "denominator": 418,
+            "count": 310,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "literal_absent_from_question": {
+            "denominator": 417,
+            "count": 309,
+            "wins_from_atoms_whole": 0,
+            "losses_from_atoms_whole": 0
+          },
+          "median_bytes": 4082.0
+        },
+        "Contextless_routed_whole": {
+          "all_messages": {
+            "denominator": 840,
+            "count": 649,
+            "wins_from_atoms_whole": 54,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 418,
+            "count": 338,
+            "wins_from_atoms_whole": 30,
+            "losses_from_atoms_whole": 2
+          },
+          "literal_absent_from_question": {
+            "denominator": 417,
+            "count": 337,
+            "wins_from_atoms_whole": 30,
+            "losses_from_atoms_whole": 2
+          },
+          "median_bytes": 4165.0
+        },
+        "Contextless_routed_first_grow": {
+          "all_messages": {
+            "denominator": 840,
+            "count": 649,
+            "wins_from_atoms_whole": 54,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 418,
+            "count": 338,
+            "wins_from_atoms_whole": 30,
+            "losses_from_atoms_whole": 2
+          },
+          "literal_absent_from_question": {
+            "denominator": 417,
+            "count": 337,
+            "wins_from_atoms_whole": 30,
+            "losses_from_atoms_whole": 2
+          },
+          "median_bytes": 4165.0
+        },
+        "Contextless_routed_query_grow": {
+          "all_messages": {
+            "denominator": 840,
+            "count": 649,
+            "wins_from_atoms_whole": 54,
+            "losses_from_atoms_whole": 5
+          },
+          "literal": {
+            "denominator": 418,
+            "count": 338,
+            "wins_from_atoms_whole": 30,
+            "losses_from_atoms_whole": 2
+          },
+          "literal_absent_from_question": {
+            "denominator": 417,
+            "count": 337,
+            "wins_from_atoms_whole": 30,
+            "losses_from_atoms_whole": 2
+          },
+          "median_bytes": 4165.0
+        }
+      },
+      "pools_fitting_budget": {
+        "BM25_atoms": 840,
+        "BM25_routed": 840,
+        "Contextless_atoms": 840,
+        "Contextless_routed": 840
+      }
+    }
+  }
+}

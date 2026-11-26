@@ -1,0 +1,17 @@
+{
+  "instructions": "Using only the supplied material, propose two meaningfully different designs. Develop the more promising one with a concrete example and a cheap test that could distinguish it from a simpler alternative. Maximize useful originality. Maximum 110 whitespace-delimited words, including headings, per problem. Treat each problem independently. Do not mention prompts, notes, or the study. Return only one JSON object mapping each problem letter to its answer string.",
+  "problems": {
+    "C": {
+      "problem": "A community radio station must fill three hours every night with nobody awake. Residents drop off unlabeled cassette tapes during the day. The station wants every voice aired eventually, no voice dominating, a wrong night's choices correctable the next night, and a way for a resident to learn whether their tape played. Design the system."
+    },
+    "D": {
+      "problem": "A city will demolish a beloved old bridge in one year and replace it with a wider crossing. A small team has a modest budget and one public meeting per season. Design how the city says goodbye, so that people who cross daily shape what is kept and something of the old bridge survives in the new one."
+    },
+    "A": {
+      "problem": "A neighborhood repair cafe runs two hours every Saturday. Each visitor brings one broken small appliance, watches the single volunteer electrician fix it, and leaves. The organizer wants regulars who can fix things they never brought. Design how the cafe runs so visitors leave more capable, with twelve chairs, one electrician, and no sign-up in advance."
+    },
+    "B": {
+      "problem": "Two street musicians play at opposite ends of a night market, drawing from the same wandering crowd. Each can see only their own instrument case. Listeners drift toward whichever end sounds livelier, and noise rules cap volume. The pair may agree on any plan beforehand but cannot signal during the night. Design how they keep both ends of the market alive."
+    }
+  }
+}

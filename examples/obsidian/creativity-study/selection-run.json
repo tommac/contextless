@@ -1,0 +1,66 @@
+{
+  "vault_size": 526,
+  "index_seconds": 0.28277225,
+  "four_searches_seconds": 0.008582124999999996,
+  "search": {
+    "A": [
+      "ideas/Stale memory is a weak spot of memory frameworks.md",
+      "fields/Zettelkasten.md",
+      "ideas/Dead runs are marked abandoned and an unanswered turn is retried.md"
+    ],
+    "B": [
+      "results/Fusing BM25 with late interaction added 11.2 Hit at 1 on LoCoMo.md",
+      "sources/Luo et al 2026.md",
+      "results/Indexing atoms with the question they answer did not help overall.md"
+    ],
+    "C": [
+      "ideas/Locks held by agents.md",
+      "ideas/Spans that never enter the context can never be cited.md",
+      "ideas/R1 Repair the instrument and record the offline floor.md"
+    ],
+    "D": [
+      "fields/Result diversification.md",
+      "results/Research 201 turns old probes 29 whole turns 27 atoms at 8k.md",
+      "ideas/LLM summaries as memory.md"
+    ]
+  },
+  "source_bytes": {
+    "question": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0
+    },
+    "search": {
+      "A": 1254,
+      "B": 1471,
+      "C": 1600,
+      "D": 1469
+    },
+    "selected": {
+      "A": 1710,
+      "B": 1563,
+      "C": 1454,
+      "D": 1547
+    },
+    "labeled": {
+      "A": 1710,
+      "B": 1563,
+      "C": 1454,
+      "D": 1547
+    }
+  },
+  "curator_elapsed_seconds": 23.887647,
+  "curator_start_unix_ns": 1795282012100937000,
+  "curator_end_unix_ns": 1795282035988584000,
+  "reader_packets_sha256": {
+    "input0.json": "e3d6d7f26c5267de5b88109d68c23c7f01d03838cda3a71dc4ee40d591486d8e",
+    "input1.json": "c51421f2a45068537f74696a26b10665326203695bd7c33826da7c35a1d80fc1",
+    "input2.json": "98555c5cec7092f223b782e2d067b4cca4cc54f2d42024f82e1c9fae58fe41d2",
+    "input3.json": "7b754ecff1f14eae1d38da36a3b79e59abe965b04860e0fd27ba8272005d78fd",
+    "input4.json": "48fcbbc5f381b46afe1730d8b80827a2cdd8d28ce697cbc223418679d79410c1",
+    "input5.json": "2b7df9b5933f36cb072d815b80accf2d832adea9df1b64df9a0eeed26345a5eb",
+    "input6.json": "dd25069305c5de7baad23028c597be9e51e2ebcfb8eb5a2ed8284d2c983deff7",
+    "input7.json": "19735e99c51203a29c933fce09206bbd11c8107b3a3cc11946c181a91840af9c"
+  }
+}

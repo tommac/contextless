@@ -1,0 +1,58 @@
+{
+  "A": [
+    {
+      "path": "fields/Incremental view maintenance.md",
+      "label": "When is the work paid?"
+    },
+    {
+      "path": "ideas/Propagation from lexical seeds over a rare-key graph.md",
+      "label": "What makes a bridge distinctive?"
+    },
+    {
+      "path": "ideas/Compression distance as the redundancy term in packing.md",
+      "label": "Competing measure of difference"
+    }
+  ],
+  "B": [
+    {
+      "path": "fields/Actor model and supervision.md",
+      "label": "What can run independently?"
+    },
+    {
+      "path": "fields/Blackboard architecture.md",
+      "label": "Alternative to direct signaling"
+    },
+    {
+      "path": "results/CodeCRDT converged every time with 5 to 10 percent semantic conflicts.md",
+      "label": "Mechanical agreement can mislead"
+    }
+  ],
+  "C": [
+    {
+      "path": "fields/Information foraging.md",
+      "label": "When does a beginner move on?"
+    },
+    {
+      "path": "fields/Counterfactual learning to rank.md",
+      "label": "Whose preference is actually visible?"
+    },
+    {
+      "path": "fields/Map tiles and level of detail.md",
+      "label": "How much detail comes first?"
+    }
+  ],
+  "D": [
+    {
+      "path": "sources/PM-2.md",
+      "label": "Which direction is underrepresented?"
+    },
+    {
+      "path": "ideas/A branch needs an explicit inheritance rule.md",
+      "label": "What carries into a detour?"
+    },
+    {
+      "path": "fields/Durable execution by journal and replay.md",
+      "label": "What must survive exact replay?"
+    }
+  ]
+}

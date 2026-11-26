@@ -1,0 +1,69 @@
+{
+  "nodes": [
+    {
+      "id": "afe02ccd635259df",
+      "type": "text",
+      "text": "# Question\n\nTwo volunteers build separate halves of an interactive science exhibit and meet only on installation day. Their halves should produce a surprising interaction together. They can exchange one postcard each in advance, and either half might arrive late. Design how they collaborate.",
+      "x": 0,
+      "y": 300,
+      "width": 360,
+      "height": 320
+    },
+    {
+      "id": "1be7d8043cd59e82",
+      "type": "file",
+      "file": "fields/Actor model and supervision.md",
+      "x": 650,
+      "y": 0,
+      "width": 500,
+      "height": 290,
+      "color": "4"
+    },
+    {
+      "id": "61fa9834bcde23a0",
+      "type": "file",
+      "file": "fields/Blackboard architecture.md",
+      "x": 650,
+      "y": 350,
+      "width": 500,
+      "height": 290,
+      "color": "5"
+    },
+    {
+      "id": "cd08001bcabce9ae",
+      "type": "file",
+      "file": "results/CodeCRDT converged every time with 5 to 10 percent semantic conflicts.md",
+      "x": 650,
+      "y": 700,
+      "width": 500,
+      "height": 290,
+      "color": "2"
+    }
+  ],
+  "edges": [
+    {
+      "id": "23ca3f1521710b28",
+      "fromNode": "afe02ccd635259df",
+      "fromSide": "right",
+      "toNode": "1be7d8043cd59e82",
+      "toSide": "left",
+      "label": "What can run independently?"
+    },
+    {
+      "id": "212f2d6b889f1d6e",
+      "fromNode": "afe02ccd635259df",
+      "fromSide": "right",
+      "toNode": "61fa9834bcde23a0",
+      "toSide": "left",
+      "label": "Alternative to direct signaling"
+    },
+    {
+      "id": "7729be56b43781f6",
+      "fromNode": "afe02ccd635259df",
+      "fromSide": "right",
+      "toNode": "cd08001bcabce9ae",
+      "toSide": "left",
+      "label": "Mechanical agreement can mislead"
+    }
+  ]
+}

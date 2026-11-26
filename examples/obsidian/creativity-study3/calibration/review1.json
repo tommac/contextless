@@ -1,0 +1,198 @@
+[
+  {
+    "problem": "Two street musicians play at opposite ends of a night market, drawing from the same wandering crowd. Each can see only their own instrument case. Listeners drift toward whichever end sounds livelier, and noise rules cap volume. The pair may agree on any plan beforehand but cannot signal during the night. Design how they keep both ends of the market alive.",
+    "designs": [
+      {
+        "id": "313",
+        "answer": "Two ways: barrier steps vs expiring leases. Barrier: both switch loud/soft together every fifteen minutes by clock. Lease: one end holds lively lease, other stays quiet; lease expires alone, next holder takes over. Chosen: alternating fifteen-minute leases with rising set numbers; only current number may peak, older number stays soft even if player paused. Example: north lively 8:00-8:15 with set 1, south soft; south lively 8:15-8:30 with set 2. Test: compare one night leases vs one night both-loud-then-retreat; if cases show two living ends only under leases, timed yielding beats matching."
+      },
+      {
+        "id": "222",
+        "answer": "**Lease Lead vs Clock Steps.** Lease Lead: one end holds crowd for timed grant, must yield at expiry; numbered handoffs reject stale loudness. Clock Steps: both play synchronized sets divided by barrier, checkpointing loudness. Choose Clock Steps with leases. Agree 20-minute steps; lively end plays soft, quiet end solos, then both pause at barrier. Example: east softens 7:00-7:20 while west leads; swap next step. Fencing number prevents both leading. Test: compare drift on swapped vs unswapped nights; quiet case fills without breaching cap, unlike optimistic both-try-loud."
+      },
+      {
+        "id": "725",
+        "answer": "**Lease-Lead** vs **Barrier Sets** Lease-Lead: pre-agreed 10-min leases; leader plays lively, other quiet. Lease expires alone; numbered setlist rises each grant, higher number wins if overlap, so late holder yields. Barrier Sets: both play 8-min supersteps, then 2-min silence barrier to remix crowd before next commit. Example: 7:00 lease #1 A leads, 7:10 lease #2 B leads; if A overruns, B's #2 outranks. Test: count coins per case per hour vs both-loud baseline; Lease wins if total higher and gap smaller."
+      },
+      {
+        "id": "437",
+        "answer": "**Turns vs Barriers.** 1) Lease slots: alternate 20-min featured/quiet roles by clock; fuller case cannot override; quiet plays low, steady. 2) Synced sets: both play 15-min sets then both pause 5 min to let crowd drift, restart together. Winner: leases. Example: 7:00 A lively, B sparse; 7:20 swap, no judging by ear. Test: count coins per half-hour at each end across nights; leases should keep both ends non-zero more nights than always-lively both."
+      },
+      {
+        "id": "902",
+        "answer": "**Take Turns.** Design 1: the musicians agree to alternate every hour. Design 2: both play quietly all night. Develop alternating: North plays 7 to 8, South plays 8 to 9, and so on, so each end gets the crowd in turn. Example: at 8 o'clock North stops and South starts a song. Test: at the end of the night, ask both musicians whether they are happy with how the evening went."
+      },
+      {
+        "id": "744",
+        "answer": "**Leases / Barred Time** 1. Crowd Leases: 15-minute holder grant expires alone; numbered setlist rises each grant; louder end after expiry yields — must yield. 2. Market Supersteps: synced clock divides night into 10-minute bars; both commit roles at barrier, check case coins at commit. Build 2: even bars north lively, south soft, odd bars swap; barrier on watch. Example: 8:00 north leads, 8:10 south leads despite thin case. Test: compare nights of both-loud versus barred swap; wins if quiet-end coins rise without total falling."
+      },
+      {
+        "id": "459",
+        "answer": "**Lease Lead / Barred Remix** Lease Lead: clock grants 15-min liveliness leases; holder plays bright, other drops to quiet ostinato; roles swap on quarter-hour; slot number is fencing token—if clocks drift, higher number wins. Barred Remix: synchronized 30-min supersteps ending in 3-min joint silence to rescramble crowd. Keep Lease Lead. Ex: east leads :00-:15 with singalong, west hums; then flip. Test: alternate Lease nights vs both-full nights; log minutes each case sits empty; Lease wins if dead-minutes fall without total coins falling."
+      },
+      {
+        "id": "906",
+        "answer": "**Shared Mixer.** Both musicians plug into one rented amplifier with a mixing board placed at the market center, and a hired sound engineer rides the levels all night, texting each performer when to swell or soften. Example: at 8:20 the engineer texts North to go forte. Test: compare tips on engineer nights versus unmixed nights; the mixer should keep both cases fuller."
+      },
+      {
+        "id": "272",
+        "answer": "**A Leased Spotlight** Preassign alternating 15-minute loud leases; lease expires alone, numbered cards prevent overlap. **B Clockwork Supersteps** Divide night into 20-minute steps with synced soft barrier for drift. Chosen: B. 7:00 both lively, 7:20 both thin for five minutes, repeat; fast end waits at barrier. Noise stays capped, crowd redistributes each pause. Private flourishes checked at barrier; clash restarts next step. Test: vs both always lively; count minutes both ends hold crowds and east-case coins on west-loud slots."
+      },
+      {
+        "id": "853",
+        "answer": "Lease vs Barriers. Design 1: lease the crowd — one end holds lively grant for 15 minutes, expiry passes it, fencing number rejects late loud playing. Design 2, chosen: barrier sets — pre-agreed 20-minute supersteps, both play quiet, then both commit loud for 2 minutes at barrier, checkpoint case totals. Example: 8pm, 8:20, 8:40 loud together, spreading drift both ways. Test: compare nights with leases vs barriers; barrier nights should show both cases growing, lease nights one case starving."
+      },
+      {
+        "id": "910",
+        "answer": "**Mirror Sets.** Both musicians play the same twelve-song list in the same order, starting on the hour, so neither end sounds livelier than the other. Example: both open with the same waltz at 7. Test: run it for a few nights and see whether the market feels pleasant and whether the musicians want to keep doing it."
+      }
+    ]
+  },
+  {
+    "problem": "A city will demolish a beloved old bridge in one year and replace it with a wider crossing. A small team has a modest budget and one public meeting per season. Design how the city says goodbye, so that people who cross daily shape what is kept and something of the old bridge survives in the new one.",
+    "designs": [
+      {
+        "id": "904",
+        "answer": "**A Fitting Farewell.** Design 1: hold a ceremony before demolition. Design 2: install a plaque on the new crossing. Develop the ceremony: invite residents to walk the bridge one last time, share memories, and take photos. Example: a Sunday walk with speeches at the midpoint. Test: count how many people attend and ask them afterwards whether the event felt meaningful."
+      },
+      {
+        "id": "743",
+        "answer": "**Kept Beam / Linked Crossings** 1. Provenance Pieces: salvage 20 fragments; each stamped with its derivations — who crossed, when, why kept; new bridge plaques carry polynomial of sources; rank by independent derivations. 2. Seasonal Cards: each meeting closes one version, never deletes; atomic cards record crossing-time and telling-time, joined by explicit links. Build 1: embed beam with 30 derivations into new rail. Example: rusted bolt + “night-shift nurse, 1998-2024, 3 routes cited it.” Test: remove labels for a week; count visitors who retell a derivation vs name only material. Provenance wins if retellings double."
+      },
+      {
+        "id": "336",
+        "answer": "Linked-cards vs Lineage-salvage. Design 1: atomic bridge cards with explicit links — daily crossers write small memories, model links them into paths. Design 2, chosen: provenance plus bitemporal — each salvaged beam annotated with stories deriving it, scored by independent derivations; old versions closed never deleted. Example: rivet panel derived from 14 commuter stories outranks architect pick, cast into new railing. Test: remove top story; high-lineage piece stays, linked-only favorite collapses."
+      },
+      {
+        "id": "908",
+        "answer": "**Daily Meetings.** The team holds a public meeting every week instead of one per season, hires a facilitator and a film crew, and buys out a billboard campaign, spending about ten times the modest budget to make sure every voice is heard. Example: weekly hall sessions with livestream. Test: compare attendance at the first and last meetings; attendance should grow."
+      },
+      {
+        "id": "912",
+        "answer": "**Memory Walk.** Monthly guided walks collect stories at the bridge; the best are printed in a booklet placed in the new crossing's railing kiosk. Example: a ferry-shift story becomes a railing panel. Test: print the booklet and see whether people pick it up and whether the team feels proud of it."
+      },
+      {
+        "id": "674",
+        "answer": "**Provenance Beam / Linked Keepsakes** Provenance Beam: tag each candidate piece with teller, use, date; keep pieces with most independent derivations, embed with labels. Linked Keepsakes: collect atomic crossing stories on cards, link related cards on library wall. Keep fused: seasonal meetings gather cards, vote with derivations. Ex: worn handrail section returns as new-bridge bench, plaque lists three commuters’ 1989, 2005, 2024 crossings with both event and telling dates. Test: vs council plaque; quiz daily crossers next season on what survives and why; fused wins if recall and ownership double."
+      },
+      {
+        "id": "194",
+        "answer": "**Keep List vs Link Web.** Keep List saves big pieces with origin tags: lane, story, donor crossing. Link Web saves small atomic keepsakes joined by explicit links. Choose Link Web. Each season meeting, daily crossers write one small card: moment, valid date, meeting date it was recorded; old cards are closed, never deleted. Example: rivet 114 links to 6am foghorn, marathon kiss, final bus. New bridge embeds linked rivets with QR to cards. Test: hide one card, ask newcomer to retell crossing; linked set retells fuller than list."
+      },
+      {
+        "id": "512",
+        "answer": "**A Lineage Vault** Tag each saved piece with who proposed it; keep only pieces with independent backers. **B Linked Time Cards** Each story one card with links; never erase, only close old versions. Chosen: B. Autumn meeting: commuters write 100 crossing cards, link rush-hour, first-kiss, flood cards. Winter vote picks riveted arch segment for new railing; card versions record bridge-true dates and meeting-learned dates. Spring casting embeds old rivets in new parapet. Test: vs suggestion box plus plaque; count daily-crosser cards reused in final design and visitors naming derivation."
+      },
+      {
+        "id": "266",
+        "answer": "Two ways: provenance salvage vs linked keepsakes. Salvage tags each beam with crossings it served; keepsakes split memories into small linked cards. Chosen: collect one-sentence crossing cards each season, link cards sharing place or hour, record crossing year plus telling date, close old versions without deleting. Each salvaged beam carries card cluster codes, scored by independent tellings. Example: 7:40 school-crossing stories from three decades pick one girder to set in new railing with codes stamped. Test: offer two girders, one top-linked, one staff-picked; if daily crossers recognize stories only on linked one, links beat picking."
+      },
+      {
+        "id": "325",
+        "answer": "**Relics vs Cards.** 1) Provenance pieces: each saved rivet/plaque tagged with who kept it and which crossings derived it; pieces with independent backers rank higher for new bridge. 2) Living cards: atomic walker slips linked by route/memory, versioned by crossing-date and record-date, never deleted. Winner: cards choose relics. Example: daily commuter's dawn-crossing slip links to school-run slip, both point to north railing; railing wins reuse. Test: hold autumn meeting vote; card-backed shortlist should match daily-crossers' picks better than staff pick."
+      },
+      {
+        "id": "223",
+        "answer": "**Provenance Salvage** vs **Bitemporal Notes** Salvage: each story annotates bridge parts it names; polynomials carry derivations. Score parts by independent derivations; embed winners in new crossing. Notes: atomic crosser notes with explicit links; bitemporal versions store crossing-time and telling-time, closing old versions. Example: lamppost named in 14 independent commuter notes outranks plaque named twice; lamppost iron recast as new rail. Test: vs council-picked plaque; survey daily crossers on recognition; Salvage wins if more recognize kept piece."
+      }
+    ]
+  },
+  {
+    "problem": "A community radio station must fill three hours every night with nobody awake. Residents drop off unlabeled cassette tapes during the day. The station wants every voice aired eventually, no voice dominating, a wrong night's choices correctable the next night, and a way for a resident to learn whether their tape played. Design the system.",
+    "designs": [
+      {
+        "id": "426",
+        "answer": "**Replay Log vs Tiered Pager.** Replay Log files every drop as ordered event; nightly playlist is rebuildable and correctable by replay. Tiered Pager ranks waiting tapes by least-aired first. Choose Replay Log with pager. Day drops logged; snapshot posts current ledger. Three hours play least-aired; overflow waits tiered oldest-first. Example: tape 42 plays Tuesday; error logged, replay fixes Wednesday without rescan. Board lists played IDs daily so resident checks. Test: skip one voice a week; fault rate shows it prefetched next night, unlike fixed rotation."
+      },
+      {
+        "id": "200",
+        "answer": "Two ways: tiered waitlist vs paging rotation. Tiers drop in order when night fills; rotation keeps recent voices resident plus neighbours of missed voices. Chosen: log every play in order, post nightly snapshot list, fill three hours by tiers with unplayed first, recent last, naming dropped tapes. Keep last-played set for next night and prefetch neighbours of long-unplayed tapes. Track miss rate. Example: Tuesday's log shows tape 14 skipped; snapshot posts it; Wednesday plays 14 plus neighbour 15. Test: compare one week tiers-plus-log vs one week newest-first; if quiet voices air only under tiers-plus-log, ordering plus correction wins."
+      },
+      {
+        "id": "129",
+        "answer": "**Log vs Tiers.** 1) Play-log: number each tape at drop-off, log nightly plays in order; mistakes replayed by re-airing; posted snapshot lets residents check. 2) Tier rotation: new voices never dropped; overfull nights drop most-played first, named aloud; keep recent plays pinned plus same-day neighbours. Winner: combined. Example: #14 plays Tue 1am; Wed board shows #14 played, #22 pending; Tue error fixed Wed. Test: plant three marked tapes; combined should air all within week more evenly than random shuffle."
+      },
+      {
+        "id": "545",
+        "answer": "**Log Rotation / Tiered Vault** Log Rotation: number each tape at drop-off, autoplay in log order, append intake and airing to ordered log, post nightly snapshot list; correct errors by re-airing next night, never rewriting. Tiered Vault: when over 3h, drop most-aired first, keep unplayed working set resident, prefetch same-donor tapes. Keep fused version. Ex: #47 folk song airs Tue 1am, logged; if skipped, replay Wed plus correction; giver checks #47 on posted list. Test: vs newest-first week; compare unaired count and max repeats; fused wins if unaired hits zero with lower repeats."
+      },
+      {
+        "id": "411",
+        "answer": "**Log-Replay** vs **Paged Tiers** Log-Replay: log every play as ordered event; nightly snapshot of counts. Mistake corrected by replay next night. Resident checks log by tape marks. Paged Tiers: unplayed tapes fault in; working set holds recent voices to block repeats; prefetch neighbours. Overfull night drops by tier: repeats first, oldest protected last. Example: 90-min backlog, Monday double-plays Maya; Tuesday replay skips Maya, faults in two unplayed tapes; snapshot proves Maya aired twice. Test: vs random shuffle for month; Log wins if every voice airs and max-min gap smaller."
+      },
+      {
+        "id": "243",
+        "answer": "**A Log Replay** Record each tape and play as ordered entries; post weekly snapshot card. **B Tiered Crates** Sort tapes into never-drop, seasonal, filler tiers; drop filler first when night overfull. Chosen: A. Night 4 plays tapes 12-20; error omits 15, next night replays log plus 15 first. Lobby board shows snapshot plus last nights. Fairness: ban repeat until all played once. Keep recent asks plus neighbours pinned; track miss rate. Test: run A vs alphabetical rotation one month; count unplayed voices and resident checks resolved at board."
+      },
+      {
+        "id": "903",
+        "answer": "**First In First Out.** Design 1: play tapes in arrival order each night. Design 2: draw tapes from a hat. Develop arrival order: number each tape as it arrives and air the oldest first until three hours are full. Example: tape 14 airs before tape 15. Test: after a week, send residents a survey asking whether they are satisfied with the station."
+      },
+      {
+        "id": "377",
+        "answer": "Discard-tiers vs Log-replay. Design 1: tiered night — Tier 0 must-play log and requests never dropped; drop catalog first, then oldest nights, then least-relevant, naming every drop. Design 2, chosen: event log plus snapshots — each play is ordered event; mistakes replayed next night; weekly snapshot lists who played; working set blocks recent voices. Example: Monday misplays same voice twice; Tuesday replays log, skips duplicate, airs two unplayed. Test: ask residents did mine play? snapshot answers without scanning tapes; tier-only system cannot."
+      },
+      {
+        "id": "911",
+        "answer": "**Star Chart.** A corkboard shows every tape as a star; tapes with fewest stars air first, and each airing adds a star. Example: a tape with zero stars airs before one with three. Test: watch the board over a month and check that it fills up nicely with stars across most tapes."
+      },
+      {
+        "id": "556",
+        "answer": "**Log Play / Tiered Pages** 1. Ledger Night: every drop and play is ordered event; nightly snapshot posts state; mistake replayed tomorrow by appending correction. 2. Tiered Pages: Tier0 news never dropped; music tiers drop least-recently-aired first; dropped named on door; unplayed stay resident like working set. Build 2+1: number tapes at drop, log plays, post snapshot list. Example: #47 plays Tuesday 1am, listed Wednesday door. Test: seed one quiet tape; compare weeks of newest-first versus tiered-resident; wins if quiet tape airs within 7 days without regulars exceeding share."
+      },
+      {
+        "id": "907",
+        "answer": "**Smart Scheduler.** An app transcribes every tape on arrival, and a paid overnight DJ assembles the three hours live from the transcript summaries, texting donors whose tapes aired. Example: Ana gets a 1am text that her story played. Test: count distinct voices per week under the DJ versus arrival order; the DJ should air more voices."
+      }
+    ]
+  },
+  {
+    "problem": "A neighborhood repair cafe runs two hours every Saturday. Each visitor brings one broken small appliance, watches the single volunteer electrician fix it, and leaves. The organizer wants regulars who can fix things they never brought. Design how the cafe runs so visitors leave more capable, with twelve chairs, one electrician, and no sign-up in advance.",
+    "designs": [
+      {
+        "id": "905",
+        "answer": "**Rotating Tutors.** Three hired electricians each lead a four-person workbench, and an app matches arrivals to benches by fault type; visitors pre-register online the week before. Each visitor disassembles a device with their tutor. Example: the kettle bench rewires three kettles together. Test: quiz visitors on an unseen toaster; bench participants should diagnose more faults than drop-ins."
+      },
+      {
+        "id": "577",
+        "answer": "Two ways: maker-checker seats vs failure wall. Maker-checker: eleven visitors never approve own appliance; each watches, then tests another's fix. Failure wall: every miss is posted by fault class and opens next session. Chosen: pick one demo by new skill per minute, then combine. Electrician fixes one kettle slowly, posts two past misses, then pairs each visitor to test someone else's kettle with different fault. Example: Saturday's burnt fuse teaches next week's frayed cord. Test: hide wall one week; if visitors fix only seen models, wall drives transfer, not watching."
+      },
+      {
+        "id": "581",
+        "answer": "**Skill Knapsack / Failure Checkers** Skill Knapsack: fill two hours by new-skill per minute, covering distinct faults, fallback to best single demo. Failure Checkers: owner attempts diagnosis, different visitor checks it, electrician only fixes; failures written on cards carried to next table. Keep Failure Checkers. Ex: 12 chairs as three walk-in groups of four; toaster with frayed cord: owner proposes, neighbor checks plug vs element, electrician confirms; card records confusion for next group. Test: vs first-come watch-only Saturdays; give returners an unseen kettle fault to diagnose solo; checkers win if solo diagnoses double."
+      },
+      {
+        "id": "394",
+        "answer": "**Fixer-Checker Cafe** vs **Best-Seat Knapsack** Checker: visitor attempts fix, electrician only checks; never maker-checks own. Failures carry forward on board by fault and exit class for next fixer. Knapsack: fill 12 chairs by gain-per-minute, fallback best single demo. Example: toaster with dead cord: regular tries, electrician stops unsafe step, board logs 'cord-open-miswired', next visitor reads it first. Test: two Saturdays, checker vs watch-only; quiz both on unseen kettle fault. Checker wins if scores higher."
+      },
+      {
+        "id": "909",
+        "answer": "**Fix-it Passport.** Each visitor gets a passport stamped for every fault type they touch: power, heating, moving parts. The electrician demos one, then visitors pair up on the same fault. Example: two visitors test a fuse on a second kettle after the demo. Test: hold the cafe for two months and see whether attendance grows and people say nice things in the guestbook."
+      },
+      {
+        "id": "624",
+        "answer": "**Demo Line vs Check Chairs.** Demo Line maximizes new skill per minute, picking varied fixes. Check Chairs splits twelve chairs into makers and checkers. Choose blended. Electrician picks three varied faults covering most skills; failed attempts brief next fix. Example: toaster, lamp, kettle teach heat, continuity, strain relief. Walk-in visitors fix while stranger checks, never own work. Test: following Saturday give unseen fan fault; blended regulars diagnose more than demo-only watchers, proving checking transfers skill beyond bringing."
+      },
+      {
+        "id": "738",
+        "answer": "Tiered Chairs vs Checkers. Design 1: Failed-attempts ledger — each fix lists what failed, next visitor inherits list. Design 2, chosen: Maker-checker seats — electrician makes one demo repair, visitors pair as maker and different checker. Example: 12 chairs = 6 pairs fix 6 kettles; maker wires, checker tests and rejects. Test: Saturday lottery picks unseen appliance; maker-checker regulars vs ledger-only regulars, count independent fixes. Gain-per-chair picks demos covering most faults."
+      },
+      {
+        "id": "404",
+        "answer": "**A Failure Board** Post each failure by fault and fix; next visitor briefed on past misses. **B Maker-Checker Chairs** Twelve chairs split: makers attempt, different checkers test; electrician only judges. Chosen: B. Saturday: 9 toasters, lamps, kettles ranked by learning-per-minute; pick set fitting 120 minutes plus best single fallback. Visitor fixes lamp, neighbor tests it; roles swap next week. Failed fuse diagnosis travels to next lamp. Test: vs first-come watch-only; quiz regulars on unseen kettle fault after one month."
+      },
+      {
+        "id": "901",
+        "answer": "**Watch and Try.** Design 1: the electrician demonstrates each repair while visitors watch. Design 2: visitors hold parts and help. Develop watching: everyone gathers around the bench, the electrician explains each step aloud, and visitors may ask questions. Example: a kettle gets its fuse replaced while twelve people watch. Test: after the session, ask visitors whether they feel more confident about fixing things."
+      },
+      {
+        "id": "710",
+        "answer": "**Pair-check vs Menu.** 1) Fix pairs: holder narrates failed tries aloud; next holder inherits list. Fixer never declares done — neighbor checks. 2) Menu: electrician picks three fault-types per Saturday maximizing new-skills per minute, plus one best single demo. Winner: pairs + menu cap. Example: toasters only; each pair logs dead fuse vs frayed cord; neighbor tests. Test: following Saturday give each returner unseen kettle with same fault; pairs should fix more without help than watch-only regulars."
+      },
+      {
+        "id": "482",
+        "answer": "**Checker Loop / Skill Budget** 1. Failure-Checker Loop: board lists last failures by appliance and fault; visitor fixes, stranger checks; electrician judges safety only. 2. Skill Budget: pick Saturday demos by new-skill-per-minute, fallback to hardest single fix. Build 1: twelve chairs in trios rotate maker-checker-watcher. Example: toaster element fix, ex-kettle failure warns about live capacitors. Test: next week quiz on unbrought fault; loop wins if twice as many succeed versus watch-only chairs."
+      }
+    ]
+  }
+]

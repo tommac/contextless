@@ -1,0 +1,258 @@
+[
+  {
+    "id": "119",
+    "condition": "question",
+    "repeat": 1,
+    "problem": "A",
+    "original_words": 77,
+    "answer": "**Chairs as Crew.** Option 1: Theater — electrician fixes, eleven watch. Option 2: Relay — each fixed visitor stays to coach next arrival. Choose Relay: twelve chairs become three pods of four: one broken item, one owner, one graduate-coach, one watcher; electrician roams. Example: Maya's toaster fixed at 10:20; she coaches Leo's kettle, naming fuse test steps. Cheap test: next Saturday, count visitors who correctly diagnose a dead lamp without help; relay Saturdays should double theater Saturdays."
+  },
+  {
+    "id": "120",
+    "condition": "question",
+    "repeat": 1,
+    "problem": "B",
+    "original_words": 71,
+    "answer": "**Timed Lighthouses.** Option 1: Both play peak all night. Option 2: Clock duet — pre-agreed 10-minute turns as Draw and Hold. Choose duet: on :00/:20/:40 North plays danceable set, South strums quiet drone; roles flip each block; volume stays capped. Example: 8:00 crowd gathers north, then drifts south at 8:10 as south brightens. Cheap test: compare coin counts per half-hour; duet nights should show balanced cases versus winner-take-all when both blast."
+  },
+  {
+    "id": "110",
+    "condition": "question",
+    "repeat": 1,
+    "problem": "C",
+    "original_words": 75,
+    "answer": "**Numbered Binder.** Option 1: Shuffle and play. Option 2: Ledger rotation — number each tape at drop-off, give depositor matching stub. Choose ledger: play oldest unplayed nightly, log number plus order publicly, cap one play per tape per week, fix errors by priority replay next night. Example: tape 43 plays Tuesday 1:12am; owner checks binder Wednesday, sees 43 listed. Cheap test: audit two weeks; ledger should air more distinct tapes with fewer repeats than shuffle."
+  },
+  {
+    "id": "104",
+    "condition": "question",
+    "repeat": 1,
+    "problem": "D",
+    "original_words": 72,
+    "answer": "**Four Harvests.** Option 1: One farewell festival. Option 2: Seasonal salvage — each quarterly meeting saves one piece. Choose salvage: Fall collect crossing stories; Winter vote daily users on rails, lamps, plaques; Spring cut and clean winners; Summer embed them in new crossing plus story rail. Example: commuters save 1932 lamp posts for new walkway lighting. Cheap test: count daily crossers naming one saved element; salvage should beat a single party's recall."
+  },
+  {
+    "id": "131",
+    "condition": "question",
+    "repeat": 2,
+    "problem": "A",
+    "original_words": 78,
+    "answer": "**Options:** 1) Demo Line: electrician repairs, crowd watches. 2) Fault Families: group by symptom. **Build Fault Families.** Twelve chairs as three pods: dead, intermittent, jammed. Electrician rotates 20 minutes per pod; visitors open same-fault devices together. Example: three dead kettles arrive; first visitor learns fuse test, checks second kettle, coaches third while electrician only verifies. **Test:** next Saturday swap brands within pod. If second-time visitors fix an unseen brand unaided, skill generalized; if they freeze, they only mimicked."
+  },
+  {
+    "id": "111",
+    "condition": "question",
+    "repeat": 2,
+    "problem": "B",
+    "original_words": 87,
+    "answer": "**Options:** 1) Both play full-out. 2) Clockwork Tides: pre-agreed alternating roles. **Build Clockwork Tides.** Agree on 15-minute blocks by church clock; in each block one end is Harbor (soft drone, easy to leave) and other is Beacon (lively tunes, easy to join), then swap regardless of case coins. Crowd shuttles instead of pooling. Volume stays under cap. Example: 8:00 east Beacon, west Harbor; 8:15 flip. **Test:** compare empty-case minutes versus a both-full night. If total tips hold and neither case sits empty >10 minutes, oscillation beats competition."
+  },
+  {
+    "id": "125",
+    "condition": "question",
+    "repeat": 2,
+    "problem": "C",
+    "original_words": 93,
+    "answer": "**Options:** 1) Shuffle pile nightly. 2) Ticketed Loop with public log. **Build Ticketed Loop.** Day volunteer slips each tape into numbered sleeve, gives depositor matching ticket, logs number in binder. Night player airs sleeves in numerical order, three hours, one pass max per number, writing played numbers on door sheet. Missed or doubled numbers are debts/credits corrected tomorrow. Example: #14 plays Tuesday; owner sees #14 on door Wednesday, knows it aired. **Test:** plant two marked tapes one week. If both appear once on door log and air check, fairness and traceability beat shuffle."
+  },
+  {
+    "id": "126",
+    "condition": "question",
+    "repeat": 2,
+    "problem": "D",
+    "original_words": 89,
+    "answer": "**Options:** 1) Farewell plaque chosen by council. 2) Seasonal salvage chosen by crossers. **Build Seasonal Salvage.** Each seasonal meeting, daily crossers nominate one keepable fragment — rail, lamp, rivets — and vote where it lives in the new crossing. Modest budget funds cleaning and remounting only. Example: winter picks iron lattice; engineers cast its pattern into new parapet panels. Summer picks toll-bell ritual for opening day. **Test:** survey crossers to name what was kept and where. If most can point to it on the new bridge, co-authorship beats plaque."
+  },
+  {
+    "id": "101",
+    "condition": "search",
+    "repeat": 1,
+    "problem": "A",
+    "original_words": 96,
+    "answer": "**Fix Cards vs One Hands Bench** Design 1: Question expansion. Each repair files one card with 1-3 questions it answers, filtered for hallucinations, indexed unchanged for later search. Design 2: One-writer bench. Twelve chairs contribute diagnosis but only electrician touches wires; shared decisions written before work, handoff applied by engine. Bet on one-writer plus cards. Example: toaster cold left side; crowd calls causes, decision written, electrician executes, card filed as truth with search cache beside it. Test: next week give regulars a cold iron they never brought; card group should name steps faster than watch-only group."
+  },
+  {
+    "id": "108",
+    "condition": "search",
+    "repeat": 1,
+    "problem": "B",
+    "original_words": 100,
+    "answer": "**Shared Spine vs Neighbor Lures** Design 1: Shared prefix. Agree long opening spine growing only at end plus epoch window starting every N songs; consecutive hours share 37-45% opening without changing draw, but cost more energy with no returning crowd. Design 2: Excerpt lures with headers. Short phrases carrying song number and answered call, plus before-and-after neighbors for readability at double cost, still 2.5-3.5x cheaper than whole sets. Bet on spine. Example: both open hourly with same three tunes, change only every fourth hour. Test: one night spine vs independent loudest; spine should hold both cases nonempty longer despite cap."
+  },
+  {
+    "id": "130",
+    "condition": "search",
+    "repeat": 1,
+    "problem": "C",
+    "original_words": 97,
+    "answer": "**Paging Rotation vs Budget Selector** Design 1: Page-fault radio. Keep recently aired in next night's working set, prefetch same donor's neighbors, track faults per night as health; post nightly list so donor checks play, omission refaults next night. Design 2: Budgeted selector. Fill three hours by drop order at tight budgets, MMR variety near full budget; selector beats tape-length choice, no clustered blocks. Bet on paging. Example: Ana's story airs, her second tape prefetches tomorrow, list proves it. Test: one week paging vs last-ten floor; paging should air more distinct voices per billable minute without one dominating."
+  },
+  {
+    "id": "106",
+    "condition": "search",
+    "repeat": 1,
+    "problem": "D",
+    "original_words": 94,
+    "answer": "**Ledger Carry vs Checks First** Design 1: Saved-answer ledger. Record each kept item with place, story and cutoff date; at demolition find every affected presence and count and point to new source lines in wider crossing. Design 2: Checks-then-reviewer with superseding facts. Deterministic checks first, human reviewer second on the join; new date-stamped fact supersedes old, packet shows both. Bet on ledger plus supersede. Example: commuters save pier-3 lattice; its steel returns as rail inlay, labeled old/new dates. Test: one season ledger vs single-vote meeting; ledger should carry more daily-crossing items into final design."
+  },
+  {
+    "id": "105",
+    "condition": "search",
+    "repeat": 2,
+    "problem": "A",
+    "original_words": 78,
+    "answer": "**Fix-Once, Diagnose-Together.** Design 1: Question Wall — each repair writes 1-3 symptom questions indexed on cards. Design 2: Single Hands — only electrician touches wires; crowd diagnoses on shared board before work starts. Adopt 2. Example: toaster won't latch; board lists crumbs, spring, mains; visitors vote order, watch test. Logbook is truth; tally of fixes is rebuildable cache. Test: next week give regulars unseen kettle fault; success if they name checks in order versus Wall-only group naming parts."
+  },
+  {
+    "id": "113",
+    "condition": "search",
+    "repeat": 2,
+    "problem": "B",
+    "original_words": 87,
+    "answer": "**Alternate by Clock.** Design 1: Shared Opening — both play same chorus atop each half-hour, then improvise. Design 2: Fixed Epochs — clock decides who is Lively: e.g. :00 north drives, south thins; :15 swap; never slide on tip-case. Adopt 2. Example: Saturday 7:00 north fast fiddle, south low drone holds space; 7:15 reverse, wanderers shuttle. Lively excerpt alone misleads; surrounding quiet makes return attractive. Test: count heads north/south each 5 min one night versus both-full-energy night; pass if quiet end never empties and total stays close."
+  },
+  {
+    "id": "109",
+    "condition": "search",
+    "repeat": 2,
+    "problem": "C",
+    "original_words": 89,
+    "answer": "**Numbered Paging.** Design 1: Diversity Mix — pick most different tapes nightly. Design 2: Page Queue — number each tape at drop-off, play in order, post list; keep last ten played in next sheet; pull neighbour tape if slot gaps. Adopt 2. Example: #14–#22 fill Tuesday; sheet outside door shows numbers played; #19 owner sees it aired. Wrong pick stays listed and is skipped/replayed next night, no reordering hunt. Test: run order-nights vs curator-choice week; pass if order airs more unique voices with fewer repeats and lower logging minutes."
+  },
+  {
+    "id": "123",
+    "condition": "search",
+    "repeat": 2,
+    "problem": "D",
+    "original_words": 89,
+    "answer": "**Ledger of Keeps.** Design 1: Relic Vote — one meeting picks one artifact. Design 2: Seasonal Releases — each meeting logs valued spans with place, story, date; when new plans arrive, find affected keeps and show old versus new fact side-by-side. Adopt 2. Example: autumn walk saves railing lattice at pier 3 for weddings; winter girder change triggers review; lattice cast into new parapet. Cheapest paper check first, maker review second. Test: introduce mock span removal; pass if ledger names hit lines in minutes versus memory-only meeting missing them."
+  },
+  {
+    "id": "116",
+    "condition": "selected",
+    "repeat": 1,
+    "problem": "A",
+    "original_words": 83,
+    "answer": "**Fix-It Circle vs Critique Wall** Design 1 — Knapsack program: pick Saturday's 6 fixes by gain-per-minute under 120min, best-single fallback. Design 2 — Maker-checker chairs: visitor makes, neighbor checks, electrician judges only. Adopt 2. Example: 12 chairs in trios; Anna rewires lamp while Ben narrates-checks, then swap roles on next toaster; electrician vetoes unsafe steps. Failed attempts posted as lastCritiques cards for next trio. Test: after 4 weeks give regulars an unseen broken kettle; trios vs demo-watchers measured on unaided safe fix rate."
+  },
+  {
+    "id": "121",
+    "condition": "selected",
+    "repeat": 1,
+    "problem": "B",
+    "original_words": 90,
+    "answer": "**Barriers vs Leases** Design 1 — Fenced leases: odd/even 15-min loud-claim tokens, holder may swell, other stays soft; fencing number rejects overtime swell. Design 2 — BSP supersteps: clock-synced 20-min play + 5-min joint silence, commit crowd count at barrier. Adopt 2; prevents herd lock-in without signaling. Example: 8:00-8:20 both lively, 8:20-8:25 both silent, wanderers redistribute, repeat. No volume chase. Test: alternate barrier nights vs free nights for two weeks; compare minutes with one case empty and coins per end; barrier wins if empty-end time falls while total take holds."
+  },
+  {
+    "id": "107",
+    "condition": "selected",
+    "repeat": 1,
+    "problem": "C",
+    "original_words": 95,
+    "answer": "**Ledger vs Tiers** Design 1 — Tiered discard: when tapes exceed 3hr drop tiered: ads first, longest voices next, recent arrivals last, losses listed publicly. Design 2 — Event-sourced night: log drop-off, play, complaint as ordered events; post snapshot playlist. Adopt 2. Example: each tape numbered at drop; nightly log + 1-page snapshot on door: 7:00 #14, 7:12 #15...; fairness rule caps repeats; error replayed next night without erasing log, temporal query shows any night. Test: plant 5 marked tapes; compare claimed vs actual plays; ledger wins if residents verify plays and overplayed voices drop."
+  },
+  {
+    "id": "118",
+    "condition": "selected",
+    "repeat": 1,
+    "problem": "D",
+    "original_words": 93,
+    "answer": "**Stones vs Cards** Design 1 — Zettel wall: atomic memory cards with explicit links, rewritten each season into linked booklet. Design 2 — Provenance bridge: bitemporal archive keeps world-time vs learned-time, never deletes superseded stories; each new-beam records derivation polynomial. Adopt 2. Example: autumn meeting collects daily-crossing stories; winter vote picks railings, rivets, toll bell; builders cast numbers into new concrete noting source spans; plaque lists derivations. Test: after spring meeting quiz 30 crossers on whose story survived where; provenance wins if daily crossers recognize their kept fragment in place vs generic nostalgia."
+  },
+  {
+    "id": "117",
+    "condition": "selected",
+    "repeat": 2,
+    "problem": "A",
+    "original_words": 99,
+    "answer": "**Fail-forward cafe vs Checker chairs**\n1. Fail wall: each fix logs appliance type, fault, failed move. Next visitor with same type gets that slip first.\n2. Maker-checker + budget seats: twelve chairs filled by gain-per-minute, fallback to longest fix; fixer never self-checks, another regular verifies.\nUse 2. Saturday: 8 toasters, 4 lamps, 1 mixer. Pick mix maximizing new skills per minute: 6 varied toasters over 6 identical, plus mixer as best-single fallback. Fixer repairs, watcher narrates, second watcher checks.\nTest: two Saturdays, raw first-come vs gain-per-minute seating. Count visitors fixing unseen fault unaided next week. Gain seating should win."
+  },
+  {
+    "id": "129",
+    "condition": "selected",
+    "repeat": 2,
+    "problem": "B",
+    "original_words": 103,
+    "answer": "**Leased lead vs Synced waves**\n1. Optimistic ears: both play full-out, loser restarts set if crowd skews; wastes effort when conflict common.\n2. Lease + barrier: agree 20-min leases; lease-holder sets lively tempo, other supports quietly. Numbered lease cards rise each handover; crowd-count rule rejects stale loudness. Barrier every lease: both pause, each logs own case, commit next leader.\nExample: North holds lease 3, plays melody; South keeps volume under cap. At bell, both pause, each logs own case, South takes lease 4.\nTest: one night optimistic vs one night leases. Measure minutes both cases gain coins. Leases should keep both alive longer."
+  },
+  {
+    "id": "102",
+    "condition": "selected",
+    "repeat": 2,
+    "problem": "C",
+    "original_words": 97,
+    "answer": "**Tiered log vs Paged requests**\n1. Paging playback: keep recently aired in working set, prefetch neighbours, track miss rate; risks star voices.\n2. Event log + drop tiers: log every drop and play as ordered events with nightly snapshot. Tier 0 never dropped: new tapes. Tier 1-3 drop order: overplayed, recent, least-varied. Rebuild or replay corrects errors.\nExample: Monday overplays loud band. Tuesday replays log, snapshots correction, forces Tier 0 unplayed tapes first. Board lists tape numbers played.\nTest: two weeks paging vs log-tiers. Count unplayed tapes and repeat voices. Log should air all with fewer repeats."
+  },
+  {
+    "id": "103",
+    "condition": "selected",
+    "repeat": 2,
+    "problem": "D",
+    "original_words": 91,
+    "answer": "**Linked cards vs Dated lineage**\n1. Zettel archive: atomic cards with explicit links for stories, measured for synthesis; links rot fast.\n2. Bitemporal provenance: record when story true and when learned, never delete, versions close. Each kept fragment carries polynomials of tellers and crossings. Seasonal meeting snapshots lineage.\nExample: summer collects rivet tales; fall closes duplicates, keeps both times. Beam with most independent derivations anchors new crossing plaque.\nTest: one season links-only vs one season dated lineage. Ask daily crossers what survives and who told it. Lineage should trace keepers better."
+  },
+  {
+    "id": "115",
+    "condition": "labeled",
+    "repeat": 1,
+    "problem": "A",
+    "original_words": 87,
+    "answer": "**Demo Line vs Fix-and-Check** 1. Failure Wall: post last week's failures; electrician narrates fixes while visitors watch. 2. Skill-Value Circle: pick weekly queue for most new skill per minute; fixers repair, strangers check. Circle wins: builds transferable skill, not spectatorship. Example: 12 chairs in trios; visitor Maya fixes toaster cord, then checks stranger's kettle plug against checklist while electrician only confirms. Test: two Saturdays alternate formats; following week invite back without appliances and ask each to diagnose unseen faulty lamp. Circle must yield more correct independent fixes."
+  },
+  {
+    "id": "112",
+    "condition": "labeled",
+    "repeat": 1,
+    "problem": "B",
+    "original_words": 90,
+    "answer": "**Joint Peak vs Lease Turns** 1. Synced Peaks: both play lively on shared clock blocks, pause together. 2. Crowd Lease: alternate holder on wall-clock; holder plays lively, other plays sparse for 15 minutes, then yield. Lease wins: prevents mutual starvation under volume cap. Example: 7-10pm, even quarters Ana holds north with chorus, Ben south fingerpicks; odd quarters swap; watches checked at :00/:15/:30/:45. Test: compare one lease night vs one both-full night using case coins per 15 minutes at each end. Lease must show higher minimum take and smaller end-to-end gap."
+  },
+  {
+    "id": "127",
+    "condition": "labeled",
+    "repeat": 1,
+    "problem": "C",
+    "original_words": 85,
+    "answer": "**FIFO Stack vs Fair Ledger** 1. Nightly Shuffle: play random tapes three hours, discard rest. 2. Fair Ledger: number each tape at drop-off, log every play publicly, fill nights least-played first, re-queue errors next night. Ledger wins: guarantees eventual airing, correctability, traceability. Example: Tuesday airs least-played #14-#22 for three hours; morning posts list on door; #19 cut short returns top of Wednesday queue; owner sees number. Test: run each for one week; compare oldest unplayed wait and top-voice share. Ledger must lower both versus Shuffle."
+  },
+  {
+    "id": "128",
+    "condition": "labeled",
+    "repeat": 1,
+    "problem": "D",
+    "original_words": 95,
+    "answer": "**Keep Wall vs Link Cards** 1. Salvage Yard: store large beams in new bridge, each stamped with donor crossing story. 2. Link Cards: give each daily crosser one rivet-chip card to annotate with date crossed and memory, then pin linked cards by route, season, ritual. Link Cards win: cheaper, daily-shaped, survivable. Example: commuter Ana links her 6am chip to her father's fishing chip; both cast into new parapet concrete with QR lineage. Test: for one season offer both; count distinct daily crossers contributing and links created per dollar. Link Cards must beat Yard by 3x."
+  },
+  {
+    "id": "124",
+    "condition": "labeled",
+    "repeat": 2,
+    "problem": "A",
+    "original_words": 82,
+    "answer": "**Fix Lottery vs Skill Budget**\nLottery fixes arrivals in order. Skill Budget fills twelve chairs to maximize new capability per minute, picking repairs covering common faults first.\nElectrician demos, then visitors become checkers for strangers' diagnoses, never their own. Failed attempts stay on board to teach next week.\nExample: choose kettle switch over rare blender gear because it teaches continuity testing reusable elsewhere.\nTest: after eight weeks quiz regulars on unseen toaster; Skill Budget group should diagnose more faults than lottery group."
+  },
+  {
+    "id": "122",
+    "condition": "labeled",
+    "repeat": 2,
+    "problem": "B",
+    "original_words": 89,
+    "answer": "**Always Loud vs Clock Leases**\nAlways Loud has both play full volume. Clock Leases divides night into 20-minute supersteps by clock: one end featured, other quiet, then swap and pause at boundary.\nPre-agreed numbered sets act as tokens; higher number wins if overlap, preventing double-fortissimo that breaches noise rules. Featured lease expires automatically, so crowd holder must yield.\nExample: 8:00 North leads, South brushes; 8:20 they flip.\nTest: compare tip counts per end over four nights; leases should keep both cases non-empty versus one end starving under Always Loud."
+  },
+  {
+    "id": "114",
+    "condition": "labeled",
+    "repeat": 2,
+    "problem": "C",
+    "original_words": 93,
+    "answer": "**Arrival Order vs Tiered Ledger**\nArrival Order plays tapes as dropped off. Tiered Ledger numbers each tape, logs every play in order, posts nightly playlist snapshot on station door.\nWaiting tapes sit in tiers: tonight, overflow, newcomer. Cap repeats per voice; unplayed working set stays pinned and pulls neighbours from same drop day, so quiet voices cannot starve.\nExample: #42 skipped Tuesday by error; log reveals gap, Wednesday opens with #42.\nTest: track tapes unplayed after seven days for a month each; tiered version should near zero while arrival order leaves many buried."
+  },
+  {
+    "id": "132",
+    "condition": "labeled",
+    "repeat": 2,
+    "problem": "D",
+    "original_words": 96,
+    "answer": "**Plaque Vote vs Linked Salvage**\nPlaque Vote picks one memorial. Linked Salvage collects atomic story cards at seasonal meetings, links related cards, and tags each salvaged piece with its derivation chain: who crossed, when, why it matters.\nStore both bridge-time and meeting-time, closing old versions without deleting, so daily crossers revise what is kept. New crossing embeds pieces with QR to chains.\nExample: rivet + ferry-shift story + photo linked as one bundle cast into railing.\nTest: after winter meeting, ask newcomers to retell bundle origins; linked group should recall more independent sources than plaque group."
+  }
+]

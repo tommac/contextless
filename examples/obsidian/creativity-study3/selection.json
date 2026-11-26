@@ -1,0 +1,58 @@
+{
+  "A": [
+    {
+      "path": "ideas/Failed attempts teach the next attempt.md",
+      "label": "Whose mistake teaches the room?"
+    },
+    {
+      "path": "fields/Maker-checker separation.md",
+      "label": "What can a stranger safely check?"
+    },
+    {
+      "path": "fields/Submodular maximization under a knapsack budget.md",
+      "label": "Which fix adds the most new skill?"
+    }
+  ],
+  "B": [
+    {
+      "path": "fields/Leases and fencing tokens.md",
+      "label": "Who holds the crowd, and when must they yield?"
+    },
+    {
+      "path": "fields/Bulk synchronous parallel supersteps.md",
+      "label": "What can a clock synchronize?"
+    },
+    {
+      "path": "fields/Optimistic concurrency control.md",
+      "label": "Which conflict is worth detecting?"
+    }
+  ],
+  "C": [
+    {
+      "path": "fields/Event sourcing.md",
+      "label": "How does tonight get corrected tomorrow?"
+    },
+    {
+      "path": "ideas/Drop tiers set the order in which records are left out.md",
+      "label": "What waits when three hours are full?"
+    },
+    {
+      "path": "fields/Virtual memory paging.md",
+      "label": "What keeps a quiet voice from starving?"
+    }
+  ],
+  "D": [
+    {
+      "path": "fields/Provenance and lineage.md",
+      "label": "What story must a salvaged piece carry?"
+    },
+    {
+      "path": "fields/Zettelkasten.md",
+      "label": "What is the smallest keepsake worth linking?"
+    },
+    {
+      "path": "fields/Bitemporal data model.md",
+      "label": "Which time does a memory belong to?"
+    }
+  ]
+}

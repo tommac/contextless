@@ -1,0 +1,43 @@
+filters:
+  and:
+    - file.ext == "md"
+views:
+  - type: table
+    name: Proposed experiments
+    filters:
+      and:
+        - note.type == "idea"
+        - note.status == "proposed"
+    order:
+      - file.name
+      - note.area
+      - note.needs
+  - type: table
+    name: Our measurements
+    filters:
+      and:
+        - note.type == "result"
+        - note["measured-by"] == "us"
+    order:
+      - file.name
+      - note.area
+      - note.status
+  - type: table
+    name: Rejected ideas
+    filters:
+      and:
+        - note.type == "idea"
+        - note.status == "rejected"
+    order:
+      - file.name
+      - note.area
+  - type: table
+    name: Sources
+    filters:
+      and:
+        - note.type == "source"
+    order:
+      - file.name
+      - note.year
+      - note.area
+      - note.url

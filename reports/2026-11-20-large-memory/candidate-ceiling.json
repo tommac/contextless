@@ -1,0 +1,248 @@
+{
+  "questions": 500,
+  "answerable": 470,
+  "abstention_excluded": 30,
+  "budget_bytes": 8000,
+  "max_candidates": 24,
+  "missing_required_message_even_in_union": 108,
+  "all_questions": {
+    "BM25": {
+      "current_pack": {
+        "complete_now": 343,
+        "required_message_missing_from_candidates": 108,
+        "all_present_minimum_exceeds_budget": 0,
+        "feasible_but_current_pack_misses": 19
+      },
+      "candidate_oracle_under_budget": 362,
+      "round_robin_complete": 355,
+      "round_robin_vs_current": {
+        "won": 15,
+        "lost": 3,
+        "both_complete": 340,
+        "both_incomplete": 112
+      }
+    },
+    "Contextless": {
+      "current_pack": {
+        "complete_now": 343,
+        "required_message_missing_from_candidates": 108,
+        "all_present_minimum_exceeds_budget": 0,
+        "feasible_but_current_pack_misses": 19
+      },
+      "candidate_oracle_under_budget": 362,
+      "round_robin_complete": 355,
+      "round_robin_vs_current": {
+        "won": 15,
+        "lost": 3,
+        "both_complete": 340,
+        "both_incomplete": 112
+      }
+    }
+  },
+  "by_question_type": {
+    "knowledge-update": {
+      "BM25": {
+        "current_pack": {
+          "complete_now": 63,
+          "required_message_missing_from_candidates": 6,
+          "all_present_minimum_exceeds_budget": 0,
+          "feasible_but_current_pack_misses": 3
+        },
+        "candidate_oracle_under_budget": 66,
+        "round_robin_complete": 65,
+        "round_robin_vs_current": {
+          "won": 2,
+          "lost": 0,
+          "both_complete": 63,
+          "both_incomplete": 7
+        }
+      },
+      "Contextless": {
+        "current_pack": {
+          "complete_now": 62,
+          "required_message_missing_from_candidates": 6,
+          "all_present_minimum_exceeds_budget": 0,
+          "feasible_but_current_pack_misses": 4
+        },
+        "candidate_oracle_under_budget": 66,
+        "round_robin_complete": 64,
+        "round_robin_vs_current": {
+          "won": 2,
+          "lost": 0,
+          "both_complete": 62,
+          "both_incomplete": 8
+        }
+      }
+    },
+    "multi-session": {
+      "BM25": {
+        "current_pack": {
+          "complete_now": 65,
+          "required_message_missing_from_candidates": 49,
+          "all_present_minimum_exceeds_budget": 0,
+          "feasible_but_current_pack_misses": 7
+        },
+        "candidate_oracle_under_budget": 72,
+        "round_robin_complete": 70,
+        "round_robin_vs_current": {
+          "won": 7,
+          "lost": 2,
+          "both_complete": 63,
+          "both_incomplete": 49
+        }
+      },
+      "Contextless": {
+        "current_pack": {
+          "complete_now": 66,
+          "required_message_missing_from_candidates": 49,
+          "all_present_minimum_exceeds_budget": 0,
+          "feasible_but_current_pack_misses": 6
+        },
+        "candidate_oracle_under_budget": 72,
+        "round_robin_complete": 70,
+        "round_robin_vs_current": {
+          "won": 6,
+          "lost": 2,
+          "both_complete": 64,
+          "both_incomplete": 49
+        }
+      }
+    },
+    "single-session-assistant": {
+      "BM25": {
+        "current_pack": {
+          "complete_now": 53,
+          "required_message_missing_from_candidates": 3,
+          "all_present_minimum_exceeds_budget": 0,
+          "feasible_but_current_pack_misses": 0
+        },
+        "candidate_oracle_under_budget": 53,
+        "round_robin_complete": 53,
+        "round_robin_vs_current": {
+          "won": 0,
+          "lost": 0,
+          "both_complete": 53,
+          "both_incomplete": 3
+        }
+      },
+      "Contextless": {
+        "current_pack": {
+          "complete_now": 53,
+          "required_message_missing_from_candidates": 3,
+          "all_present_minimum_exceeds_budget": 0,
+          "feasible_but_current_pack_misses": 0
+        },
+        "candidate_oracle_under_budget": 53,
+        "round_robin_complete": 53,
+        "round_robin_vs_current": {
+          "won": 0,
+          "lost": 0,
+          "both_complete": 53,
+          "both_incomplete": 3
+        }
+      }
+    },
+    "single-session-preference": {
+      "BM25": {
+        "current_pack": {
+          "complete_now": 15,
+          "required_message_missing_from_candidates": 15,
+          "all_present_minimum_exceeds_budget": 0,
+          "feasible_but_current_pack_misses": 0
+        },
+        "candidate_oracle_under_budget": 15,
+        "round_robin_complete": 15,
+        "round_robin_vs_current": {
+          "won": 0,
+          "lost": 0,
+          "both_complete": 15,
+          "both_incomplete": 15
+        }
+      },
+      "Contextless": {
+        "current_pack": {
+          "complete_now": 14,
+          "required_message_missing_from_candidates": 15,
+          "all_present_minimum_exceeds_budget": 0,
+          "feasible_but_current_pack_misses": 1
+        },
+        "candidate_oracle_under_budget": 15,
+        "round_robin_complete": 15,
+        "round_robin_vs_current": {
+          "won": 1,
+          "lost": 0,
+          "both_complete": 14,
+          "both_incomplete": 15
+        }
+      }
+    },
+    "single-session-user": {
+      "BM25": {
+        "current_pack": {
+          "complete_now": 60,
+          "required_message_missing_from_candidates": 2,
+          "all_present_minimum_exceeds_budget": 0,
+          "feasible_but_current_pack_misses": 2
+        },
+        "candidate_oracle_under_budget": 62,
+        "round_robin_complete": 61,
+        "round_robin_vs_current": {
+          "won": 1,
+          "lost": 0,
+          "both_complete": 60,
+          "both_incomplete": 3
+        }
+      },
+      "Contextless": {
+        "current_pack": {
+          "complete_now": 61,
+          "required_message_missing_from_candidates": 2,
+          "all_present_minimum_exceeds_budget": 0,
+          "feasible_but_current_pack_misses": 1
+        },
+        "candidate_oracle_under_budget": 62,
+        "round_robin_complete": 62,
+        "round_robin_vs_current": {
+          "won": 1,
+          "lost": 0,
+          "both_complete": 61,
+          "both_incomplete": 2
+        }
+      }
+    },
+    "temporal-reasoning": {
+      "BM25": {
+        "current_pack": {
+          "complete_now": 87,
+          "required_message_missing_from_candidates": 33,
+          "all_present_minimum_exceeds_budget": 0,
+          "feasible_but_current_pack_misses": 7
+        },
+        "candidate_oracle_under_budget": 94,
+        "round_robin_complete": 91,
+        "round_robin_vs_current": {
+          "won": 5,
+          "lost": 1,
+          "both_complete": 86,
+          "both_incomplete": 35
+        }
+      },
+      "Contextless": {
+        "current_pack": {
+          "complete_now": 87,
+          "required_message_missing_from_candidates": 33,
+          "all_present_minimum_exceeds_budget": 0,
+          "feasible_but_current_pack_misses": 7
+        },
+        "candidate_oracle_under_budget": 94,
+        "round_robin_complete": 91,
+        "round_robin_vs_current": {
+          "won": 5,
+          "lost": 1,
+          "both_complete": 86,
+          "both_incomplete": 35
+        }
+      }
+    }
+  }
+}

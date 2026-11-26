@@ -1,0 +1,194 @@
+{
+  "323": {
+    "original_id": "123",
+    "problem": "D",
+    "condition": "selected",
+    "repeat": 4
+  },
+  "328": {
+    "original_id": "128",
+    "problem": "D",
+    "condition": "labeled",
+    "repeat": 3
+  },
+  "318": {
+    "original_id": "118",
+    "problem": "D",
+    "condition": "labeled",
+    "repeat": 1
+  },
+  "304": {
+    "original_id": "104",
+    "problem": "D",
+    "condition": "selected",
+    "repeat": 1
+  },
+  "306": {
+    "original_id": "106",
+    "problem": "D",
+    "condition": "selected",
+    "repeat": 3
+  },
+  "326": {
+    "original_id": "126",
+    "problem": "D",
+    "condition": "selected",
+    "repeat": 2
+  },
+  "303": {
+    "original_id": "103",
+    "problem": "D",
+    "condition": "labeled",
+    "repeat": 2
+  },
+  "332": {
+    "original_id": "132",
+    "problem": "D",
+    "condition": "labeled",
+    "repeat": 4
+  },
+  "301": {
+    "original_id": "101",
+    "problem": "A",
+    "condition": "selected",
+    "repeat": 3
+  },
+  "324": {
+    "original_id": "124",
+    "problem": "A",
+    "condition": "labeled",
+    "repeat": 4
+  },
+  "319": {
+    "original_id": "119",
+    "problem": "A",
+    "condition": "selected",
+    "repeat": 1
+  },
+  "317": {
+    "original_id": "117",
+    "problem": "A",
+    "condition": "labeled",
+    "repeat": 2
+  },
+  "331": {
+    "original_id": "131",
+    "problem": "A",
+    "condition": "selected",
+    "repeat": 2
+  },
+  "316": {
+    "original_id": "116",
+    "problem": "A",
+    "condition": "labeled",
+    "repeat": 1
+  },
+  "315": {
+    "original_id": "115",
+    "problem": "A",
+    "condition": "labeled",
+    "repeat": 3
+  },
+  "305": {
+    "original_id": "105",
+    "problem": "A",
+    "condition": "selected",
+    "repeat": 4
+  },
+  "330": {
+    "original_id": "130",
+    "problem": "C",
+    "condition": "selected",
+    "repeat": 3
+  },
+  "307": {
+    "original_id": "107",
+    "problem": "C",
+    "condition": "labeled",
+    "repeat": 1
+  },
+  "309": {
+    "original_id": "109",
+    "problem": "C",
+    "condition": "selected",
+    "repeat": 4
+  },
+  "327": {
+    "original_id": "127",
+    "problem": "C",
+    "condition": "labeled",
+    "repeat": 3
+  },
+  "302": {
+    "original_id": "102",
+    "problem": "C",
+    "condition": "labeled",
+    "repeat": 2
+  },
+  "310": {
+    "original_id": "110",
+    "problem": "C",
+    "condition": "selected",
+    "repeat": 1
+  },
+  "314": {
+    "original_id": "114",
+    "problem": "C",
+    "condition": "labeled",
+    "repeat": 4
+  },
+  "325": {
+    "original_id": "125",
+    "problem": "C",
+    "condition": "selected",
+    "repeat": 2
+  },
+  "329": {
+    "original_id": "129",
+    "problem": "B",
+    "condition": "labeled",
+    "repeat": 2
+  },
+  "311": {
+    "original_id": "111",
+    "problem": "B",
+    "condition": "selected",
+    "repeat": 2
+  },
+  "312": {
+    "original_id": "112",
+    "problem": "B",
+    "condition": "labeled",
+    "repeat": 3
+  },
+  "308": {
+    "original_id": "108",
+    "problem": "B",
+    "condition": "selected",
+    "repeat": 3
+  },
+  "313": {
+    "original_id": "113",
+    "problem": "B",
+    "condition": "selected",
+    "repeat": 4
+  },
+  "320": {
+    "original_id": "120",
+    "problem": "B",
+    "condition": "selected",
+    "repeat": 1
+  },
+  "321": {
+    "original_id": "121",
+    "problem": "B",
+    "condition": "labeled",
+    "repeat": 1
+  },
+  "322": {
+    "original_id": "122",
+    "problem": "B",
+    "condition": "labeled",
+    "repeat": 4
+  }
+}

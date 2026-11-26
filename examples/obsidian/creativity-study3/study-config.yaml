@@ -1,0 +1,8 @@
+# Round-2 creativity study: pin every session to one model so all conditions
+# share the same reader, and disable cross-provider answer review.
+# codex/gpt-6.1-sol was quota-limited on 2026-11-24, claude auth-limited,
+# agy/grok unauthenticated; muse was the only available lane.
+review: off
+routing:
+  responder: [muse/muse-spark-1.3/xhigh]
+  reviewer: [muse/muse-spark-1.3/xhigh]

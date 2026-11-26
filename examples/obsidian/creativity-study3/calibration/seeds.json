@@ -1,0 +1,50 @@
+{
+  "901": {
+    "problem": "A",
+    "defect": "generic"
+  },
+  "902": {
+    "problem": "B",
+    "defect": "generic"
+  },
+  "903": {
+    "problem": "C",
+    "defect": "generic"
+  },
+  "904": {
+    "problem": "D",
+    "defect": "generic"
+  },
+  "905": {
+    "problem": "A",
+    "defect": "breaks-constraint"
+  },
+  "906": {
+    "problem": "B",
+    "defect": "breaks-constraint"
+  },
+  "907": {
+    "problem": "C",
+    "defect": "breaks-constraint"
+  },
+  "908": {
+    "problem": "D",
+    "defect": "breaks-constraint"
+  },
+  "909": {
+    "problem": "A",
+    "defect": "weak-test"
+  },
+  "910": {
+    "problem": "B",
+    "defect": "weak-test"
+  },
+  "911": {
+    "problem": "C",
+    "defect": "weak-test"
+  },
+  "912": {
+    "problem": "D",
+    "defect": "weak-test"
+  }
+}

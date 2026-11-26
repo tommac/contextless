@@ -1,0 +1,57 @@
+{
+  "vault_size": 526,
+  "index_seconds": 0.0906707919202745,
+  "searches_seconds": 0.0032403330551460385,
+  "search": {
+    "A": [
+      "sources/doc2query.md",
+      "sources/Cognition Dont Build Multi-Agents.md",
+      "ideas/Files are the truth for the conversation and SQLite for the machine.md"
+    ],
+    "B": [
+      "ideas/Catalog spine and epoch window make the prefix repeat.md",
+      "ideas/Excerpt readability is the main open question.md",
+      "results/Adding each atom's neighbors doubled the median cost.md"
+    ],
+    "C": [
+      "sources/Total Recall at What Cost.md",
+      "fields/Virtual memory paging.md",
+      "results/Selector choice mattered more than unit choice under a token budget.md"
+    ],
+    "D": [
+      "results/New release records changed 204 saved answers.md",
+      "ideas/Deterministic checks run before the reviewer.md",
+      "ideas/Facts supersede facts.md"
+    ]
+  },
+  "source_bytes": {
+    "question": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0
+    },
+    "labeled": {
+      "A": 1078,
+      "B": 1714,
+      "C": 1562,
+      "D": 1624
+    }
+  },
+  "curator_elapsed_seconds": 0.0,
+  "curator": "No new curation: selections reused verbatim from round 2",
+  "reader_packets_sha256": {
+    "input0.json": "cfc0345c6520eac1f326d84fb1a3b8f4d1de9dccaaee47b8a75fd54853b73da0",
+    "input1.json": "daf0e036c366850f13ff14d41f9407a03c669e84bd321a31d4cb06efb45f8528",
+    "input10.json": "1b40c76c623acedcfbdb37099043b2a987b6775b457d70835b05ca60e386cbfd",
+    "input11.json": "96bc3cebb42a6d41067d3be3af3394f3d9504ba107b27736fc7bf6de05fbae15",
+    "input2.json": "7defe22f62b1137cdff2cd5bfac4c03c226dfd9d1dc84bede661ee5f2184578d",
+    "input3.json": "29071391e5ec68c46363d8e1123895c3f318e19b96953a31c39004611f25bdf7",
+    "input4.json": "69f759ca33cb2e2075099614847d443451f606f8c524a5ddb93cf4776a2c9dd6",
+    "input5.json": "df40ffd95a646fcb8f152f7429f5b215b1db054258dc2b58a29671b545586ef0",
+    "input6.json": "ddd098fd94ed0570e08418c9cc7f995a85c9880394a576f23f52d0a2981fd778",
+    "input7.json": "cbd73440e872d3d6412e533a2fe9ca2c11bb652eb6546a9c206500d4143e6f78",
+    "input8.json": "6f45bbf552970cf5f7a2d50653eaadbefa49306e05c54f5b6e0587d6e03334d7",
+    "input9.json": "f6a03fd63d29a6d5ae1e2f79de6be93cf2e2d06b88459805f8ac3d0c12ffd15f"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "means": {
+    "selected": {
+      "originality": 2.542,
+      "feasibility": 3.5,
+      "test": 3.458
+    },
+    "labeled": {
+      "originality": 2.938,
+      "feasibility": 4.042,
+      "test": 4.062
+    }
+  },
+  "by_problem": {
+    "A": {
+      "selected": {
+        "originality": 2.583,
+        "feasibility": 3.417,
+        "test": 3.917
+      },
+      "labeled": {
+        "originality": 3.083,
+        "feasibility": 3.583,
+        "test": 4.417
+      }
+    },
+    "B": {
+      "selected": {
+        "originality": 2.583,
+        "feasibility": 3.333,
+        "test": 3.333
+      },
+      "labeled": {
+        "originality": 2.833,
+        "feasibility": 4,
+        "test": 3.833
+      }
+    },
+    "C": {
+      "selected": {
+        "originality": 2.5,
+        "feasibility": 3.583,
+        "test": 3.333
+      },
+      "labeled": {
+        "originality": 2.833,
+        "feasibility": 4.417,
+        "test": 4.333
+      }
+    },
+    "D": {
+      "selected": {
+        "originality": 2.5,
+        "feasibility": 3.667,
+        "test": 3.25
+      },
+      "labeled": {
+        "originality": 3,
+        "feasibility": 4.167,
+        "test": 3.667
+      }
+    }
+  },
+  "originality_order": {
+    "agree": 93,
+    "disagree": 40,
+    "either_tied": 203
+  },
+  "word_cap_applied": 0
+}

@@ -1,0 +1,19 @@
+{
+  "questions": 500,
+  "answerable": 470,
+  "candidate_count": 24,
+  "budget_bytes": 8000,
+  "overflow": 489,
+  "Contextless all annotated turns represented": 343,
+  "Contextless any annotated turn represented": 423,
+  "Contextless all gold sessions represented": 417,
+  "Contextless any gold session represented": 464,
+  "BM25 all annotated turns represented": 343,
+  "BM25 any annotated turn represented": 424,
+  "BM25 all gold sessions represented": 416,
+  "BM25 any gold session represented": 464,
+  "Contextless only": 2,
+  "tied": 466,
+  "abstention": 30,
+  "BM25 only": 2
+}

@@ -1,0 +1,374 @@
+// Overlay-only experiment. All parsing and the exhaustive oracle are provided by the real packet package.
+package packet
+
+import (
+	"bytes"
+	"compress/gzip"
+	"encoding/gob"
+	"encoding/json"
+	"fmt"
+	"io"
+	"math/rand"
+	"os"
+	"path/filepath"
+	"reflect"
+	"sort"
+	"strconv"
+	"strings"
+	"testing"
+	"time"
+
+	"github.com/tommac/contextless/internal/store"
+	"github.com/tommac/contextless/internal/vault"
+)
+
+// Each ordinal identifies one value occurrence, even when its text is repeated in an atom.
+// An atom ordinal is an index into the caller's separate verbatim atom/address array.
+type valueAnchor struct {
+	Atom int
+	Stem string
+}
+
+type valuePostings struct {
+	Anchors []valueAnchor
+	ByTerm  map[string][]int
+}
+
+func buildValuePostings(bodies []string) valuePostings {
+	idx := valuePostings{ByTerm: make(map[string][]int)}
+	for atom, body := range bodies {
+		toks := tokens(body)
+		terms := make([]string, len(toks))
+		for i, tok := range toks {
+			terms[i] = stem(strings.ToLower(tok.text))
+		}
+		for i, tok := range toks {
+			if !isValue(tok) {
+				continue
+			}
+			occ := len(idx.Anchors)
+			idx.Anchors = append(idx.Anchors, valueAnchor{atom, terms[i]})
+			for j := max(0, i-4); j <= min(i+4, len(toks)-1); j++ {
+				if j == i || toks[j].sent != tok.sent {
+					continue
+				}
+				w := terms[j]
+				list := idx.ByTerm[w]
+				// Windows are emitted in occurrence order. The last ordinal suffices for deduplication.
+				if len(list) == 0 || list[len(list)-1] != occ {
+					idx.ByTerm[w] = append(list, occ)
+				}
+			}
+		}
+	}
+	return idx
+}
+
+func (idx valuePostings) scores(words map[string]bool) (map[int]int, int) {
+	hits := make(map[int]int)
+	counts := make(map[int]uint8)
+	visited := 0
+	for word := range words {
+		list := idx.ByTerm[word]
+		visited += len(list)
+		for _, occ := range list {
+			a := idx.Anchors[occ]
+			if words[a.Stem] {
+				continue
+			}
+			counts[occ]++ // the window contains at most eight distinct matching terms
+			hits[a.Atom] = max(hits[a.Atom], int(counts[occ]))
+		}
+	}
+	return hits, visited
+}
+
+func exhaustiveValueScores(bodies []string, words map[string]bool) map[int]int {
+	hits := make(map[int]int)
+	for i, body := range bodies {
+		if score := valueScore(body, words); score > 0 {
+			hits[i] = score
+		}
+	}
+	return hits
+}
+
+func mustMatchScores(t *testing.T, bodies []string, idx valuePostings, query string) {
+	t.Helper()
+	w := queryWords(query)
+	want := exhaustiveValueScores(bodies, w)
+	got, _ := idx.scores(w)
+	if !reflect.DeepEqual(want, got) {
+		t.Fatalf("value score mismatch for %q: exhaustive %v indexed %v", query, want, got)
+	}
+}
+
+// Check ties against atomLanes with a real SQLite FTS index and multiple atoms per turn.
+func TestValuePostingsOrdering(t *testing.T) {
+	sections := []string{
+		"Worker timeout timeout is 45 seconds. Different sentence: retry delay is 12.",
+		"Worker timeout is 48! The upstream latency threshold near retry is 12.",
+		"The timeout is 45 and retry count is 45. Worker cachePath uses /var/cache.",
+		"Worker exact timeout 42 seconds. Worker additional timeout 42 seconds.",
+		"Unicode Ångström is tuned for worker timeouts at ４２. CAPITAL: /path/value - 東京.",
+	}
+	var turns []vault.Turn
+	var atoms []vault.Atom
+	var bodies []string
+	var batch []store.AtomTurn
+	for i, s := range sections {
+		body := strings.Repeat(s+" ", 4) + "\n\n" + strings.Repeat(sections[(i+1)%len(sections)]+" ", 4)
+		turn := vault.Turn{ID: vault.TurnID(i + 1), Seq: i + 1, Body: body, BodySHA: vault.SHA(body)}
+		turns = append(turns, turn)
+		item := store.AtomTurn{Turn: turn.ID, Seq: turn.Seq}
+		for _, a := range vault.Atoms(turn.ID, body) {
+			atoms = append(atoms, a)
+			bodies = append(bodies, a.Text(body))
+			item.Atoms = append(item.Atoms, store.AtomRec{ID: a.ID(), Text: a.Text(body)})
+		}
+		batch = append(batch, item)
+	}
+	db, err := store.OpenFile(filepath.Join(t.TempDir(), "state.db"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer db.Close()
+	if err := db.IndexAtomTurns(batch); err != nil {
+		t.Fatal(err)
+	}
+	idx := buildValuePostings(bodies)
+	for _, query := range []string{"worker timeout", "timeouts 45", "worker Ångström retry delay", "cachePath /var/cache", "42", "１２ worker", "missing completely", ""} {
+		mustMatchScores(t, bodies, idx, query)
+		for _, cutoff := range []int{0, 3} {
+			for _, depth := range []int{2, 48} {
+				_, _, fts, want := atomLanes(turns, db, query, cutoff, depth)
+				gotScores, _ := idx.scores(queryWords(query))
+				ftsRank := make(map[string]int)
+				for i, id := range fts {
+					ftsRank[id] = i + 1
+				}
+				type position struct {
+					id                 string
+					score, fts, seq, k int
+				}
+				var got []position
+				for row, score := range gotScores {
+					a := atoms[row]
+					seq, _ := vault.TurnSeq(a.Turn)
+					if cutoff > 0 && seq >= cutoff {
+						continue
+					}
+					rank := ftsRank[a.ID()]
+					if rank == 0 {
+						rank = len(fts) + 1
+					}
+					got = append(got, position{a.ID(), score, rank, seq, a.K})
+				}
+				sort.Slice(got, func(i, j int) bool {
+					a, b := got[i], got[j]
+					if a.score != b.score {
+						return a.score > b.score
+					}
+					if a.fts != b.fts {
+						return a.fts < b.fts
+					}
+					if a.seq != b.seq {
+						return a.seq > b.seq
+					}
+					return a.k < b.k
+				})
+				if len(want) != min(len(got), depth) {
+					t.Fatalf("length differs: %s %d %d", query, cutoff, depth)
+				}
+				for i, id := range want {
+					if got[i].id != id {
+						t.Fatalf("rank mismatch: %s %d %d %d", query, cutoff, depth, i)
+					}
+				}
+			}
+		}
+	}
+}
+
+func TestValuePostingsGeneratedEquivalence(t *testing.T) {
+	rng := rand.New(rand.NewSource(19))
+	words := strings.Fields("timeout worker running retries Foo ４２ $4.00 /bin/a blåbær Éric fast_ID repeat.")
+	seps := []string{" ", ": ", "! ", "\n", " -> ", " | ", "?", " ; ", ". ", ""}
+	var bodies []string
+	for range 200 {
+		var s strings.Builder
+		for range 24 {
+			s.WriteString(words[rng.Intn(len(words))])
+			s.WriteString(seps[rng.Intn(len(seps))])
+		}
+		bodies = append(bodies, s.String())
+	}
+	idx := buildValuePostings(bodies)
+	for range 80 {
+		var q []string
+		for range 4 {
+			q = append(q, words[rng.Intn(len(words))])
+		}
+		mustMatchScores(t, bodies, idx, strings.Join(q, " "))
+	}
+}
+
+func measureScore(f func() map[int]int) (time.Duration, map[int]int) {
+	start := time.Now()
+	scores := f()
+	return time.Since(start), scores
+}
+
+func TestValuePostingsScale(t *testing.T) {
+	for _, raw := range strings.Split(os.Getenv("CX_VALUEPOSTINGS_SIZES"), ",") {
+		size, err := strconv.Atoi(raw)
+		if err != nil || size < 1 {
+			t.Fatal("invalid size")
+		}
+		bodies := make([]string, size)
+		rawBytes := 0
+		for i := range bodies {
+			// Hundreds of topics alongside a universal value-bearing phrase. Constant selectivity
+			// for the topic by itself, plus a serial identifier that can match a single occurrence.
+			bodies[i] = fmt.Sprintf("The parcel at site%d has a worker timeout of %d seconds. For serial code%d route to station%d.", i%2000, 20+i%490, i, i%500)
+			rawBytes += len(bodies[i])
+		}
+		start := time.Now()
+		idx := buildValuePostings(bodies)
+		build := time.Since(start)
+		var encoded bytes.Buffer
+		if err := gob.NewEncoder(&encoded).Encode(idx); err != nil {
+			t.Fatal(err)
+		}
+		var compressed bytes.Buffer
+		g := gzip.NewWriter(&compressed)
+		if _, err := g.Write(encoded.Bytes()); err != nil {
+			t.Fatal(err)
+		}
+		if err := g.Close(); err != nil {
+			t.Fatal(err)
+		}
+		packedSize := compressed.Len()
+		r, err := gzip.NewReader(&compressed)
+		if err != nil {
+			t.Fatal(err)
+		}
+		var decoded valuePostings
+		if err := gob.NewDecoder(r).Decode(&decoded); err != nil {
+			t.Fatal(err)
+		}
+		if err := r.Close(); err != nil {
+			t.Fatal(err)
+		}
+		if !reflect.DeepEqual(idx, decoded) {
+			t.Fatal("snapshot differs after decoding")
+		}
+		totalPostings := 0
+		for _, list := range idx.ByTerm {
+			totalPostings += len(list)
+		}
+		t.Logf("atoms=%d raw_bytes=%d anchors=%d postings=%d gob_bytes=%d gzip_bytes=%d build_ms=%.3f", size, rawBytes, len(idx.Anchors), totalPostings, encoded.Len(), packedSize, float64(build.Microseconds())/1000)
+		for _, query := range []string{"code888", "station88", "worker timeout", "wombat"} {
+			wordSet := queryWords(query)
+			var baselineTimes, indexTimes []time.Duration
+			visited := 0
+			matches := 0
+			for trial := range 5 {
+				var got, want map[int]int
+				var bt, it time.Duration
+				scan := func() map[int]int { return exhaustiveValueScores(bodies, wordSet) }
+				indexed := func() map[int]int { scores, n := idx.scores(wordSet); visited = n; return scores }
+				if trial%2 == 0 {
+					bt, want = measureScore(scan)
+					it, got = measureScore(indexed)
+				} else {
+					it, got = measureScore(indexed)
+					bt, want = measureScore(scan)
+				}
+				if !reflect.DeepEqual(got, want) {
+					t.Fatalf("score parity failed for %s", query)
+				}
+				matches = len(want)
+				baselineTimes = append(baselineTimes, bt)
+				indexTimes = append(indexTimes, it)
+			}
+			sort.Slice(baselineTimes, func(i, j int) bool { return baselineTimes[i] < baselineTimes[j] })
+			sort.Slice(indexTimes, func(i, j int) bool { return indexTimes[i] < indexTimes[j] })
+			t.Logf("atoms=%d query=%q hits=%d posting_visits=%d scan_us=%.2f index_us=%.2f", size, query, matches, visited, float64(baselineTimes[2].Nanoseconds())/1000, float64(indexTimes[2].Nanoseconds())/1000)
+		}
+	}
+}
+
+func TestValuePostingsPublic(t *testing.T) {
+	path := os.Getenv("CX_VALUEPOSTINGS_PUBLIC")
+	if path == "" {
+		t.Skip("optional pinned public corpus")
+	}
+	f, err := os.Open(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer f.Close()
+	d := json.NewDecoder(f)
+	if tok, err := d.Token(); err != nil || tok != json.Delim('[') {
+		t.Fatal("invalid dataset")
+	}
+	questions, atoms, matches, visits := 0, 0, 0, 0
+	var buildTime, scanTime, lookupTime time.Duration
+	for d.More() {
+		var q struct {
+			Query    string `json:"question"`
+			Sessions [][]struct {
+				Content string `json:"content"`
+			} `json:"haystack_sessions"`
+		}
+		if err := d.Decode(&q); err != nil {
+			t.Fatal(err)
+		}
+		var bodies []string
+		seq := 0
+		for _, session := range q.Sessions {
+			for _, m := range session {
+				seq++
+				for _, a := range vault.Atoms(vault.TurnID(seq), m.Content) {
+					bodies = append(bodies, a.Text(m.Content))
+				}
+			}
+		}
+		start := time.Now()
+		idx := buildValuePostings(bodies)
+		buildTime += time.Since(start)
+		w := queryWords(q.Query)
+		var want, got map[int]int
+		var bt, it time.Duration
+		var n int
+		scan := func() map[int]int { return exhaustiveValueScores(bodies, w) }
+		lookup := func() map[int]int { var scores map[int]int; scores, n = idx.scores(w); return scores }
+		if questions%2 == 0 {
+			bt, want = measureScore(scan)
+			it, got = measureScore(lookup)
+		} else {
+			it, got = measureScore(lookup)
+			bt, want = measureScore(scan)
+		}
+		scanTime += bt
+		lookupTime += it
+		visits += n
+		if !reflect.DeepEqual(want, got) {
+			t.Fatalf("public mismatch on ordinal %d", questions)
+		}
+		questions++
+		atoms += len(bodies)
+		matches += len(got)
+	}
+	if _, err := d.Token(); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := d.Token(); err != io.EOF {
+		t.Fatal("unexpected additional data")
+	}
+	if questions != 500 {
+		t.Fatalf("incomplete release: %d", questions)
+	}
+	t.Logf("public questions=%d atom_query_comparisons=%d nonzero_scores=%d mismatches=0 posting_visits=%d build_ms=%.1f scan_ms=%.1f index_ms=%.1f", questions, atoms, matches, visits, float64(buildTime.Microseconds())/1000, float64(scanTime.Microseconds())/1000, float64(lookupTime.Microseconds())/1000)
+}

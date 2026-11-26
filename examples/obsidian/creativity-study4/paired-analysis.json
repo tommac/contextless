@@ -1,0 +1,324 @@
+{
+  "pairs": [
+    {
+      "problem": "A",
+      "repeat": 1,
+      "draft": [
+        2,
+        4,
+        4
+      ],
+      "revision": [
+        3,
+        4.33,
+        4
+      ],
+      "delta": [
+        1,
+        0.33,
+        0
+      ]
+    },
+    {
+      "problem": "A",
+      "repeat": 2,
+      "draft": [
+        2,
+        4,
+        3.67
+      ],
+      "revision": [
+        3,
+        3.67,
+        3
+      ],
+      "delta": [
+        1,
+        -0.33,
+        -0.67
+      ]
+    },
+    {
+      "problem": "A",
+      "repeat": 3,
+      "draft": [
+        3,
+        4,
+        3.33
+      ],
+      "revision": [
+        4,
+        4,
+        3
+      ],
+      "delta": [
+        1,
+        0,
+        -0.33
+      ]
+    },
+    {
+      "problem": "A",
+      "repeat": 4,
+      "draft": [
+        2,
+        4,
+        4
+      ],
+      "revision": [
+        3.33,
+        4,
+        3
+      ],
+      "delta": [
+        1.33,
+        0,
+        -1
+      ]
+    },
+    {
+      "problem": "B",
+      "repeat": 1,
+      "draft": [
+        2,
+        4,
+        4
+      ],
+      "revision": [
+        3.33,
+        4.33,
+        4.33
+      ],
+      "delta": [
+        1.33,
+        0.33,
+        0.33
+      ]
+    },
+    {
+      "problem": "B",
+      "repeat": 2,
+      "draft": [
+        2,
+        4,
+        3.67
+      ],
+      "revision": [
+        2.67,
+        4,
+        3.67
+      ],
+      "delta": [
+        0.67,
+        0,
+        0.0
+      ]
+    },
+    {
+      "problem": "B",
+      "repeat": 3,
+      "draft": [
+        2,
+        4,
+        3
+      ],
+      "revision": [
+        3,
+        4,
+        3
+      ],
+      "delta": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "problem": "B",
+      "repeat": 4,
+      "draft": [
+        2,
+        4,
+        3.33
+      ],
+      "revision": [
+        2,
+        4,
+        3.33
+      ],
+      "delta": [
+        0,
+        0,
+        0.0
+      ]
+    },
+    {
+      "problem": "C",
+      "repeat": 1,
+      "draft": [
+        2,
+        4.33,
+        2.67
+      ],
+      "revision": [
+        3.33,
+        4.67,
+        2.67
+      ],
+      "delta": [
+        1.33,
+        0.33,
+        0.0
+      ]
+    },
+    {
+      "problem": "C",
+      "repeat": 2,
+      "draft": [
+        2,
+        4.67,
+        4
+      ],
+      "revision": [
+        2.33,
+        4.33,
+        4
+      ],
+      "delta": [
+        0.33,
+        -0.33,
+        0
+      ]
+    },
+    {
+      "problem": "C",
+      "repeat": 3,
+      "draft": [
+        3.33,
+        4,
+        3.67
+      ],
+      "revision": [
+        3.33,
+        4,
+        3.67
+      ],
+      "delta": [
+        0.0,
+        0,
+        0.0
+      ]
+    },
+    {
+      "problem": "C",
+      "repeat": 4,
+      "draft": [
+        3,
+        4.33,
+        2.67
+      ],
+      "revision": [
+        3,
+        4,
+        2.67
+      ],
+      "delta": [
+        0,
+        -0.33,
+        0.0
+      ]
+    },
+    {
+      "problem": "D",
+      "repeat": 1,
+      "draft": [
+        2,
+        3.67,
+        2.33
+      ],
+      "revision": [
+        3.33,
+        3.67,
+        2
+      ],
+      "delta": [
+        1.33,
+        0.0,
+        -0.33
+      ]
+    },
+    {
+      "problem": "D",
+      "repeat": 2,
+      "draft": [
+        2.33,
+        3.67,
+        3.67
+      ],
+      "revision": [
+        3,
+        3.67,
+        3.67
+      ],
+      "delta": [
+        0.67,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "problem": "D",
+      "repeat": 3,
+      "draft": [
+        2.33,
+        4,
+        3
+      ],
+      "revision": [
+        3,
+        4,
+        3
+      ],
+      "delta": [
+        0.67,
+        0,
+        0
+      ]
+    },
+    {
+      "problem": "D",
+      "repeat": 4,
+      "draft": [
+        2.33,
+        4,
+        2
+      ],
+      "revision": [
+        2.33,
+        4,
+        2
+      ],
+      "delta": [
+        0.0,
+        0,
+        0
+      ]
+    }
+  ],
+  "mean_delta": {
+    "originality": 0.729,
+    "feasibility": 0.0,
+    "test": -0.125
+  },
+  "revisions_improved": {
+    "originality": 12,
+    "feasibility": 3,
+    "test": 1
+  },
+  "revisions_worsened": {
+    "originality": 0,
+    "feasibility": 3,
+    "test": 4
+  },
+  "n_pairs": 16
+}

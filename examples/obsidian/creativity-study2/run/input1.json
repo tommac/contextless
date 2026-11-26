@@ -1,0 +1,73 @@
+{
+  "instructions": "Using only the supplied material, propose two meaningfully different designs. Develop the more promising one with a concrete example and a cheap test that could distinguish it from a simpler alternative. Maximize useful originality. Maximum 110 whitespace-delimited words, including headings, per problem. Treat each problem independently. Do not mention prompts, notes, or the study. Return only one JSON object mapping each problem letter to its answer string.",
+  "problems": {
+    "A": {
+      "problem": "A neighborhood repair cafe runs two hours every Saturday. Each visitor brings one broken small appliance, watches the single volunteer electrician fix it, and leaves. The organizer wants regulars who can fix things they never brought. Design how the cafe runs so visitors leave more capable, with twelve chairs, one electrician, and no sign-up in advance.",
+      "material": [
+        {
+          "title": "doc2query",
+          "text": "Nogueira et al., 2019, Document Expansion by Query Prediction: a model writes the questions a document answers and they are indexed with it, so the model runs at index time only. The design cites it for the one to three questions an indexer could write per atom. A 2023 follow-up, Doc2Query--, filters hallucinated generated queries before indexing and leaves the inverted index unchanged at query time."
+        },
+        {
+          "title": "Cognition Dont Build Multi-Agents",
+          "text": "Walden Yan's June 2025 essay argued against multi-agent systems because actions carry implicit decisions and conflicting decisions carry bad results, and copying the original task to each subagent does not fix that. The April 2026 revision keeps the objection for parallel-writer swarms and endorses setups where several agents contribute intelligence while writes stay single-threaded. The essay is an argument with examples and not a measurement. The survey takes two things from it: one writer, and shared decisions written down before units run."
+        },
+        {
+          "title": "Files are the truth for the conversation and SQLite for the machine",
+          "text": "The records of a conversation are Markdown files with YAML front matter in a git repository, and they are the truth about what was said. A SQLite database beside them holds what the machine needs: the index, full-text search, runs and provider health. Models never write either one; they return a handoff and the engine applies it. The paragraph index in the database is a cache that reading commands may bring up to date."
+        }
+      ]
+    },
+    "D": {
+      "problem": "A city will demolish a beloved old bridge in one year and replace it with a wider crossing. A small team has a modest budget and one public meeting per season. Design how the city says goodbye, so that people who cross daily shape what is kept and something of the old bridge survives in the new one.",
+      "material": [
+        {
+          "title": "New release records changed 204 saved answers",
+          "text": "A release can change an answer while its old citations still match. In a replay of three public Go API ledgers, the program saved each question's package, declaration and time cutoff. When the next release arrived it found every affected presence or count answer and identified the new source lines. The workload was retrospective and used exact conditions."
+        },
+        {
+          "title": "Deterministic checks run before the reviewer",
+          "text": "Checking is ordered from cheapest and most reliable to least. Schema, evidence ids and quotes, citation coverage, the allowlist and the verify command for coder units run first, and the cross-provider reviewer runs second with the engine's comparison so that it checks the join. Checks grounded in something external have the strongest measured effect: executable feedback added 4.2 and 5.4 points for MetaGPT, and deterministic rules reached AUROC 0.95 to 0.98 on local violations. Rules and LLM checks fail in complementary places, which is why both are kept."
+        },
+        {
+          "title": "Facts supersede facts",
+          "text": "The indexer is shown the facts in force that the words of the new turns match. A fact that changes a value, such as a new port, date, price or time, supersedes the old fact. A packet then shows the current fact with the one it replaced, and every fact and decision carries the date of its source turn. The rule answers the gaps that CogCanvas states for itself and the knowledge-update questions of LongMemEval."
+        }
+      ]
+    },
+    "C": {
+      "problem": "A community radio station must fill three hours every night with nobody awake. Residents drop off unlabeled cassette tapes during the day. The station wants every voice aired eventually, no voice dominating, a wrong night's choices correctable the next night, and a way for a resident to learn whether their tape played. Design the system.",
+      "material": [
+        {
+          "title": "Total Recall at What Cost",
+          "text": "This August 2026 preprint compares three memory systems against a floor of the last ten turns and a ceiling of the full transcript, counting billable input tokens across ingest, retrieval and answer. It finds that the choice of model matters as much as the memory system for cost per correct answer. It reports no latency and no formal Pareto comparison, which is the gap the project's cost-quality frontier would fill."
+        },
+        {
+          "title": "Virtual memory paging",
+          "text": "The design treats a recall request the way an operating system treats a page fault, and takes three mechanisms from paging. The working set keeps recently recalled or cited atoms in the next packets, which is temporal locality. Prefetch brings in the graph neighbours of a faulted atom, which is spatial locality, and the fault rate per call becomes a health metric."
+        },
+        {
+          "title": "Selector choice mattered more than unit choice under a token budget",
+          "text": "In a 2026 study of budgeted selection on clinical and biomedical text, which selector won depended on the budget: document order was strong at 256 to 512 tokens and MMR dominated near 1,024, while on long PubMedQA contexts document order was the worst selector at every budget from 64 to 256 tokens. The authors found that selector choice mattered more than unit choice and that cluster-based units hurt. It is a single-group preprint with no independent replication the notes could find."
+        }
+      ]
+    },
+    "B": {
+      "problem": "Two street musicians play at opposite ends of a night market, drawing from the same wandering crowd. Each can see only their own instrument case. Listeners drift toward whichever end sounds livelier, and noise rules cap volume. The pair may agree on any plan beforehand but cannot signal during the night. Design how they keep both ends of the market alive.",
+      "material": [
+        {
+          "title": "Catalog spine and epoch window make the prefix repeat",
+          "text": "Two layout steps make consecutive briefs share a long opening. CatalogSpine lists every older turn in the catalog, so the catalog only grows at its end, and recent_epoch starts the recent window at a multiple of N turns, so it does not slide on every message. Both are built and switched off: in replay at an epoch of 4 they raised the median shared prefix from nothing to 37 to 45 percent without changing probe recovery, but with no cache hits they make each message cost more."
+        },
+        {
+          "title": "Excerpt readability is the main open question",
+          "text": "The probes show that the answer is in the packet, not that a model answers correctly: a paragraph out of context can lose what a pronoun refers to. Excerpts carry the turn, the paragraph numbers and the message they answer in their header, and the paragraphs around one come back by id, but whether a model reads an excerpt as well as a whole turn is unmeasured. Only an end-to-end run with a model settles it, and that run is the next step in the roadmap, with model calls to be asked for first."
+        },
+        {
+          "title": "Adding each atom's neighbors doubled the median cost",
+          "text": "Sending the paragraph before and after each ranked atom doubled the median tokens spent before the answer was in. Recovery was unchanged within 8k and 16k but fell by 1 to 3 of 30 within 2k and by 1 to 4 of 30 within 4k, because the same budget holds about half as many hits. It stayed 2.5 to 3.5 times cheaper than whole turns and is the price of readability, which only an end-to-end test can weigh."
+        }
+      ]
+    }
+  }
+}

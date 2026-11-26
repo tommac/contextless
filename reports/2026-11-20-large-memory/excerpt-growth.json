@@ -1,0 +1,134 @@
+{
+  "answerable": 470,
+  "abstention_excluded": 30,
+  "budget_bytes": 8000,
+  "literal_eligible": 170,
+  "arms": {
+    "atoms_whole": {
+      "median_bytes": 7902.5,
+      "all_messages": {
+        "n": 470,
+        "count": 343,
+        "won": 0,
+        "lost": 0
+      },
+      "literal": {
+        "n": 170,
+        "count": 145,
+        "won": 0,
+        "lost": 0
+      },
+      "literal_absent_from_question": {
+        "n": 157,
+        "count": 137,
+        "won": 0,
+        "lost": 0
+      }
+    },
+    "atoms_first_grow": {
+      "median_bytes": 7986.0,
+      "all_messages": {
+        "n": 470,
+        "count": 362,
+        "won": 19,
+        "lost": 0
+      },
+      "literal": {
+        "n": 170,
+        "count": 142,
+        "won": 3,
+        "lost": 6
+      },
+      "literal_absent_from_question": {
+        "n": 157,
+        "count": 132,
+        "won": 1,
+        "lost": 6
+      }
+    },
+    "atoms_query_grow": {
+      "median_bytes": 7993.0,
+      "all_messages": {
+        "n": 470,
+        "count": 362,
+        "won": 19,
+        "lost": 0
+      },
+      "literal": {
+        "n": 170,
+        "count": 145,
+        "won": 3,
+        "lost": 3
+      },
+      "literal_absent_from_question": {
+        "n": 157,
+        "count": 135,
+        "won": 1,
+        "lost": 3
+      }
+    },
+    "routed_whole": {
+      "median_bytes": 7923.0,
+      "all_messages": {
+        "n": 470,
+        "count": 338,
+        "won": 14,
+        "lost": 19
+      },
+      "literal": {
+        "n": 170,
+        "count": 142,
+        "won": 2,
+        "lost": 5
+      },
+      "literal_absent_from_question": {
+        "n": 157,
+        "count": 134,
+        "won": 1,
+        "lost": 4
+      }
+    },
+    "routed_first_grow": {
+      "median_bytes": 7994.0,
+      "all_messages": {
+        "n": 470,
+        "count": 380,
+        "won": 37,
+        "lost": 0
+      },
+      "literal": {
+        "n": 170,
+        "count": 145,
+        "won": 8,
+        "lost": 8
+      },
+      "literal_absent_from_question": {
+        "n": 157,
+        "count": 134,
+        "won": 5,
+        "lost": 8
+      }
+    },
+    "routed_query_grow": {
+      "median_bytes": 7998.0,
+      "all_messages": {
+        "n": 470,
+        "count": 380,
+        "won": 37,
+        "lost": 0
+      },
+      "literal": {
+        "n": 170,
+        "count": 151,
+        "won": 10,
+        "lost": 4
+      },
+      "literal_absent_from_question": {
+        "n": 157,
+        "count": 139,
+        "won": 6,
+        "lost": 4
+      }
+    }
+  }
+}

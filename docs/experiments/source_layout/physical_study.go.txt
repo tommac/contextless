@@ -1,0 +1,76 @@
+package vault
+
+import (
+	"fmt"
+	"os"
+	"path/filepath"
+	"sort"
+	"strings"
+	"testing"
+	"time"
+)
+
+func TestPhysicalStudyActualVault(t *testing.T) {
+	tmp := t.TempDir()
+	v := Vault{Dir: tmp}
+	if err := os.MkdirAll(filepath.Join(tmp, "turns"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	n := 0
+	for _, target := range []int{100, 1000, 10000, 30000} {
+		for n < target {
+			n++
+			body := strings.Repeat(fmt.Sprintf("Operational note %d: original source text with exact timestamp and venue. ", n), 8)
+			turn := Turn{ID: TurnID(n), Seq: n, Role: RoleUser, Created: time.Unix(int64(n), 0).UTC(), Body: body, BodySHA: SHA(body)}
+			if e := v.write(TurnPath(turn.ID), turn, body); e != nil {
+				t.Fatal(e)
+			}
+		}
+		var times []time.Duration
+		for range 7 {
+			t0 := time.Now()
+			turn, e := v.AppendTurnAt(RoleUser, "experiment", "", "", "new source café", time.Unix(1, 0))
+			times = append(times, time.Since(t0))
+			if e != nil {
+				t.Fatal(e)
+			}
+			n++
+			if turn.Seq != n {
+				t.Fatalf("sequence error")
+			}
+		}
+		sort.Slice(times, func(i, j int) bool { return times[i] < times[j] })
+		t0 := time.Now()
+		turns, err := v.Turns()
+		elapsed := time.Since(t0)
+		if err != nil || len(turns) != n {
+			t.Fatal(err, n)
+		}
+		t.Logf("preseed=%d median_new_append_ms=%.2f all_turns_open_ms=%.2f turns_verified=%d",
+			target, float64(times[3].Microseconds())/1000, float64(elapsed.Microseconds())/1000, n)
+	}
+	if e := v.git("init", "-q"); e != nil {
+		t.Fatal(e)
+	}
+	// Time setup separately from the normal incremental commit. Check the commit and parent.
+	t0 := time.Now()
+	v.Commit("Seed")
+	seed := time.Since(t0)
+	if e := v.git("rev-parse", "--verify", "HEAD"); e != nil {
+		t.Fatal(e)
+	}
+	tt, e := v.AppendTurnAt(RoleUser, "experiment", "", "", "one extra record", time.Unix(2, 0))
+	if e != nil {
+		t.Fatal(e)
+	}
+	t0 = time.Now()
+	v.Commit("Append one")
+	increment := time.Since(t0)
+	if e := v.git("cat-file", "-e", "HEAD:"+TurnPath(tt.ID)); e != nil {
+		t.Fatal(e)
+	}
+	if e := v.git("rev-parse", "--verify", "HEAD^"); e != nil {
+		t.Fatal(e)
+	}
+	t.Logf("seed_commit_ms=%.3f single_git_commit_ms=%.3f", float64(seed.Microseconds())/1000, float64(increment.Microseconds())/1000)
+}

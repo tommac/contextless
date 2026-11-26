@@ -1,0 +1,41 @@
+{
+  "answerable": 470,
+  "max_candidates": 24,
+  "max_bytes": 8000,
+  "elapsed_seconds": 7.46,
+  "arms": {
+    "atoms": {
+      "complete": 343,
+      "present": 362,
+      "feasible": 362,
+      "bytes": 3695377,
+      "won": 0,
+      "lost": 0,
+      "newly_reachable": 0,
+      "newly_unreachable": 0,
+      "previously_unreachable_now_complete": 0
+    },
+    "atoms_plus_flat_messages": {
+      "complete": 333,
+      "present": 370,
+      "feasible": 370,
+      "bytes": 3707231,
+      "won": 6,
+      "lost": 16,
+      "newly_reachable": 8,
+      "newly_unreachable": 0,
+      "previously_unreachable_now_complete": 0
+    },
+    "atoms_plus_routed_messages": {
+      "complete": 338,
+      "present": 380,
+      "feasible": 380,
+      "bytes": 3714439,
+      "won": 14,
+      "lost": 19,
+      "newly_reachable": 20,
+      "newly_unreachable": 2,
+      "previously_unreachable_now_complete": 5
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "vault_size": 526,
+  "index_seconds": 0.10262795793823898,
+  "four_searches_seconds": 0.0039055830566212535,
+  "search": {
+    "A": [
+      "sources/doc2query.md",
+      "sources/Cognition Dont Build Multi-Agents.md",
+      "ideas/Files are the truth for the conversation and SQLite for the machine.md"
+    ],
+    "B": [
+      "ideas/Catalog spine and epoch window make the prefix repeat.md",
+      "ideas/Excerpt readability is the main open question.md",
+      "results/Adding each atom's neighbors doubled the median cost.md"
+    ],
+    "C": [
+      "sources/Total Recall at What Cost.md",
+      "fields/Virtual memory paging.md",
+      "results/Selector choice mattered more than unit choice under a token budget.md"
+    ],
+    "D": [
+      "results/New release records changed 204 saved answers.md",
+      "ideas/Deterministic checks run before the reviewer.md",
+      "ideas/Facts supersede facts.md"
+    ]
+  },
+  "source_bytes": {
+    "selected": {
+      "A": 1078,
+      "B": 1714,
+      "C": 1562,
+      "D": 1624
+    },
+    "labeled": {
+      "A": 1078,
+      "B": 1714,
+      "C": 1562,
+      "D": 1624
+    }
+  },
+  "curator_elapsed_seconds": 0.0,
+  "curator": "No new curation: selections reused verbatim from round 2 (Kimi curator, 93.2 s there)",
+  "reader_packets_sha256": {
+    "input0.json": "6ae8d585592d2d71a578f383a35a33c1bf99819e5ebd416548195a19dded9c20",
+    "input1.json": "0744a9a9b67c9eda34712884358cb6a7a9e70437407203f6ce1b295f06eac6ab",
+    "input2.json": "785db7300d47ec91b171815513a314a6213061601d2d2e4ef11ed2b561b6421c",
+    "input3.json": "53f10d0fa432a644467c27ed3c8c1816821f8f20e9f4b50085076ee2e357e3f3",
+    "input4.json": "69f759ca33cb2e2075099614847d443451f606f8c524a5ddb93cf4776a2c9dd6",
+    "input5.json": "df40ffd95a646fcb8f152f7429f5b215b1db054258dc2b58a29671b545586ef0",
+    "input6.json": "ddd098fd94ed0570e08418c9cc7f995a85c9880394a576f23f52d0a2981fd778",
+    "input7.json": "cbd73440e872d3d6412e533a2fe9ca2c11bb652eb6546a9c206500d4143e6f78"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "means": {
+    "question": {
+      "originality": 3.5,
+      "feasibility": 4.583,
+      "test": 3.458
+    },
+    "search": {
+      "originality": 3.375,
+      "feasibility": 4.792,
+      "test": 4.208
+    },
+    "selected": {
+      "originality": 3.625,
+      "feasibility": 4.458,
+      "test": 4.542
+    },
+    "labeled": {
+      "originality": 3.958,
+      "feasibility": 4.833,
+      "test": 4.583
+    }
+  },
+  "by_problem": {
+    "A": {
+      "question": {
+        "originality": 2.833,
+        "feasibility": 4.833,
+        "test": 3.5
+      },
+      "search": {
+        "originality": 3.333,
+        "feasibility": 4.333,
+        "test": 3.833
+      },
+      "selected": {
+        "originality": 3.333,
+        "feasibility": 5,
+        "test": 4.333
+      },
+      "labeled": {
+        "originality": 3.833,
+        "feasibility": 4.833,
+        "test": 4.5
+      }
+    },
+    "B": {
+      "question": {
+        "originality": 3.333,
+        "feasibility": 4,
+        "test": 3.667
+      },
+      "search": {
+        "originality": 3.5,
+        "feasibility": 4.833,
+        "test": 4
+      },
+      "selected": {
+        "originality": 4.333,
+        "feasibility": 4.333,
+        "test": 4.5
+      },
+      "labeled": {
+        "originality": 5,
+        "feasibility": 4.5,
+        "test": 4.833
+      }
+    },
+    "C": {
+      "question": {
+        "originality": 3.833,
+        "feasibility": 4.5,
+        "test": 3.167
+      },
+      "search": {
+        "originality": 3.5,
+        "feasibility": 5,
+        "test": 4.5
+      },
+      "selected": {
+        "originality": 3.667,
+        "feasibility": 4,
+        "test": 4.833
+      },
+      "labeled": {
+        "originality": 3.5,
+        "feasibility": 5,
+        "test": 4
+      }
+    },
+    "D": {
+      "question": {
+        "originality": 4,
+        "feasibility": 5,
+        "test": 3.5
+      },
+      "search": {
+        "originality": 3.167,
+        "feasibility": 5,
+        "test": 4.5
+      },
+      "selected": {
+        "originality": 3.167,
+        "feasibility": 4.5,
+        "test": 4.5
+      },
+      "labeled": {
+        "originality": 3.5,
+        "feasibility": 5,
+        "test": 5
+      }
+    }
+  },
+  "originality_order": {
+    "agree": 142,
+    "disagree": 3,
+    "either_tied": 191
+  },
+  "word_cap_applied": 0
+}
