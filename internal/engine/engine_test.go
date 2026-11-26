@@ -132,7 +132,15 @@ func newHarness(t *testing.T, alphaWindow int, reply func(c call) any) *harness 
 	if err != nil {
 		t.Fatal(err)
 	}
-	t.Cleanup(func() { e.Close() })
+	// Close whichever engine the test ends with as well as the first one: a
+	// test that reopens the workspace would otherwise leave the second
+	// engine's background indexer writing while the temp directory is removed.
+	t.Cleanup(func() {
+		if h.e != nil && h.e != e {
+			h.e.Close()
+		}
+		e.Close()
+	})
 	for _, p := range []string{"alpha", "beta", "gamma"} {
 		e.R.SetAdapter(p, scripted{name: p, dir: root, mu: &h.mu, calls: &h.calls, reply: func(c call) any { return h.reply(c) }})
 	}

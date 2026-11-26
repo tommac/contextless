@@ -25,6 +25,11 @@ func gitT(t *testing.T, dir string, args ...string) string {
 func newRepo(t *testing.T) string {
 	dir := t.TempDir()
 	gitT(t, dir, "init", "-q", "-b", "main")
+	// The engine merges into a user's repository as that user, so the test
+	// repository carries its own identity: a machine with no global git
+	// identity (a fresh container, a CI runner) would refuse the merge.
+	gitT(t, dir, "config", "user.name", "t")
+	gitT(t, dir, "config", "user.email", "t@t")
 	_ = os.MkdirAll(filepath.Join(dir, "pkg"), 0o755)
 	_ = os.WriteFile(filepath.Join(dir, "pkg", "a.go"), []byte("package pkg\n"), 0o644)
 	_ = os.WriteFile(filepath.Join(dir, "README.md"), []byte("readme\n"), 0o644)
