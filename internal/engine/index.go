@@ -477,11 +477,10 @@ func (e *Engine) ensureAtoms(checkCards bool) error {
 	if e.Cfg.RelevantTokens <= 0 || e.S.ReadOnly {
 		return nil
 	}
+	// The unlocked read keeps the common case free of a write transaction;
+	// ResetAtomsTo reads the version again under the write lock.
 	if e.S.Meta("atom_seg") != atomIndexVersion() {
-		if err := e.S.ResetAtoms(); err != nil {
-			return fmt.Errorf("atom index: %w", err)
-		}
-		if err := e.S.SetMeta("atom_seg", atomIndexVersion()); err != nil {
+		if _, err := e.S.ResetAtomsTo(atomIndexVersion()); err != nil {
 			return fmt.Errorf("atom index: %w", err)
 		}
 	}

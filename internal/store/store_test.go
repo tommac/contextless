@@ -72,3 +72,50 @@ func TestRunsTableGainsCacheColumns(t *testing.T) {
 		t.Fatalf("%+v, %v", r, ok)
 	}
 }
+
+// Two processes that open a workspace at once can both decide, from an
+// unlocked read, that the atom index must be reset. The second reset must
+// see the first one's version and leave its index alone.
+func TestResetAtomsToLeavesACurrentIndexAlone(t *testing.T) {
+	dir := t.TempDir()
+	if err := os.MkdirAll(filepath.Join(dir, ".cx"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	a, err := Open(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer a.Close()
+	b, err := Open(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer b.Close()
+
+	if did, err := a.ResetAtomsTo("v1"); err != nil || !did {
+		t.Fatalf("first reset: did=%v err=%v", did, err)
+	}
+	if err := a.IndexAtoms("t000001", 1, []AtomRec{{ID: "t000001#a1", Text: "Let's go with the walnut ones."}}, ""); err != nil {
+		t.Fatal(err)
+	}
+	// b read the old version before a wrote the new one, and resets late
+	if did, err := b.ResetAtomsTo("v1"); err != nil || did {
+		t.Fatalf("late reset under the same version: did=%v err=%v, want it to do nothing", did, err)
+	}
+	if n := len(a.SearchAtoms("walnut", 10, 0)); n != 1 {
+		t.Fatalf("walnut is in %d atoms after the late reset, want 1", n)
+	}
+	if n := len(b.AtomTurns()); n != 1 {
+		t.Fatalf("%d turns marked indexed after the late reset, want 1", n)
+	}
+	// a real change of rules still clears the index
+	if did, err := b.ResetAtomsTo("v2"); err != nil || !did {
+		t.Fatalf("reset under new rules: did=%v err=%v", did, err)
+	}
+	if n := len(a.SearchAtoms("walnut", 10, 0)); n != 0 {
+		t.Fatalf("walnut is in %d atoms after a real reset, want 0", n)
+	}
+	if n := len(a.AtomTurns()); n != 0 {
+		t.Fatalf("%d turns marked indexed after a real reset, want 0", n)
+	}
+}

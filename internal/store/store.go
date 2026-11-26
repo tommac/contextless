@@ -625,9 +625,41 @@ func (s *Store) AtomTurnsE() (map[string]string, error) {
 	return out, rows.Err()
 }
 
-// ResetAtoms clears the atom index (the splitting rules changed).
+// ResetAtoms clears the atom index unconditionally. It is for a process that
+// owns the index file, such as an experiment that rebuilds it per question.
+// A workspace that other processes may open uses ResetAtomsTo.
 func (s *Store) ResetAtoms() error {
 	return s.execAll(`DELETE FROM atoms_fts`, `DELETE FROM atom_turns`)
+}
+
+// ResetAtomsTo clears the atom index unless it was built under the splitting
+// rules named by version, and records version. The check and the reset are
+// one write transaction. When two processes open a workspace at once, the
+// one that comes second sees the first one's version and leaves its index
+// alone; with the check made outside the transaction, the second could wipe
+// what the first had just built. It reports whether it cleared the index.
+func (s *Store) ResetAtomsTo(version string) (bool, error) {
+	tx, err := s.DB.Begin()
+	if err != nil {
+		return false, err
+	}
+	defer tx.Rollback()
+	var have string
+	if err := tx.QueryRow(`SELECT value FROM meta WHERE key='atom_seg'`).Scan(&have); err != nil && err != sql.ErrNoRows {
+		return false, err
+	}
+	if have == version {
+		return false, nil
+	}
+	for _, q := range []string{`DELETE FROM atoms_fts`, `DELETE FROM atom_turns`} {
+		if _, err := tx.Exec(q); err != nil {
+			return false, err
+		}
+	}
+	if _, err := tx.Exec(`INSERT INTO meta(key,value) VALUES('atom_seg',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value`, version); err != nil {
+		return false, err
+	}
+	return true, tx.Commit()
 }
 
 // Meta reads a small key-value setting of the index ("" when unset).

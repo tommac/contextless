@@ -204,12 +204,17 @@ Left, in order:
    address on every commit and is not published.
 2. **Set the module path** in `go.mod` to the public repository's path. Done
    2026-11-26: `github.com/tommac/contextless`. `go install` from that path
-   still fails: ten file names in `idea-vault/` contain an apostrophe, which
-   the Go module format refuses. Rename them and their links, or give
-   `idea-vault/` its own `go.mod` so it is left out of the module.
+   failed at first: ten file names in `idea-vault/` contain an apostrophe,
+   which the Go module format refuses. `idea-vault/` now has its own `go.mod`,
+   which leaves it out of the module.
 3. **See CI pass on Linux.** Done 2026-11-26, after two test fixes: a test
    repository with no git identity, and a reopened engine the harness did not
-   close. The sandbox tests skip on Linux.
+   close. The sandbox tests skip on Linux. A later run failed once on macOS
+   and showed a defect in the engine: two processes opening a workspace at
+   once could each decide to reset the paragraph index, and the second wiped
+   what the first had built. The check and the reset are now one transaction
+   (`TestResetAtomsToLeavesACurrentIndexAlone`). The failure did not
+   reproduce locally in 300 runs, so the fix rests on reading the code.
 4. **A container recipe for Linux**, tested, so "run it in a container" is one
    command instead of advice.
 5. **A public conversation with public questions**, so the answer tests can be

@@ -44,7 +44,11 @@ make demo                   # builds bin/cx, then walks the engine through a scr
 go test ./... -count=1      # the whole suite: no model calls, no keys
 ```
 
-`go install` from the module path does not work yet: ten file names in `idea-vault/` contain an apostrophe, which the Go module format refuses.
+To install the binary alone, without the repository:
+
+```sh
+go install github.com/tommac/contextless/cmd/cx@latest
+```
 
 The replays below also start no model. The last one downloads three public Go API files.
 
