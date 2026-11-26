@@ -6,6 +6,10 @@ It can also split a request across several vendors' command-line tools (Claude, 
 
 This is one author's research system, not a product. The design is in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and [docs/CONTEXT-COMPILER.md](docs/CONTEXT-COMPILER.md). Plans and known defects are in [docs/ROADMAP.md](docs/ROADMAP.md).
 
+![Bar chart of the confirming answer test: the share of needed passages the model stated, by what it was given. Only the exact needed paragraphs 0.982; ContextlessAI packet with its map of notes 0.882; the whole conversation 0.810; note lines then requested paragraphs 0.762; ContextlessAI packet without the map 0.706; search results of the same size 0.672; the question only 0.000.](docs/figures/confirming-test.png)
+
+The chart is the confirming answer test, drawn by `docs/figures/confirming_test.py` from the table under [Measurements](#measurements). Its limits are in the next section.
+
 ## What is shown, and what is not
 
 Read every claim in this file at the level of evidence given here.
