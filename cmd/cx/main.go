@@ -44,29 +44,29 @@ usage: cx [-config file] [-q] <command> [args]
                                        shows the packet after a recall request for those ids, -json lists
                                        the records for a script
   explain <name> [-json] [-adaptive] [-session-route] [-auto-reply] [-drop id,id] <message...>
-                                       Context Query Planner: query class, lane hits, cache prefix,
-                                       prefix-closed optimizer, causal -drop ablation, profile estimates (no model)
+                                       for a message: its query class, which lane found what, the reusable prefix,
+                                       and size estimates per profile; -drop removes ids from the built packet (no model)
   query <name> [-kind decisions|facts|turns] [-op count|list|latest|presence|absent] [-filter TEXT] [-status active|superseded|all] [-as-of SEQ] [-strict] [-resume ID] [-json]
-                                       exact deterministic resumable ledger query with strict withholding (no model)
+                                       count or list ledger records by code; resumable; withheld when unsure (no model)
   views <name> [-key KEY] [-filter TEXT] [-as-of SEQ] [-json]
                                        experimental: key=value views over the turn sequence (known defects: docs/ROADMAP.md)
   fork <src> <dst> [-as-of SEQ] [-title T]
                                        experimental: fork a workspace, or branch it at turn SEQ (known defects: docs/ROADMAP.md)
   pack <name> [-block 4096] [-verify]  build/verify a seekable 4 KiB block-compressed lossless body pack (.cx/bodies.cxp)
   watch <name> [-as-of SEQ] [-absent KEY] [-offline ANSWER] <question...>
-                                       answer and bind a snapshot-pinned Living Answer Query Receipt
+                                       answer, and keep a receipt pinned to the current turn number
   stale <name> [-all]                  list watched receipts marked stale (or all receipts with -all)
   receipt <name> <receipt-id>          verify original evidence anchors and show verbatim delta turns (no model)
-  refresh <name> <receipt-id>          Delta Resume: update a stale receipt using only prior receipt + delta turns
+  refresh <name> <receipt-id>          update a stale receipt from the earlier receipt plus the turns added since
   tune <name> <probes.jsonl>           offline 60/40 train/held-out tuning of lane weights & adaptive pack (no model)
   resume <name> <plan-id>              resume an interrupted multi-unit plan from its checkpoint
   merge <name> <repo> <branch>         re-verify a cx/* branch on current HEAD before merging it
   serve <name> [-mcp]                  run a stdio JSON-RPC 2.0 MCP server backed by this workspace
-  ui <name> [-addr 127.0.0.1:8787]     launch the embedded local Context X-Ray web dashboard
+  ui <name> [-addr 127.0.0.1:8787]     serve a local web page for inspecting packets
   obsidian export <name> <out-dir>     export workspace to Obsidian Markdown (preserves human notes)
   obsidian brief <board.canvas> [-vault DIR]
                                        compile an Obsidian Canvas board into a deterministic verbatim brief
-  demo                                 run a self-contained model-free Living Memory & Typed Recall showcase
+  demo                                 walk the engine through a scripted conversation (no model)
   probe <name> <probes.jsonl> [-lanes exact,fulltext,value] [-granularity atoms|turns] [-budget N] [-whole N] [-arm A] [-adaptive]
                                        recovery probes: for each question with a known source turn, is that
                                        turn in the packet verbatim, named, or reachable by search? (no model)
@@ -309,7 +309,7 @@ func main() {
 		adaptive := f.Bool("adaptive", false, "use source-diverse adaptive excerpt packing")
 		sessionRoute := f.Bool("session-route", false, "enable two-stage episode/thread candidate routing")
 		autoReply := f.Bool("auto-reply", false, "co-select immediate reply turn (seq+1) for question anchors")
-		drop := f.String("drop", "", "comma-separated turn/atom IDs to exclude for causal ablation")
+		drop := f.String("drop", "", "comma-separated turn/atom IDs to remove from the built packet")
 		name := firstArg(rest, "explain <name> [-json] [-adaptive] [-session-route] [-auto-reply] [-drop id,id] <message>")
 		_ = f.Parse(rest[1:])
 		if *adaptive {
@@ -661,7 +661,7 @@ func main() {
 		}
 	case "ui":
 		f := flag.NewFlagSet("ui", flag.ExitOnError)
-		addr := f.String("addr", "127.0.0.1:8787", "listen address for the local Context X-Ray dashboard")
+		addr := f.String("addr", "127.0.0.1:8787", "listen address for the local dashboard")
 		name := firstArg(rest, "ui <name> [-addr 127.0.0.1:8787]")
 		_ = f.Parse(rest[1:])
 		e := openRO(cfg, name)
@@ -669,7 +669,7 @@ func main() {
 		if host, _, err := net.SplitHostPort(*addr); err == nil && host != "127.0.0.1" && host != "localhost" && host != "::1" {
 			fmt.Fprintf(os.Stderr, "warning: %s is not a loopback address. The dashboard has no login and serves the conversation's text to anyone who can reach that address.\n", *addr)
 		}
-		fmt.Fprintf(os.Stderr, "ContextlessAI Context X-Ray serving %q at http://%s (Ctrl-C to stop)\n", name, *addr)
+		fmt.Fprintf(os.Stderr, "cx dashboard serving %q at http://%s (Ctrl-C to stop)\n", name, *addr)
 		if err := ui.Serve(ctx, e, *addr); err != nil {
 			die(err)
 		}
@@ -1282,7 +1282,7 @@ func chat(ctx context.Context, e *engine.Engine) {
 			return
 		case "/help":
 			fmt.Println(`/history [n]  show the last n turns verbatim
-/explain <q>  run Context Query Planner dry-run for a question
+/explain <q>  show the packet a question would get (no model)
 /stale        list watched receipts invalidated by recent turns
 /retry        answer the last message again if it went unanswered
 /runs         recent runs

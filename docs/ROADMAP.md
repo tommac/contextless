@@ -202,10 +202,14 @@ Left, in order:
    2026-11-26: published as `github.com/tommac/contextless`, which is where
    work continues. The earlier private history carries a personal email
    address on every commit and is not published.
-2. **Set the module path** in `go.mod` to the public repository's path, so
-   `go install` works. Done 2026-11-26: `github.com/tommac/contextless`.
-3. **See CI pass on Linux.** The tests have only run on macOS; the sandbox
-   tests skip elsewhere and the rest have not been tried.
+2. **Set the module path** in `go.mod` to the public repository's path. Done
+   2026-11-26: `github.com/tommac/contextless`. `go install` from that path
+   still fails: ten file names in `idea-vault/` contain an apostrophe, which
+   the Go module format refuses. Rename them and their links, or give
+   `idea-vault/` its own `go.mod` so it is left out of the module.
+3. **See CI pass on Linux.** Done 2026-11-26, after two test fixes: a test
+   repository with no git identity, and a reopened engine the harness did not
+   close. The sandbox tests skip on Linux.
 4. **A container recipe for Linux**, tested, so "run it in a container" is one
    command instead of advice.
 5. **A public conversation with public questions**, so the answer tests can be

@@ -36,7 +36,7 @@ func TestRunDemoEndToEnd(t *testing.T) {
 		t.Fatalf("typed recall outputs incomplete: openBlock=%v timeline=%q", res.OpenBlockIDs, res.TimelineText)
 	}
 	txt := FormatDemo(res)
-	if !strings.Contains(txt, "ContextlessAI End-to-End Demo") || !strings.Contains(txt, "pool_size=64") {
+	if !strings.Contains(txt, "ContextlessAI demo") || !strings.Contains(txt, "pool_size=64") {
 		t.Fatalf("unexpected FormatDemo output:\n%s", txt)
 	}
 }
@@ -116,7 +116,7 @@ func TestLivingAnswersRefreshDeltaResume(t *testing.T) {
 		t.Fatalf("expected receipt marked stale automatically, got %+v ok=%v err=%v", after, ok, err)
 	}
 
-	// RefreshReceipt (Delta Resume) must send ONLY prior receipt + delta turn and supersede old receipt.
+	// RefreshReceipt must send only the prior receipt plus the new turn, and supersede the old receipt.
 	updated, o, err := h.e.RefreshReceipt(context.Background(), rcpt.ID)
 	if err != nil {
 		t.Fatal(err)

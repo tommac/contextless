@@ -44,7 +44,7 @@ struct ContentView: View {
                 } label: {
                     Label("Run Demo", systemImage: "play.circle")
                 }
-                .help("Run model-free `cx demo` showcase")
+                .help("Run `cx demo` (no model)")
 
                 Button {
                     state.refreshWorkspaces(keepSelection: true)
@@ -253,7 +253,7 @@ private struct ChatPaneView: View {
                         }
                         .buttonStyle(.bordered)
                         .disabled(state.draftMessage.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
-                        .help("Dry-run Context Query Planner (`cx explain`) with zero model calls")
+                        .help("Run `cx explain` (no model call)")
                     }
                 }
 
@@ -473,7 +473,7 @@ private struct VaultPaneView: View {
                         .padding(8)
                 }
 
-                GroupBox("Living Answer Receipts (`cx stale -all`)") {
+                GroupBox("Receipts (`cx stale -all`)") {
                     Text(state.receiptsOutput)
                         .font(.system(.caption, design: .monospaced))
                         .textSelection(.enabled)

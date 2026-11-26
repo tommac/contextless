@@ -8,7 +8,7 @@ authors:
     orcid: "https://orcid.org/0009-0004-5702-5302"
 license: Apache-2.0
 repository-code: "https://github.com/tommac/contextless"
-date-released: 2026-11-25
+date-released: 2026-11-26
 keywords:
   - long-context
   - agent memory

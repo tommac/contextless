@@ -11,31 +11,31 @@ import (
 	"github.com/tommac/contextless/internal/vault"
 )
 
-// DemoResult captures the deterministic, model-free end-to-end showcase of
-// ContextlessAI's core primitives: immutable archive, zero-scan indexing,
-// Context Query Planner with causal ablation, Living Answer Query Receipts
-// (live invalidation + historical time-travel verification), and Typed Recall.
+// DemoResult holds what the model-free demo produced: the stored turns, an
+// explain plan with and without a dropped turn, receipts before and after
+// a turn that changes their answer (one live, one read at an earlier turn
+// number), and a typed recall.
 type DemoResult struct {
-	TurnsCreated         int
-	ExplainPlan          packet.ExplainPlan
-	AblatedPlan          packet.ExplainPlan
-	LiveReceiptBefore    store.Receipt
-	LiveReceiptAfter     store.Receipt
-	HistoricalReceipt    store.Receipt
-	StaleAlerts          []StaleAlert
-	LiveDiff             ReceiptDiff
-	HistoricalDiff       ReceiptDiff
-	OpenBlockNotes       []string
-	OpenBlockIDs         []string
-	ExchangeNotes        []string
-	GrepNotes            []string
-	TimelineNotes        []string
-	TimelineText         string
-	KeyHistoryRows       []store.KeyStateRow
-	KeyHistoryAt6        []store.KeyStateRow
+	TurnsCreated      int
+	ExplainPlan       packet.ExplainPlan
+	AblatedPlan       packet.ExplainPlan
+	LiveReceiptBefore store.Receipt
+	LiveReceiptAfter  store.Receipt
+	HistoricalReceipt store.Receipt
+	StaleAlerts       []StaleAlert
+	LiveDiff          ReceiptDiff
+	HistoricalDiff    ReceiptDiff
+	OpenBlockNotes    []string
+	OpenBlockIDs      []string
+	ExchangeNotes     []string
+	GrepNotes         []string
+	TimelineNotes     []string
+	TimelineText      string
+	KeyHistoryRows    []store.KeyStateRow
+	KeyHistoryAt6     []store.KeyStateRow
 }
 
-// RunDemo executes a self-contained, model-free showcase inside a temporary
+// RunDemo runs the model-free demo inside a temporary
 // directory (cleaned up automatically on return).
 func RunDemo() (DemoResult, error) {
 	var res DemoResult
@@ -51,7 +51,7 @@ func RunDemo() (DemoResult, error) {
 	cfg.WholeHistoryTokens = -1 // force atom selection so Explain shows ranking lanes even on 6 turns
 	cfg.AdaptivePack = true
 
-	e, err := Create(cfg, "demo", "ContextlessAI Living Memory Demo", "Demonstrate verbatim receipts, reactive invalidation, explain, and typed recall")
+	e, err := Create(cfg, "demo", "ContextlessAI demo", "Walk through receipts, their invalidation, explain and typed recall")
 	if err != nil {
 		return res, err
 	}
@@ -83,7 +83,7 @@ func RunDemo() (DemoResult, error) {
 	_ = e.Reindex()
 	res.TurnsCreated = len(saved)
 
-	// 1. Context Query Planner + causal ablation
+	// 1. Explain, with and without a dropped turn
 	q := "What is the database pool_size for the canary?"
 	plan, err := e.Explain(q, nil)
 	if err != nil {
@@ -96,7 +96,7 @@ func RunDemo() (DemoResult, error) {
 	}
 	res.AblatedPlan = ablated
 
-	// 2. Bind Living Answer receipts at snapshot #6:
+	// 2. Bind receipts at snapshot #6:
 	//    (a) Live watched receipt with verified anchor + absence predicate
 	//    (b) Historical cutoff receipt pinned to seq=6
 	atoms1 := packet.AtomsOf(saved[0])
@@ -141,7 +141,7 @@ func RunDemo() (DemoResult, error) {
 	_ = e.V.PutDecision(vault.Decision{
 		ID:        vault.NewID("dec"),
 		Statement: "Canary database raised to pool_size=64 after load testing",
-		Status: "active", Source: t7.ID, Quote: "raised database pool_size=64 after load testing",
+		Status:    "active", Source: t7.ID, Quote: "raised database pool_size=64 after load testing",
 		Supersedes: []string{d1.ID},
 	})
 	_ = e.Reindex()
@@ -184,24 +184,24 @@ func RunDemo() (DemoResult, error) {
 	return res, nil
 }
 
-// FormatDemo renders a DemoResult into a crisp CLI walkthrough.
+// FormatDemo renders a DemoResult as text.
 func FormatDemo(r DemoResult) string {
 	var b strings.Builder
-	b.WriteString("=== ContextlessAI End-to-End Demo (Model-Free) ===\n\n")
-	fmt.Fprintf(&b, "1. Context Query Planner (cx explain)\n")
+	b.WriteString("=== ContextlessAI demo (no model) ===\n\n")
+	fmt.Fprintf(&b, "1. Explain a packet (cx explain)\n")
 	fmt.Fprintf(&b, "   Query:   %q (class: %s, adaptive=%v)\n", r.ExplainPlan.Query, r.ExplainPlan.Class, r.ExplainPlan.AdaptivePack)
 	fmt.Fprintf(&b, "   Budget:  %d / %d tokens (brief %d tok, cache prefix %d%%)\n",
 		r.ExplainPlan.Budget.Planned, r.ExplainPlan.Budget.Cap, r.ExplainPlan.Budget.Brief, r.ExplainPlan.CacheSharePct)
 	if r.ExplainPlan.SubmodularCert != nil {
-		fmt.Fprintf(&b, "   Optimality certificate: >= %.1f%% of theoretical OPT (utility %.3f / LP upper %.3f)\n",
+		fmt.Fprintf(&b, "   Coverage score: %.1f%% of an upper bound on a stand-in objective (utility %.3f / bound %.3f)\n",
 			r.ExplainPlan.SubmodularCert.OptimalityPct, r.ExplainPlan.SubmodularCert.Utility, r.ExplainPlan.SubmodularCert.UpperBoundOPT)
 	}
 	fmt.Fprintf(&b, "   Lanes:   exact=%d full_text=%d value=%d working_set=%d\n",
 		r.ExplainPlan.LaneCounts["exact"], r.ExplainPlan.LaneCounts["full_text"], r.ExplainPlan.LaneCounts["value"], r.ExplainPlan.LaneCounts["working_set"])
-	fmt.Fprintf(&b, "   Causal ablation (-drop t000001): omitted count %d -> %d, brief %d -> %d tok\n\n",
+	fmt.Fprintf(&b, "   With -drop t000001 (removed after selection): omitted count %d -> %d, brief %d -> %d tok\n\n",
 		r.ExplainPlan.OmittedCount, r.AblatedPlan.OmittedCount, r.ExplainPlan.Budget.Brief, r.AblatedPlan.Budget.Brief)
 
-	fmt.Fprintf(&b, "2. Living Answers & Reactive Invalidation (snapshot #6 -> #7)\n")
+	fmt.Fprintf(&b, "2. Receipts and their invalidation (snapshot #6 -> #7)\n")
 	fmt.Fprintf(&b, "   Live receipt %s:\n", r.LiveReceiptAfter.ID)
 	fmt.Fprintf(&b, "     Before t000007: status=%s (snapshot #%d root %s)\n", r.LiveReceiptBefore.Status, r.LiveReceiptBefore.SnapshotSeq, short(r.LiveReceiptBefore.SnapshotRoot))
 	fmt.Fprintf(&b, "     After  t000007: status=%s · trigger=%s\n", r.LiveReceiptAfter.Status, r.LiveReceiptAfter.StaleReason)

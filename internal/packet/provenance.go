@@ -7,9 +7,12 @@ import (
 	"strings"
 )
 
-// How-Provenance Semiring Polynomials (Green, Karvounarakis & Tannen PODS 2007;
-// Asma et al. Oct 2026) and Instance-Dependent Submodular Knapsack Optimality
-// Certificates (Tang et al. 2020; Lin & Bilmes 2010).
+// Two diagnostics for cx explain. The first records which search channels
+// proposed a span, after the provenance polynomials of Green, Karvounarakis
+// and Tannen (PODS 2007). The second scores a packet against an upper bound
+// on a coverage objective. That objective is a stand-in: it is not the
+// selector that builds packets, so the score says nothing about them
+// (docs/ROADMAP.md, open defects).
 
 // ProvenanceTerm is one elementary retrieval channel derivation for a span.
 type ProvenanceTerm struct {
@@ -34,8 +37,8 @@ func (p *ProvenancePoly) Add(channel, detail string, reliability float64) {
 	p.Terms = append(p.Terms, ProvenanceTerm{Channel: channel, Detail: detail, Weight: reliability})
 }
 
-// CorroborationCount evaluates the polynomial in the Counting Semiring
-// (N, +, *, 0, 1): number of distinct retrieval channels deriving this span.
+// CorroborationCount is the number of distinct search channels that proposed
+// this span.
 func (p ProvenancePoly) CorroborationCount() int {
 	seen := map[string]bool{}
 	for _, t := range p.Terms {
@@ -44,8 +47,9 @@ func (p ProvenancePoly) CorroborationCount() int {
 	return len(seen)
 }
 
-// CombinedBelief evaluates the polynomial in the independent-evidence
-// Probabilistic Semiring ([0,1], 1-(1-a)(1-b), *, 0, 1).
+// CombinedBelief combines the channels' fixed weights as if they were
+// independent: 1 minus the product of (1 - weight). The weights are set by
+// hand, so this is a ranking aid, not a probability.
 func (p ProvenancePoly) CombinedBelief() float64 {
 	miss := 1.0
 	for _, t := range p.Terms {
@@ -54,8 +58,7 @@ func (p ProvenancePoly) CombinedBelief() float64 {
 	return math.Round((1.0-miss)*1000) / 1000
 }
 
-// Format renders a compact provenance token (Asma et al. 2026) showing both
-// how-lineage and semiring corroboration.
+// Format renders the channels and the two figures above as one short token.
 func (p ProvenancePoly) Format() string {
 	if len(p.Terms) == 0 {
 		return ""
@@ -73,25 +76,24 @@ func (p ProvenancePoly) Format() string {
 
 // SubmodularItem represents one candidate span for budgeted submodular selection.
 type SubmodularItem struct {
-	ID        string
-	Tokens    int
-	Prior     float64            // modular RRF / rank prior >= 0
-	Terms     map[string]float64 // query/value/entity features covered
-	Shingles  map[string]bool    // 3-word lexical shingles for novel-information saturation
+	ID       string
+	Tokens   int
+	Prior    float64            // modular RRF / rank prior >= 0
+	Terms    map[string]float64 // query/value/entity features covered
+	Shingles map[string]bool    // 3-word lexical shingles for novel-information saturation
 }
 
-// SubmodularCert reports the chosen knapsack subset alongside a rigorous
-// mathematical certificate bounding how close the achieved utility is to the
-// true NP-hard knapsack optimum OPT on this exact query instance.
+// SubmodularCert reports a greedily chosen subset and how close its utility
+// is to an upper bound, for the stand-in coverage objective only.
 type SubmodularCert struct {
-	SelectedIDs      []string `json:"selected_ids"`
-	TokensUsed       int      `json:"tokens_used"`
-	Budget           int      `json:"budget"`
-	Utility          float64  `json:"utility"`
-	UpperBoundOPT    float64  `json:"upper_bound_opt"`
-	OptimalityPct    float64  `json:"optimality_pct"`     // 100 * Utility / UpperBoundOPT (instance-tight!)
-	WorstCaseBoundPct float64 `json:"worst_case_bound_pct"` // 40.5% Tang et al. theorem
-	UsedSingleBest   bool     `json:"used_single_best"`
+	SelectedIDs       []string `json:"selected_ids"`
+	TokensUsed        int      `json:"tokens_used"`
+	Budget            int      `json:"budget"`
+	Utility           float64  `json:"utility"`
+	UpperBoundOPT     float64  `json:"upper_bound_opt"`
+	OptimalityPct     float64  `json:"optimality_pct"`       // 100 * Utility / UpperBoundOPT
+	WorstCaseBoundPct float64  `json:"worst_case_bound_pct"` // 40.5% Tang et al. theorem
+	UsedSingleBest    bool     `json:"used_single_best"`
 }
 
 // WordShingles extracts normalized 3-word lexical shingles so near-duplicate

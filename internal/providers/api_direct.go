@@ -50,7 +50,7 @@ func (a DirectAPIAdapter) FinalUsage([]byte, []Event) (Usage, error) {
 func (a DirectAPIAdapter) ExitClass(exitCode int, stderr []byte, events []Event) ExitClass {
 	return classifyExit(exitCode, stderr, events, nil)
 }
-func (a DirectAPIAdapter) InstructionFile() string              { return "" }
+func (a DirectAPIAdapter) InstructionFile() string                      { return "" }
 func (a DirectAPIAdapter) ProjectSettings(Invocation) map[string][]byte { return nil }
 
 // SplitBriefForCache splits a ContextlessAI brief into its stable prefix

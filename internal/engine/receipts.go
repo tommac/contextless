@@ -415,7 +415,7 @@ func (e *Engine) WatchQuestion(ctx context.Context, question string, asOfSeq int
 	return rcpt, rep, err
 }
 
-// RefreshReceipt performs Delta Resume: it feeds a fresh model call ONLY the
+// RefreshReceipt updates a stale receipt: it feeds a fresh model call only the
 // prior verified receipt (original answer + verified evidence) plus the delta
 // turns that arrived after the receipt's snapshot, keeping context constant as
 // the archive grows. Chains a new revision receipt and supersedes the old one.

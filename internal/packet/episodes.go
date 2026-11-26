@@ -27,7 +27,7 @@ const episodeGap = 30 * time.Minute
 //  4. Rank turns inside those episodes and return up to maxTurns turn IDs so
 //     the caller can interleave them with primary atom candidates before packing.
 //
-// Works seamlessly in both full-turn mode and metadata-only lazy mode (when
+// Works in both full-turn mode and metadata-only lazy mode (when
 // only metas + cards are in memory).
 func RouteEpisodeTurns(turns []vault.Turn, metas []store.TurnMeta, cards map[string]vault.Card, query string, beforeSeq, topEpisodes, maxTurns int) []string {
 	qw := ContentWords(query)

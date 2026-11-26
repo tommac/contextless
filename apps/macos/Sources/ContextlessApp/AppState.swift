@@ -146,7 +146,7 @@ final class AppState {
         async let n = CXRunner.run(binary: cxBinaryPath, arguments: ["notes", ws.name])
         let (vRes, rRes, nRes) = await (v, r, n)
         viewsOutput = vRes.combinedOutput.isEmpty ? "No active materialized key assertions." : vRes.combinedOutput
-        receiptsOutput = rRes.combinedOutput.isEmpty ? "No Living Answer receipts recorded yet." : rRes.combinedOutput
+        receiptsOutput = rRes.combinedOutput.isEmpty ? "No receipts recorded yet." : rRes.combinedOutput
         notesOutput = nRes.combinedOutput.isEmpty ? "No Atlas notes imported yet." : nRes.combinedOutput
         isLoadingVaultDetails = false
     }

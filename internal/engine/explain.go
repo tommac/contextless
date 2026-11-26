@@ -18,8 +18,8 @@ import (
 // query-planner breakdown: query class, lane hits, included/skipped atoms,
 // section token costs, cache-prefix sharing against the previous message,
 // prefix-closed knapsack recommendation, and estimated cost/latency per
-// routed profile. dropIDs supports causal ablation testing by excluding the
-// named turn/atom IDs from selection.
+// routed profile. dropIDs removes the named turn/atom IDs from the built
+// packet. Nothing is selected again, so it does not show cause.
 func (e *Engine) Explain(msg string, dropIDs []string) (packet.ExplainPlan, error) {
 	focus := e.nextTurn(msg)
 	cands, _ := e.R.Candidates(config.RoleResponder, nil)
@@ -267,7 +267,7 @@ func (e *Engine) Explain(msg string, dropIDs []string) (packet.ExplainPlan, erro
 		estimates = append(estimates, pe)
 	}
 
-	// Compute mathematical Submodular Knapsack Optimality Certificate + active
+	// Compute the coverage score against a stand-in objective, plus active
 	// materialized key-state views + 2-hop rare-key PPR bridges.
 	var subCert *packet.SubmodularCert
 	if len(diag.Fused) > 0 {

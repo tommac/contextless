@@ -32,9 +32,9 @@ import (
 // block decompress and SHA-verify that block at most once.
 
 const (
-	packMagic          = "CXPK0001"
-	packHeaderBytes    = 56
-	DefaultPackBlock   = 4096
+	packMagic        = "CXPK0001"
+	packHeaderBytes  = 56
+	DefaultPackBlock = 4096
 )
 
 type packBlockMeta struct {

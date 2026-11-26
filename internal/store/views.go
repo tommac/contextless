@@ -33,8 +33,8 @@ type KeyStateRow struct {
 	AtomK           int    `json:"atom_k"`
 	RawValue        string `json:"raw_value"`
 	ValidFromSeq    int    `json:"valid_from_seq"`
-	ValidUntilSeq   int    `json:"valid_until_seq"`    // 0 = currently active
-	SupersededBySeq int    `json:"superseded_by_seq"`  // 0 = not superseded
+	ValidUntilSeq   int    `json:"valid_until_seq"`   // 0 = currently active
+	SupersededBySeq int    `json:"superseded_by_seq"` // 0 = not superseded
 	Quote           string `json:"quote,omitempty"`
 }
 

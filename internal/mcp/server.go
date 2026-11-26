@@ -118,7 +118,7 @@ func (s *Server) handle(ctx context.Context, req rpcRequest) rpcResponse {
 			"resources": []map[string]any{
 				{"uri": "cx://session", "name": "Workspace Session", "mimeType": "text/markdown"},
 				{"uri": "cx://decisions", "name": "Decisions in Force", "mimeType": "application/json"},
-				{"uri": "cx://receipts", "name": "Living Answer Receipts", "mimeType": "application/json"},
+				{"uri": "cx://receipts", "name": "Answer receipts", "mimeType": "application/json"},
 			},
 		})
 	case "resources/read":
@@ -517,7 +517,7 @@ func toolCatalog() []map[string]any {
 				"type": "object", "required": []string{"query"},
 				"properties": map[string]any{
 					"query":    prop("string", "The question to explain"),
-					"drop_ids": arrStr("Optional turn or atom IDs to ablate for causal testing"),
+					"drop_ids": arrStr("Optional turn or atom IDs to remove from the built packet (nothing is selected again)"),
 				},
 			},
 		},
@@ -547,7 +547,7 @@ func toolCatalog() []map[string]any {
 		},
 		{
 			"name":        "cx_append_turn",
-			"description": "Append a verbatim turn to the vault, index it, and return any Living Answer staleness alerts triggered by the new record.",
+			"description": "Append a verbatim turn to the vault, index it, and return the receipts the new record makes stale.",
 			"inputSchema": map[string]any{
 				"type": "object", "required": []string{"body"},
 				"properties": map[string]any{
@@ -572,7 +572,7 @@ func toolCatalog() []map[string]any {
 		},
 		{
 			"name":        "cx_watch_status",
-			"description": "List Living Answer Query Receipts, optionally filtered by status (current, stale, superseded).",
+			"description": "List answer receipts, optionally filtered by status (current, stale, superseded).",
 			"inputSchema": map[string]any{
 				"type":       "object",
 				"properties": map[string]any{"status": prop("string", "Optional status filter")},

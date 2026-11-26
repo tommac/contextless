@@ -55,11 +55,11 @@ type TuneCandidate struct {
 // strict train / held-out split so settings that overfit are automatically
 // rejected.
 type TuneReport struct {
-	Baseline    TuneCandidate `json:"baseline"`
-	Best        TuneCandidate `json:"best"`
-	Adopted     bool          `json:"adopted"`
-	Reason      string        `json:"reason"`
-	Evaluated   int           `json:"evaluated"`
+	Baseline    TuneCandidate  `json:"baseline"`
+	Best        TuneCandidate  `json:"best"`
+	Adopted     bool           `json:"adopted"`
+	Reason      string         `json:"reason"`
+	Evaluated   int            `json:"evaluated"`
 	SignalStats map[string]int `json:"signal_stats,omitempty"`
 }
 

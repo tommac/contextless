@@ -86,7 +86,7 @@ func TestUIEndpoints(t *testing.T) {
 	cfg.Sandbox = false
 	cfg.WholeHistoryTokens = -1
 
-	e, err := engine.Create(cfg, "uitest", "UI Test Vault", "Exercise all X-Ray endpoints")
+	e, err := engine.Create(cfg, "uitest", "UI Test Vault", "Exercise all dashboard endpoints")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -108,7 +108,7 @@ func TestUIEndpoints(t *testing.T) {
 	// GET /
 	rec := httptest.NewRecorder()
 	h.ServeHTTP(rec, localReq("GET", "/", nil))
-	if rec.Code != http.StatusOK || !strings.Contains(rec.Body.String(), "Context X-Ray") {
+	if rec.Code != http.StatusOK || !strings.Contains(rec.Body.String(), "packet inspector") {
 		t.Fatalf("GET / failed: code=%d", rec.Code)
 	}
 
@@ -134,7 +134,7 @@ func TestUIEndpoints(t *testing.T) {
 		}
 	}
 
-	// POST /api/explain with adaptive + causal drop
+	// POST /api/explain with adaptive + drop
 	body := bytes.NewBufferString(`{"query":"What is pool_size?","adaptive":true,"drop_ids":["t000001"]}`)
 	w := httptest.NewRecorder()
 	h.ServeHTTP(w, localReq("POST", "/api/explain", body))

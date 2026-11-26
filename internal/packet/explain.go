@@ -77,21 +77,21 @@ type LaneHitEntry struct {
 
 // ExplainPlan is the query-planner report produced by `cx explain`.
 type ExplainPlan struct {
-	Query             string            `json:"query"`
-	Class             QueryClass        `json:"class"`
-	SelectedProfile   string            `json:"selected_profile"`
-	WholeHistory      bool              `json:"whole_history"`
-	AdaptivePack      bool              `json:"adaptive_pack"`
-	Budget            Budget            `json:"budget"`
-	Sections          []SectionCost     `json:"sections"`
-	OmittedCount      int               `json:"omitted_count"`
-	OmittedHandle     string            `json:"omitted_handle,omitempty"`
-	CachePrefixTokens int               `json:"cache_prefix_tokens"`
-	CacheSharePct     int               `json:"cache_share_pct"`
-	LaneCounts        map[string]int    `json:"lane_counts"`
-	TopCandidates     []LaneHitEntry    `json:"top_candidates"`
-	ProfileEstimates  []ProfileEstimate `json:"profile_estimates"`
-	CacheAdvice       CachePolicyAdvice `json:"cache_advice"`
+	Query             string              `json:"query"`
+	Class             QueryClass          `json:"class"`
+	SelectedProfile   string              `json:"selected_profile"`
+	WholeHistory      bool                `json:"whole_history"`
+	AdaptivePack      bool                `json:"adaptive_pack"`
+	Budget            Budget              `json:"budget"`
+	Sections          []SectionCost       `json:"sections"`
+	OmittedCount      int                 `json:"omitted_count"`
+	OmittedHandle     string              `json:"omitted_handle,omitempty"`
+	CachePrefixTokens int                 `json:"cache_prefix_tokens"`
+	CacheSharePct     int                 `json:"cache_share_pct"`
+	LaneCounts        map[string]int      `json:"lane_counts"`
+	TopCandidates     []LaneHitEntry      `json:"top_candidates"`
+	ProfileEstimates  []ProfileEstimate   `json:"profile_estimates"`
+	CacheAdvice       CachePolicyAdvice   `json:"cache_advice"`
 	PrefixOpt         *PrefixOptResult    `json:"prefix_opt,omitempty"`
 	SubmodularCert    *SubmodularCert     `json:"submodular_cert,omitempty"`
 	ActiveKeyViews    []store.KeyStateRow `json:"active_key_views,omitempty"`
@@ -120,11 +120,11 @@ func FormatExplain(p ExplainPlan) string {
 			p.PrefixOpt.BilledTokens, p.PrefixOpt.Utility, p.PrefixOpt.UsedFallback)
 	}
 	if p.SubmodularCert != nil {
-		fmt.Fprintf(&b, "  optimality: >= %.1f%% of theoretical OPT (utility %.3f / LP upper bound %.3f; worst-case theorem >= %.1f%%)\n",
+		fmt.Fprintf(&b, "  coverage score: %.1f%% of an upper bound on a stand-in objective (utility %.3f / bound %.3f; worst-case guarantee %.1f%%)\n",
 			p.SubmodularCert.OptimalityPct, p.SubmodularCert.Utility, p.SubmodularCert.UpperBoundOPT, p.SubmodularCert.WorstCaseBoundPct)
 	}
 	if len(p.DroppedForTest) > 0 {
-		fmt.Fprintf(&b, "  causal ablation: dropped %s\n", strings.Join(p.DroppedForTest, ", "))
+		fmt.Fprintf(&b, "  dropped after selection (nothing selected again): %s\n", strings.Join(p.DroppedForTest, ", "))
 	}
 	if p.Index.SnapshotSeq > 0 || len(p.Index.LaneErrors) > 0 || !p.Index.Complete {
 		root := p.Index.SnapshotRoot

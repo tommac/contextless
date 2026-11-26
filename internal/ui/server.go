@@ -1,8 +1,7 @@
-// Package ui embeds a zero-dependency single-page Context X-Ray web dashboard
-// served directly from the cx binary (`cx ui <workspace>`). It visualizes
-// compiled packets, ranking lanes, cache-prefix savings, causal ablations,
-// Living Answer receipts with verified diffs, typed recall verbs, and archive
-// telemetry.
+// Package ui is a single-page local dashboard served from the cx binary
+// (`cx ui <workspace>`). It shows built packets, ranking lanes, the reusable
+// prefix, what -drop removes, receipts with their diffs, typed recall, and
+// run statistics.
 package ui
 
 import (
@@ -80,7 +79,7 @@ func guard(next http.Handler, allowed map[string]bool) http.Handler {
 	})
 }
 
-// NewHandler builds the HTTP handler for the Context X-Ray dashboard backed
+// NewHandler builds the HTTP handler for the dashboard backed
 // by e, answering only under a loopback name.
 func NewHandler(e *engine.Engine) http.Handler { return NewHandlerFor(e, "") }
 
@@ -441,7 +440,7 @@ func newMux(e *engine.Engine) http.Handler {
 	return mux
 }
 
-// Serve runs the local Context X-Ray web dashboard until ctx is canceled.
+// Serve runs the local dashboard until ctx is canceled.
 func Serve(ctx context.Context, e *engine.Engine, addr string) error {
 	if strings.TrimSpace(addr) == "" {
 		addr = "127.0.0.1:8787"
@@ -474,7 +473,7 @@ const indexHTML = `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ContextlessAI · Context X-Ray</title>
+<title>ContextlessAI · packet inspector</title>
 <style>
   :root {
     --bg: #0b0f17; --panel: #131926; --panel-2: #192234; --border: #25324a;
@@ -527,13 +526,13 @@ const indexHTML = `<!doctype html>
 <header>
   <h1>
     <span>ContextlessAI</span>
-    <span class="pill accent">Context X-Ray</span>
+    <span class="pill accent">Packet inspector</span>
     <span id="hdr-title" class="pill">loading…</span>
     <span id="hdr-snap" class="pill"></span>
   </h1>
   <nav>
-    <button class="active" data-tab="xray">Packet X-Ray</button>
-    <button data-tab="receipts">Living Answers <span id="stale-badge"></span></button>
+    <button class="active" data-tab="xray">Packet</button>
+    <button data-tab="receipts">Receipts <span id="stale-badge"></span></button>
     <button data-tab="archive">Archive &amp; Recall Lab</button>
   </nav>
 </header>
@@ -541,9 +540,9 @@ const indexHTML = `<!doctype html>
 <main>
   <section id="tab-xray" class="grid">
     <div class="card">
-      <h2>Context Query Planner (Zero-Model Dry Run)</h2>
+      <h2>Explain a packet (no model call)</h2>
       <div class="row">
-        <input id="q-input" type="text" placeholder="Ask a question to inspect packet compilation, ranking lanes, cache prefix, and causal drops…">
+        <input id="q-input" type="text" placeholder="Ask a question to see its packet, the ranking lanes and the reusable prefix…">
         <input id="drop-input" type="text" style="max-width:240px" placeholder="Causal -drop IDs (e.g. t000001)">
         <label class="check"><input id="adaptive-chk" type="checkbox"> Adaptive Pack</label>
         <button class="primary" id="btn-explain">Explain Packet</button>
@@ -694,7 +693,7 @@ async function runExplain() {
   if (d.error) { alert(d.error); return; }
   const p = d.plan;
   document.getElementById('xray-results').classList.remove('hidden');
-  const optStr = p.submodular_cert ? ('>= ' + p.submodular_cert.optimality_pct.toFixed(1) + '% OPT') : 'whole / n.a.';
+  const optStr = p.submodular_cert ? ('>= ' + p.submodular_cert.optimality_pct.toFixed(1) + '% of stand-in bound') : 'whole / n.a.';
   document.getElementById('xray-metrics').innerHTML = [
     ['Query Class', p.class, 'profile: ' + p.selected_profile],
     ['Planned Budget', p.budget.planned + ' / ' + p.budget.cap, 'brief ' + p.budget.brief + ' tok · cert ' + optStr],
