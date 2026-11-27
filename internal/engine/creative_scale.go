@@ -16,24 +16,77 @@ import (
 
 const scaleBoard = "Scale replay.canvas"
 const scaleReaderBytes = 4096
+const fixedDesignID = "a-fixed"
 
 type creativeScaleResult struct {
-	Unrelated       int    `json:"unrelated_designs"`
-	Edit            string `json:"edit"`
-	Method          string `json:"method"`
-	Required        int    `json:"required_reviews"`
-	Candidates      int    `json:"candidate_reviews_before_ceiling"`
-	CandidateMisses int    `json:"missed_before_ceiling"`
-	CandidateExtras int    `json:"unnecessary_before_ceiling"`
-	Packed          int    `json:"reviews_in_packet"`
-	Missed          int    `json:"missed_after_ceiling"`
-	Unnecessary     int    `json:"unnecessary_after_ceiling"`
-	PacketBytes     int    `json:"packet_bytes"`
-	Opened          int    `json:"historical_bodies_reopened"`
-	HistoricalBytes int    `json:"exact_historical_excerpt_bytes"`
-	Passages        int    `json:"old_and_new_passages_in_packet"`
-	LookupNS        int64  `json:"selection_ns"`
-	TotalNS         int64  `json:"selection_and_packet_ns"`
+	Unrelated       int              `json:"unrelated_designs"`
+	Edit            string           `json:"edit"`
+	Method          string           `json:"method"`
+	Required        int              `json:"required_reviews"`
+	Candidates      int              `json:"candidate_reviews_before_ceiling"`
+	CandidateMisses int              `json:"missed_before_ceiling"`
+	CandidateExtras int              `json:"unnecessary_before_ceiling"`
+	Packed          int              `json:"reviews_in_packet"`
+	Missed          int              `json:"missed_after_ceiling"`
+	Unnecessary     int              `json:"unnecessary_after_ceiling"`
+	PacketBytes     int              `json:"packet_bytes"`
+	Opened          int              `json:"historical_bodies_reopened"`
+	HistoricalBytes int              `json:"exact_historical_excerpt_bytes"`
+	Passages        int              `json:"old_and_new_passages_in_packet"`
+	LookupNS        int64            `json:"selection_ns"`
+	TotalNS         int64            `json:"selection_and_packet_ns"`
+	Repair          reservationProbe `json:"scripted_repair"`
+}
+
+// Reservation misses grow the allocation until its configured reserve is full,
+// then replace in FIFO order. With a stale reserve the physical allocator can
+// refuse growth before the design reaches its own replacement threshold.
+func serveReservationRequests(physical, reserve int, requests []int) (served, replacements int) {
+	resident := make([]int, 0, physical)
+	victim := 0
+	for _, passage := range requests {
+		if !slices.Contains(resident, passage) {
+			if len(resident) < reserve {
+				if len(resident) == physical {
+					continue
+				}
+				resident = append(resident, passage)
+			} else {
+				resident[victim] = passage
+				victim = (victim + 1) % len(resident)
+				replacements++
+			}
+		}
+		served++
+	}
+	return served, replacements
+}
+
+type reservationProbe struct {
+	Design             string `json:"design"`
+	Admitted           bool   `json:"admitted_for_review"`
+	Physical           int    `json:"physical_slots"`
+	ReserveBefore      int    `json:"reserve_before"`
+	ReserveAfter       int    `json:"reserve_after"`
+	Requests           int    `json:"requests"`
+	ServedBefore       int    `json:"served_before"`
+	ServedAfter        int    `json:"served_after"`
+	ReplacementsBefore int    `json:"replacements_before"`
+	ReplacementsAfter  int    `json:"replacements_after"`
+}
+
+func probeReservationRepair(physical int, admitted bool) reservationProbe {
+	// The two passes exercise full allocations, replacement, and hits on the
+	// four resident pages of a design that is still waiting for more slots.
+	requests := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+	r := reservationProbe{Design: fixedDesignID, Admitted: admitted, Physical: physical,
+		ReserveBefore: 8, ReserveAfter: 8, Requests: len(requests)}
+	if admitted {
+		r.ReserveAfter = physical
+	}
+	r.ServedBefore, r.ReplacementsBefore = serveReservationRequests(physical, r.ReserveBefore, requests)
+	r.ServedAfter, r.ReplacementsAfter = serveReservationRequests(physical, r.ReserveAfter, requests)
+	return r
 }
 
 type creativeScaleReport struct {
@@ -49,6 +102,7 @@ func scaleCard(key, role, body string) CreativeCard {
 
 type scaleEdit struct {
 	label, key, message, needs string
+	physicalSlots              int
 	snapshot                   CreativeCanvas
 	old                        CreativeCard
 	replacement                *CreativeCard
@@ -65,7 +119,7 @@ func scaleFixtures(e *Engine) ([]scaleEdit, error) {
 		edges               []string
 	}
 	for _, f := range []fixture{
-		{"a-fixed", "Reserve eight internal slots", "How should the passage cache reserve slots?", []string{"contract"}},
+		{fixedDesignID, "Reserve eight internal slots", "How should the passage cache reserve slots?", []string{"contract"}},
 		{"b-backed", "Borrow slots from the spill file if needed", "What can support the passage cache reserve?", []string{"contract", "fallback"}},
 		{"c-display", "Color the meter from the display palette", "How should the cache display mark its slots?", []string{"display"}},
 	} {
@@ -84,13 +138,16 @@ func scaleFixtures(e *Engine) ([]scaleEdit, error) {
 	}
 
 	var edits []scaleEdit
-	for _, change := range []struct{ label, key, replacement, message, needs string }{
-		{"constraint-tightened", "contract", "Only four entries can remain resident.", "Only four entries can remain resident.", "a-fixed"},
-		{"unrelated-edit", "display", "The cache display uses green labels for reserved slots.", "The cache display uses green labels for reserved slots.", ""},
-		{"one-support-withdrawn", "fallback", "", "The spill file guarantee has been withdrawn.", ""},
+	for _, change := range []struct {
+		label, key, replacement, message, needs string
+		physicalSlots                           int
+	}{
+		{"constraint-tightened", "contract", "Only four entries can remain resident.", "Only four entries can remain resident.", fixedDesignID, 4},
+		{"unrelated-edit", "display", "The cache display uses green labels for reserved slots.", "The cache display uses green labels for reserved slots.", "", 8},
+		{"one-support-withdrawn", "fallback", "", "The spill file guarantee has been withdrawn.", "", 8},
 	} {
 		edit := scaleEdit{label: change.label, key: change.key, message: change.message, needs: change.needs,
-			snapshot: CreativeCanvas{Question: original.Question}}
+			physicalSlots: change.physicalSlots, snapshot: CreativeCanvas{Question: original.Question}}
 		for _, card := range original.Cards {
 			if card.Key != change.key {
 				edit.snapshot.Cards = append(edit.snapshot.Cards, card)
@@ -227,6 +284,7 @@ func measureScale(e *Engine, unrelated int, edit scaleEdit, method string) (crea
 	r.Missed = r.Required
 	if r.Candidates == 0 {
 		r.TotalNS = time.Since(start).Nanoseconds()
+		r.Repair = probeReservationRepair(edit.physicalSlots, false)
 		return r, nil
 	}
 
@@ -248,6 +306,7 @@ func measureScale(e *Engine, unrelated int, edit scaleEdit, method string) (crea
 		return r, err
 	}
 	defer rows.Close()
+	fixedAdmitted := false
 	for rows.Next() {
 		var id, question, design string
 		if err := rows.Scan(&id, &question, &design); err != nil {
@@ -271,6 +330,9 @@ func measureScale(e *Engine, unrelated int, edit scaleEdit, method string) (crea
 			break
 		}
 		r.Packed++
+		if id == fixedDesignID {
+			fixedAdmitted = true
+		}
 		r.PacketBytes += len(raw) + 1
 		r.Passages++
 		if newText != "" {
@@ -283,6 +345,7 @@ func measureScale(e *Engine, unrelated int, edit scaleEdit, method string) (crea
 		}
 	}
 	r.TotalNS = time.Since(start).Nanoseconds()
+	r.Repair = probeReservationRepair(edit.physicalSlots, fixedAdmitted)
 	return r, rows.Err()
 }
 
@@ -311,7 +374,9 @@ func runCreativeScale(dir string, sizes []int) (creativeScaleReport, error) {
 			"uses its ordinary invalidation rules with indexed absence discovery, and persists its alerts. Review-all counts every receipt and streams in ID order until full. " +
 			"Every selector uses the same per-design JSONL encoding. Packet bytes count the actual serialized records admitted to a simulated reader under one ceiling per edit. " +
 			"No model is called. Each nonempty selection fetches and verifies the old body once; repeated excerpts count toward the byte ceiling every time. " +
-			"Timings are single observations on one connection after each bulk load, with uncontrolled caches. Selection and packet timing includes enumeration and serialization; fixture creation is excluded.",
+			"Timings are single observations on one connection after each bulk load, with uncontrolled caches. Selection and packet timing includes enumeration and serialization; fixture creation and repair replay are excluded. " +
+			"Scripted repair replays two cycles over twelve passage IDs on the edited hardware with a fresh allocation before each trial. The fixed design grows until its configured reserve is full, " +
+			"then replaces FIFO. An unavailable physical slot rejects a growth request. When its ID is admitted to the packet, every selector applies the same repair: match the reserve to the physical capacity.",
 	}
 	s, err := store.Open(dir)
 	if err != nil {

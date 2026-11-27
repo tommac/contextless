@@ -1,5 +1,5 @@
 {
-  "methodology": "Model-free replay on a scratch disk-backed SQLite WAL database. Each background design has a distinct indexed source edge and lexical receipt. The three test designs sort before background designs, favoring review-all. The source selector receives the edited edge ID. The keyword watcher receives the edit text, uses its ordinary invalidation rules with indexed absence discovery, and persists its alerts. Review-all counts every receipt and streams in ID order until full. Every selector uses the same per-design JSONL encoding. Packet bytes count the actual serialized records admitted to a simulated reader under one ceiling per edit. No model is called. Each nonempty selection fetches and verifies the old body once; repeated excerpts count toward the byte ceiling every time. Timings are single observations on one connection after each bulk load, with uncontrolled caches. Selection and packet timing includes enumeration and serialization; fixture creation is excluded.",
+  "methodology": "Model-free replay on a scratch disk-backed SQLite WAL database. Each background design has a distinct indexed source edge and lexical receipt. The three test designs sort before background designs, favoring review-all. The source selector receives the edited edge ID. The keyword watcher receives the edit text, uses its ordinary invalidation rules with indexed absence discovery, and persists its alerts. Review-all counts every receipt and streams in ID order until full. Every selector uses the same per-design JSONL encoding. Packet bytes count the actual serialized records admitted to a simulated reader under one ceiling per edit. No model is called. Each nonempty selection fetches and verifies the old body once; repeated excerpts count toward the byte ceiling every time. Timings are single observations on one connection after each bulk load, with uncontrolled caches. Selection and packet timing includes enumeration and serialization; fixture creation and repair replay are excluded. Scripted repair replays two cycles over twelve passage IDs on the edited hardware with a fresh allocation before each trial. The fixed design grows until its configured reserve is full, then replaces FIFO. An unavailable physical slot rejects a growth request. When its ID is admitted to the packet, every selector applies the same repair: match the reserve to the physical capacity.",
   "reader_bytes_per_edit": 4096,
   "results": [
     {
@@ -17,8 +17,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 45,
       "old_and_new_passages_in_packet": 2,
-      "selection_ns": 184583,
-      "selection_and_packet_ns": 234333
+      "selection_ns": 135708,
+      "selection_and_packet_ns": 173500,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 4,
+        "reserve_before": 8,
+        "reserve_after": 4,
+        "requests": 24,
+        "served_before": 8,
+        "served_after": 24,
+        "replacements_before": 0,
+        "replacements_after": 20
+      }
     },
     {
       "unrelated_designs": 1000,
@@ -35,8 +47,20 @@
       "historical_bodies_reopened": 0,
       "exact_historical_excerpt_bytes": 0,
       "old_and_new_passages_in_packet": 0,
-      "selection_ns": 148875,
-      "selection_and_packet_ns": 148875
+      "selection_ns": 125458,
+      "selection_and_packet_ns": 125500,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": false,
+        "physical_slots": 4,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 8,
+        "served_after": 8,
+        "replacements_before": 0,
+        "replacements_after": 0
+      }
     },
     {
       "unrelated_designs": 1000,
@@ -53,8 +77,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 45,
       "old_and_new_passages_in_packet": 32,
-      "selection_ns": 9459,
-      "selection_and_packet_ns": 39625
+      "selection_ns": 8083,
+      "selection_and_packet_ns": 33458,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 4,
+        "reserve_before": 8,
+        "reserve_after": 4,
+        "requests": 24,
+        "served_before": 8,
+        "served_after": 24,
+        "replacements_before": 0,
+        "replacements_after": 20
+      }
     },
     {
       "unrelated_designs": 1000,
@@ -71,8 +107,20 @@
       "historical_bodies_reopened": 0,
       "exact_historical_excerpt_bytes": 0,
       "old_and_new_passages_in_packet": 0,
-      "selection_ns": 66250,
-      "selection_and_packet_ns": 66291
+      "selection_ns": 58000,
+      "selection_and_packet_ns": 58000,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": false,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 1000,
@@ -89,8 +137,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 54,
       "old_and_new_passages_in_packet": 6,
-      "selection_ns": 5067125,
-      "selection_and_packet_ns": 5130708
+      "selection_ns": 1206667,
+      "selection_and_packet_ns": 1241083,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 1000,
@@ -107,8 +167,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 54,
       "old_and_new_passages_in_packet": 30,
-      "selection_ns": 15292,
-      "selection_and_packet_ns": 52708
+      "selection_ns": 12000,
+      "selection_and_packet_ns": 39416,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 1000,
@@ -125,8 +197,20 @@
       "historical_bodies_reopened": 0,
       "exact_historical_excerpt_bytes": 0,
       "old_and_new_passages_in_packet": 0,
-      "selection_ns": 86084,
-      "selection_and_packet_ns": 86084
+      "selection_ns": 74459,
+      "selection_and_packet_ns": 74500,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": false,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 1000,
@@ -143,8 +227,20 @@
       "historical_bodies_reopened": 0,
       "exact_historical_excerpt_bytes": 0,
       "old_and_new_passages_in_packet": 0,
-      "selection_ns": 64833,
-      "selection_and_packet_ns": 64833
+      "selection_ns": 67125,
+      "selection_and_packet_ns": 67125,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": false,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 1000,
@@ -161,8 +257,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 72,
       "old_and_new_passages_in_packet": 19,
-      "selection_ns": 6667,
-      "selection_and_packet_ns": 32458
+      "selection_ns": 6750,
+      "selection_and_packet_ns": 33625,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 100000,
@@ -179,8 +287,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 45,
       "old_and_new_passages_in_packet": 2,
-      "selection_ns": 154292,
-      "selection_and_packet_ns": 193583
+      "selection_ns": 175625,
+      "selection_and_packet_ns": 237875,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 4,
+        "reserve_before": 8,
+        "reserve_after": 4,
+        "requests": 24,
+        "served_before": 8,
+        "served_after": 24,
+        "replacements_before": 0,
+        "replacements_after": 20
+      }
     },
     {
       "unrelated_designs": 100000,
@@ -197,8 +317,20 @@
       "historical_bodies_reopened": 0,
       "exact_historical_excerpt_bytes": 0,
       "old_and_new_passages_in_packet": 0,
-      "selection_ns": 143875,
-      "selection_and_packet_ns": 143875
+      "selection_ns": 151250,
+      "selection_and_packet_ns": 151250,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": false,
+        "physical_slots": 4,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 8,
+        "served_after": 8,
+        "replacements_before": 0,
+        "replacements_after": 0
+      }
     },
     {
       "unrelated_designs": 100000,
@@ -215,8 +347,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 45,
       "old_and_new_passages_in_packet": 32,
-      "selection_ns": 537708,
-      "selection_and_packet_ns": 568208
+      "selection_ns": 714125,
+      "selection_and_packet_ns": 761833,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 4,
+        "reserve_before": 8,
+        "reserve_after": 4,
+        "requests": 24,
+        "served_before": 8,
+        "served_after": 24,
+        "replacements_before": 0,
+        "replacements_after": 20
+      }
     },
     {
       "unrelated_designs": 100000,
@@ -233,8 +377,20 @@
       "historical_bodies_reopened": 0,
       "exact_historical_excerpt_bytes": 0,
       "old_and_new_passages_in_packet": 0,
-      "selection_ns": 69750,
-      "selection_and_packet_ns": 69792
+      "selection_ns": 87959,
+      "selection_and_packet_ns": 88000,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": false,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 100000,
@@ -251,8 +407,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 54,
       "old_and_new_passages_in_packet": 6,
-      "selection_ns": 1054750,
-      "selection_and_packet_ns": 1086709
+      "selection_ns": 1023833,
+      "selection_and_packet_ns": 1059333,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 100000,
@@ -269,8 +437,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 54,
       "old_and_new_passages_in_packet": 30,
-      "selection_ns": 399458,
-      "selection_and_packet_ns": 424333
+      "selection_ns": 625083,
+      "selection_and_packet_ns": 655166,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 100000,
@@ -287,8 +467,20 @@
       "historical_bodies_reopened": 0,
       "exact_historical_excerpt_bytes": 0,
       "old_and_new_passages_in_packet": 0,
-      "selection_ns": 67417,
-      "selection_and_packet_ns": 67459
+      "selection_ns": 83417,
+      "selection_and_packet_ns": 83458,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": false,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 100000,
@@ -305,8 +497,20 @@
       "historical_bodies_reopened": 0,
       "exact_historical_excerpt_bytes": 0,
       "old_and_new_passages_in_packet": 0,
-      "selection_ns": 66375,
-      "selection_and_packet_ns": 66375
+      "selection_ns": 74917,
+      "selection_and_packet_ns": 74917,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": false,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 100000,
@@ -323,8 +527,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 72,
       "old_and_new_passages_in_packet": 19,
-      "selection_ns": 492625,
-      "selection_and_packet_ns": 565750
+      "selection_ns": 521750,
+      "selection_and_packet_ns": 609667,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 1000000,
@@ -341,8 +557,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 45,
       "old_and_new_passages_in_packet": 2,
-      "selection_ns": 11297334,
-      "selection_and_packet_ns": 12598292
+      "selection_ns": 166459,
+      "selection_and_packet_ns": 202375,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 4,
+        "reserve_before": 8,
+        "reserve_after": 4,
+        "requests": 24,
+        "served_before": 8,
+        "served_after": 24,
+        "replacements_before": 0,
+        "replacements_after": 20
+      }
     },
     {
       "unrelated_designs": 1000000,
@@ -359,8 +587,20 @@
       "historical_bodies_reopened": 0,
       "exact_historical_excerpt_bytes": 0,
       "old_and_new_passages_in_packet": 0,
-      "selection_ns": 2167708,
-      "selection_and_packet_ns": 2167791
+      "selection_ns": 150333,
+      "selection_and_packet_ns": 150375,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": false,
+        "physical_slots": 4,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 8,
+        "served_after": 8,
+        "replacements_before": 0,
+        "replacements_after": 0
+      }
     },
     {
       "unrelated_designs": 1000000,
@@ -377,8 +617,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 45,
       "old_and_new_passages_in_packet": 32,
-      "selection_ns": 898257083,
-      "selection_and_packet_ns": 898545792
+      "selection_ns": 6185083,
+      "selection_and_packet_ns": 6294041,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 4,
+        "reserve_before": 8,
+        "reserve_after": 4,
+        "requests": 24,
+        "served_before": 8,
+        "served_after": 24,
+        "replacements_before": 0,
+        "replacements_after": 20
+      }
     },
     {
       "unrelated_designs": 1000000,
@@ -395,8 +647,20 @@
       "historical_bodies_reopened": 0,
       "exact_historical_excerpt_bytes": 0,
       "old_and_new_passages_in_packet": 0,
-      "selection_ns": 178083,
-      "selection_and_packet_ns": 178125
+      "selection_ns": 104209,
+      "selection_and_packet_ns": 104250,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": false,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 1000000,
@@ -413,8 +677,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 54,
       "old_and_new_passages_in_packet": 6,
-      "selection_ns": 1786625,
-      "selection_and_packet_ns": 1837083
+      "selection_ns": 1293667,
+      "selection_and_packet_ns": 1338250,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 1000000,
@@ -431,8 +707,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 54,
       "old_and_new_passages_in_packet": 30,
-      "selection_ns": 21163833,
-      "selection_and_packet_ns": 21280083
+      "selection_ns": 6263083,
+      "selection_and_packet_ns": 6335875,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 1000000,
@@ -449,8 +737,20 @@
       "historical_bodies_reopened": 0,
       "exact_historical_excerpt_bytes": 0,
       "old_and_new_passages_in_packet": 0,
-      "selection_ns": 115500,
-      "selection_and_packet_ns": 115500
+      "selection_ns": 92709,
+      "selection_and_packet_ns": 92709,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": false,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 1000000,
@@ -467,8 +767,20 @@
       "historical_bodies_reopened": 0,
       "exact_historical_excerpt_bytes": 0,
       "old_and_new_passages_in_packet": 0,
-      "selection_ns": 88667,
-      "selection_and_packet_ns": 88667
+      "selection_ns": 68083,
+      "selection_and_packet_ns": 68083,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": false,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     },
     {
       "unrelated_designs": 1000000,
@@ -485,8 +797,20 @@
       "historical_bodies_reopened": 1,
       "exact_historical_excerpt_bytes": 72,
       "old_and_new_passages_in_packet": 19,
-      "selection_ns": 17648625,
-      "selection_and_packet_ns": 17867459
+      "selection_ns": 4910916,
+      "selection_and_packet_ns": 5047750,
+      "scripted_repair": {
+        "design": "a-fixed",
+        "admitted_for_review": true,
+        "physical_slots": 8,
+        "reserve_before": 8,
+        "reserve_after": 8,
+        "requests": 24,
+        "served_before": 24,
+        "served_after": 24,
+        "replacements_before": 16,
+        "replacements_after": 16
+      }
     }
   ]
 }

@@ -160,7 +160,7 @@ func creativeDemo(args []string) error {
 		if *output != "" {
 			return errors.New("-board reads an existing demo vault; -out creates a new one")
 		}
-		return replayCreativeBoard(*board, *workload)
+		return replayCreativeBoard(os.Stdout, *board, *workload)
 	}
 	if *workload != "" {
 		if *output != "" {
@@ -195,7 +195,7 @@ func creativeDemo(args []string) error {
 	if err != nil {
 		return err
 	}
-	if err := saveCreativeDemo(root, rows, *workload); err != nil {
+	if err := saveCreativeDemo(root, rows); err != nil {
 		return err
 	}
 	if *output != "" {
@@ -213,7 +213,7 @@ const demoCanvas = `{
   {"id":"return-pattern","fromNode":"q","fromSide":"right","toNode":"trace","toSide":"left","label":"constraint: observed reuse"},
   {"id":"capacity","fromNode":"q","fromSide":"right","toNode":"limit","toSide":"left","label":"constraint: available slots"}]}`
 
-func saveCreativeDemo(root string, rows []creativity.DemoRow, workload string) error {
+func saveCreativeDemo(root string, rows []creativity.DemoRow) error {
 	data := map[string]string{"Passage cache.canvas": demoCanvas, "Return pattern.md": "Single-use scan passages never return; worthwhile passages recur at least three times.\nTrace: before\n"}
 	for name, body := range data {
 		if err := os.WriteFile(filepath.Join(root, name), []byte(body), 0644); err != nil {
@@ -224,15 +224,7 @@ func saveCreativeDemo(root string, rows []creativity.DemoRow, workload string) e
 	if err != nil {
 		return err
 	}
-	if workload == "" {
-		err = creativity.WriteWorkload(f)
-	} else {
-		var b []byte
-		b, err = os.ReadFile(workload)
-		if err == nil {
-			_, err = f.Write(b)
-		}
-	}
+	err = creativity.WriteWorkload(f)
 	closeErr := f.Close()
 	if err != nil {
 		return err
@@ -309,7 +301,7 @@ func saveCreativeDemo(root string, rows []creativity.DemoRow, workload string) e
 }
 
 // The trace label is an explicit experimental assumption, editable directly in Obsidian.
-func replayCreativeBoard(board, workload string) error {
+func replayCreativeBoard(out io.Writer, board, workload string) error {
 	root, key, err := engine.CreativeBoardPath(board, "")
 	if err != nil {
 		return err
@@ -351,14 +343,14 @@ func replayCreativeBoard(board, workload string) error {
 	if err != nil {
 		return err
 	}
-	fmt.Printf("Selected trace %s\n", phase)
+	fmt.Fprintf(out, "Selected trace %s\n", phase)
 	for _, row := range rows {
 		if row.Workload == phase {
-			fmt.Printf("%s: %d saved fetch value (%d/%d reads hit)\n", row.Policy, row.Score, row.Hits, row.Requests)
+			fmt.Fprintf(out, "%s: %d saved fetch value (%d/%d reads hit)\n", row.Policy, row.Score, row.Hits, row.Requests)
 		}
 	}
 	for _, impact := range impacts {
-		fmt.Printf("%s: %s (%s)\n", impact.ID, impact.Status, impact.Choice)
+		fmt.Fprintf(out, "%s: %s (%s)\n", impact.ID, impact.Status, impact.Choice)
 	}
 	return nil
 }
