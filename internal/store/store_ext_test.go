@@ -208,3 +208,32 @@ func TestBatchWriteValuePostingsSignalsAndReceipts(t *testing.T) {
 		t.Fatalf("MatchingReceiptIDs: %+v err=%v", matched, err)
 	}
 }
+
+func TestStaleReceiptCandidatesIncludeOnlyLiveOlderAbsences(t *testing.T) {
+	s, err := OpenFile(filepath.Join(t.TempDir(), "watch.db"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer s.Close()
+	for _, r := range []Receipt{
+		{ID: "current", Status: "current"},
+		{ID: "stale", Status: "stale"},
+		{ID: "later", Status: "current", SnapshotSeq: 2},
+		{ID: "historical", Status: "current", AsOfSeq: 1},
+		{ID: "old", Status: "superseded"},
+	} {
+		r.Predicates = []ReceiptPredicate{{Kind: "absence", Key: "Lease Signed"}, {Kind: "term", Key: "LEASE"}}
+		if err := s.PutReceipt(r); err != nil {
+			t.Fatal(err)
+		}
+	}
+	for _, pairs := range [][][2]string{nil, {{"term", " LEASE "}}} {
+		ids, err := s.StaleReceiptCandidates(2, pairs)
+		if err != nil || len(ids) != 2 || ids[0] != "current" || ids[1] != "stale" {
+			t.Fatalf("wrong watch candidates %v, %v", ids, err)
+		}
+	}
+	if ids, err := s.MatchingReceiptIDs(2, nil); err != nil || len(ids) != 0 {
+		t.Fatalf("exact lookup returned absence watches %v, %v", ids, err)
+	}
+}

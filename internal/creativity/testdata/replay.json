@@ -1,0 +1,35 @@
+{
+  "capacity": 4,
+  "before": [
+    {"pages":["a","b","c"],"repeat":4},
+    {"pages":["first-1"],"value":20},
+    {"scan":6},
+    {"pages":["other-1"],"value":20},
+    {"pages":["a","b","c"],"repeat":3},
+    {"pages":["first-2"],"value":20},
+    {"scan":6},
+    {"pages":["other-2"],"value":20},
+    {"pages":["a","b","c"],"repeat":3},
+    {"pages":["first-3"],"value":20},
+    {"scan":6},
+    {"pages":["other-3"],"value":20},
+    {"pages":["a","b","c"],"repeat":3}
+  ],
+  "after": [
+    {"pages":["a","b","c"],"repeat":4},
+    {"pages":["first-1"],"value":20},
+    {"scan":6},
+    {"pages":["first-1"],"value":20},
+    {"pages":["a","b","c"],"repeat":3},
+    {"pages":["first-2"],"value":20},
+    {"scan":6},
+    {"pages":["first-2"],"value":20},
+    {"pages":["a","b","c"],"repeat":3},
+    {"pages":["first-3"],"value":20},
+    {"scan":6},
+    {"pages":["first-3"],"value":20},
+    {"pages":["a","b","c"],"repeat":3}
+  ],
+  "two_touch": {"admit":2,"history":2,"frequency":2,"recency":1},
+  "value_first": {"admit":1,"value":4,"recency":1}
+}

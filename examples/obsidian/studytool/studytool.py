@@ -29,7 +29,6 @@ from link_retrieval import STOP  # noqa: E402
 from vault_graph import load  # noqa: E402
 
 METRICS = ("originality", "feasibility", "test")
-SEED_BASE = 900  # seeded calibration designs take ids 901+, clear of 101-132
 
 
 def excerpt(prose, cap=650):
@@ -111,11 +110,12 @@ def run_numbers(protocol):
 def blind(protocol, workdir, seeds=None, shuffle_seed=32391):
     """Anonymize outN.json into answers.json + per-reviewer packets.
 
-    seeds: optional list of {problem, defect, answer}; each gets an id in the
-    901+ range and is recorded in seeds.json. Seeds never enter score means.
+    Seeds share the shuffled ID pool with real designs. Only the private key
+    identifies them; they never enter the condition means.
     """
     workdir = Path(workdir)
-    ids = list(range(101, 900))
+    count = len(protocol["problems"]) * len(protocol["conditions"]) * protocol["repeats"] + len(seeds or [])
+    ids = list(range(101, max(1000, 101 + count)))
     random.Random(shuffle_seed).shuffle(ids)
     results = []
     for arm, rep, run in run_numbers(protocol):
@@ -133,10 +133,10 @@ def blind(protocol, workdir, seeds=None, shuffle_seed=32391):
                             **({"unclipped": full} if len(words) > 110 else {})})
     seed_rows = []
     if seeds:
-        for i, seed in enumerate(seeds):
+        for seed in seeds:
             if seed["problem"] not in protocol["problems"]:
                 raise ValueError(f"seed for unknown problem {seed['problem']}")
-            row = {"id": str(SEED_BASE + 1 + i), "condition": "seed", "repeat": 0,
+            row = {"id": str(ids.pop()), "condition": "seed", "repeat": 0,
                    "problem": seed["problem"], "defect": seed["defect"], "answer": seed["answer"]}
             seed_rows.append(row)
         (workdir / "seeds.json").write_text(json.dumps(

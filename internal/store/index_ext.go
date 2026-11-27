@@ -590,10 +590,22 @@ func (s *Store) ListReceipts(status string) ([]Receipt, error) {
 // MatchingReceiptIDs finds live receipts (as_of_seq == 0, status != 'superseded')
 // whose snapshot_seq < newSeq and whose predicates match any (kind, key) pair.
 func (s *Store) MatchingReceiptIDs(newSeq int, pairs [][2]string) ([]string, error) {
-	if len(pairs) == 0 {
+	return s.matchingReceiptIDs(newSeq, pairs, false)
+}
+
+// StaleReceiptCandidates includes active absence watches. Their keys are word
+// groups tested in Go, so they must also be checked without an exact match.
+func (s *Store) StaleReceiptCandidates(newSeq int, pairs [][2]string) ([]string, error) {
+	return s.matchingReceiptIDs(newSeq, pairs, true)
+}
+
+func (s *Store) matchingReceiptIDs(newSeq int, pairs [][2]string, includeAbsences bool) ([]string, error) {
+	var clauses []string
+	if includeAbsences {
+		clauses = append(clauses, `(rp.kind='absence' AND r.status IN ('current','stale'))`)
+	} else if len(pairs) == 0 {
 		return nil, nil
 	}
-	var clauses []string
 	args := []any{newSeq}
 	for _, p := range pairs {
 		clauses = append(clauses, `(rp.kind=? AND rp.key=?)`)

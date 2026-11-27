@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "arms": ["free", "search", "random", "neutral", "labeled"],
+  "repeats": 2,
+  "judges": 3,
+  "tasks_per_generation": 4,
+  "explanation_words": 110,
+  "source_bytes_per_card": 650,
+  "input_bytes_per_request": 24576,
+  "output_tokens_per_request": 4000,
+  "primary": "Labeled minus free difference in successful prototype rates, paired within starting draft, averaged equally by brief. Percentile paired bootstrap of 16 briefs (10000 resamples).",
+  "capacities": [4, 6, 8, 4, 6, 8, 5, 7],
+  "briefs": {
+    "C01":"Keep a conservator's most consulted object descriptions available while the catalog changes around them. A small core of passages returns repeatedly.",
+    "C02":"A tutor rereads a handful of lessons, then opens a long run of new worksheets once each. Protect the passages worth keeping through the scan.",
+    "C03":"A newsroom opens related notes in bursts as a story breaks. Decide which notes still deserve memory when the rush ends.",
+    "C04":"A translator rotates between manuscripts. The old cluster of terms eventually loses its readers, but the replacement cluster starts cold.",
+    "C05":"A field guide caches passages with very different fetch costs. Spending a slot on the wrong passage makes some expeditions expensive.",
+    "C06":"A conservatory rehearses passages in repeated waves with gaps. Decide what should survive until a section returns.",
+    "C07":"A museum guide sees rare valuable references mixed with frequent routine lookups. Preserve the greatest weighted savings under a fixed slot limit.",
+    "C08":"A help desk may revisit an old repair passage long after opening it once. Decide how much history should influence the small resident set.",
+    "S01":"A copy editor faces a recurring core of verification requests. Choose the next passage to fetch before the pending requests expire.",
+    "S02":"An indexer floods a curator with one-off read requests. Schedule limited reading credits so useful near-term requests still finish.",
+    "S03":"During a live captioning event, new source lookups arrive in bursts. Choose what to serve under each epoch's limited credits.",
+    "S04":"The questions reaching an archive shift from one collection to another mid-session. Adapt the read queue as interest changes.",
+    "S05":"A field librarian has requests with widely varying fetch costs. Choose which ones can earn their value before expiry.",
+    "S06":"A rehearsal assistant gets waves of repeated read requests separated by quieter periods. Spend credits where timely completion matters.",
+    "S07":"A reference desk receives occasional high-value requests among many routine jobs. Schedule time so those gains can actually be realized.",
+    "S08":"A case worker returns to earlier passages after long delays. Choose among new and delayed requests under an epoch budget."
+  }
+}
