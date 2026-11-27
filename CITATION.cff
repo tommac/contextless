@@ -8,7 +8,15 @@ authors:
     orcid: "https://orcid.org/0009-0004-5702-5302"
 license: Apache-2.0
 repository-code: "https://github.com/tommac/contextless"
+version: 0.1.0
 date-released: 2026-11-26
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24576849
+    description: "All archived versions on Zenodo. This DOI resolves to the latest one."
+  - type: doi
+    value: 10.5281/zenodo.24576850
+    description: "Version 0.1.0 on Zenodo."
 keywords:
   - long-context
   - agent memory

@@ -368,7 +368,7 @@ ContextlessAI was designed and developed by Tom Maciejewski.
 
 The code and documents are released under the [Apache License 2.0](LICENSE): you may use, change and redistribute them, including commercially, provided you keep the copyright and [NOTICE](NOTICE) and say what you changed. Result files derived from third-party benchmarks keep their sources' terms, including a non-commercial condition for LoCoMo ([THIRD_PARTY.md](THIRD_PARTY.md)).
 
-If you use the software or its results in research, please cite it. [CITATION.cff](CITATION.cff) has the entry, and GitHub shows it under "Cite this repository". Contributions are welcome under the same license ([CONTRIBUTING.md](CONTRIBUTING.md)).
+If you use the software or its results in research, please cite it. [CITATION.cff](CITATION.cff) has the entry, and GitHub shows it under "Cite this repository". Each release is archived on Zenodo: [10.5281/zenodo.24576849](https://doi.org/10.5281/zenodo.24576849) resolves to the latest version, and version 0.1.0 is [10.5281/zenodo.24576850](https://doi.org/10.5281/zenodo.24576850). Contributions are welcome under the same license ([CONTRIBUTING.md](CONTRIBUTING.md)).
 
 ## Lineage
 
