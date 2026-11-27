@@ -10,7 +10,7 @@ The study vault flags two measurement risks: LLM reviewers are lenient or
 noisy, and judges otherwise need human calibration. Seeded-error calibration
 answers both with code: `seeds.py` builds twelve designs with one known
 defect each (a generic pattern, a constraint violation, or an uninformative
-test), `blind` mixes them into the anonymous review packet under 9xx ids, and
+test), `blind` mixes them into the anonymous review packet using the same shuffled ID pool as genuine designs, and
 `score` reports each reviewer's catch rate (a score of at most 2 on the
 metric the seed was built to fail) and its leniency (mean score on seeds
 versus real answers). A reviewer who cannot catch planted defects should not
@@ -27,7 +27,7 @@ python3 -m unittest test_studytool
 ```
 
 `build` covers any condition list and repeat count (rounds 1-3 are special
-cases). `blind` clips at the 110-word ceiling, anonymizes into 1xx ids, and
+cases). `blind` clips at the 110-word ceiling, assigns shuffled IDs, and
 keeps seeds out of `answers.json` so they never enter condition means.
 `score` reproduces the per-round summaries and appends a `calibration`
 section when seeds are present.

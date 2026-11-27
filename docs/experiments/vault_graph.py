@@ -65,7 +65,8 @@ def load(vault):
             if not f.endswith(".md"):
                 continue
             n = Note(os.path.join(d, f), folder, f[:-3])
-            raw = open(n.path, encoding="utf-8").read()
+            with open(n.path, encoding="utf-8") as source:
+                raw = source.read()
             body = raw
             if raw.startswith("---\n") and "\n---\n" in raw[4:]:
                 head, body = raw[4:].split("\n---\n", 1)

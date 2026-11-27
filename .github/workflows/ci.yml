@@ -28,3 +28,9 @@ jobs:
         run: go test ./... -count=1
       - name: Demo
         run: make demo
+      - name: Replay the published creativity experiment (no model calls)
+        run: |
+          python3 -m unittest discover -s examples/obsidian/studytool
+          python3 -m unittest discover -s examples/obsidian/creativity-study5
+          bin/cx demo creativity
+          python3 examples/obsidian/creativity-study5/replay.py --cx ./bin/cx

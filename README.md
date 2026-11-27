@@ -54,6 +54,8 @@ To install the binary alone, without the repository:
 go install github.com/tommac/contextless/cmd/cx@latest
 ```
 
+To try an editable design experiment, run `bin/cx demo creativity -out ./cache-workshop` after building. Open the directory in Obsidian, change a source assumption, then replay the old and new cache policies. The board retains the exact passage behind each revision. [Five-minute walkthrough](examples/creativity-demo/README.md) · [Working-prototype study](examples/obsidian/creativity-study5/README.md)
+
 The replays below also start no model. The last one downloads three public Go API files.
 
 ```sh

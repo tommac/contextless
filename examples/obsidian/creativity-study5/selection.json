@@ -1,0 +1,231 @@
+{
+  "curator": "Codex",
+  "selection_seconds": 56.36,
+  "timing_scope": "Wall time from opening the public field-note shortlist through selecting and labeling 48 cards in this batch. Includes coordination and context processing. Replaying the selection costs no new curation time.",
+  "cards": {
+    "C01": [
+      {
+        "path": "fields/Rent-or-buy decisions.md",
+        "label": "Which repeated cost pays for admission?"
+      },
+      {
+        "path": "fields/Virtual memory paging.md",
+        "label": "How long should yesterday's working set survive?"
+      },
+      {
+        "path": "fields/Proximity scoring.md",
+        "label": "Does a close return deserve extra credit?"
+      }
+    ],
+    "C02": [
+      {
+        "path": "fields/Zettelkasten.md",
+        "label": "Which passages earn a connection on a return?"
+      },
+      {
+        "path": "fields/Sketches.md",
+        "label": "What evidence of repeat demand can fit?"
+      },
+      {
+        "path": "fields/Leases and fencing tokens.md",
+        "label": "When does an unused claim expire?"
+      }
+    ],
+    "C03": [
+      {
+        "path": "fields/Bulk synchronous parallel supersteps.md",
+        "label": "Which burst changes the time scale of reuse?"
+      },
+      {
+        "path": "fields/Information foraging.md",
+        "label": "When is the busy patch exhausted?"
+      },
+      {
+        "path": "fields/Rent-or-buy decisions.md",
+        "label": "What makes the first miss worth paying twice?"
+      }
+    ],
+    "C04": [
+      {
+        "path": "fields/Bitemporal data model.md",
+        "label": "Which clock measures a passage becoming obsolete?"
+      },
+      {
+        "path": "fields/Incremental view maintenance.md",
+        "label": "Which change would invalidate yesterday's score?"
+      },
+      {
+        "path": "fields/Map tiles and level of detail.md",
+        "label": "What should stay nearby when attention shifts?"
+      }
+    ],
+    "C05": [
+      {
+        "path": "fields/Query planning in databases.md",
+        "label": "Which miss consumes the most resources?"
+      },
+      {
+        "path": "fields/MapReduce re-execution and atomic commit.md",
+        "label": "How expensive would repeating this read be?"
+      },
+      {
+        "path": "fields/Minimum description length.md",
+        "label": "Is extra bookkeeping worth its cost?"
+      }
+    ],
+    "C06": [
+      {
+        "path": "fields/Leases and fencing tokens.md",
+        "label": "Can a brief grant outlast a burst?"
+      },
+      {
+        "path": "fields/Sketches.md",
+        "label": "Which burst should count as repeated interest?"
+      },
+      {
+        "path": "fields/Information foraging.md",
+        "label": "When should a returning patch regain priority?"
+      }
+    ],
+    "C07": [
+      {
+        "path": "fields/Submodular maximization under a knapsack budget.md",
+        "label": "Which rare passage changes the total benefit?"
+      },
+      {
+        "path": "fields/Result diversification.md",
+        "label": "What does the common group leave uncovered?"
+      },
+      {
+        "path": "fields/Maker-checker separation.md",
+        "label": "Which comparison checks the value claim?"
+      }
+    ],
+    "C08": [
+      {
+        "path": "fields/Event sourcing.md",
+        "label": "What trace can survive without the passage?"
+      },
+      {
+        "path": "fields/Materialized views.md",
+        "label": "When does remembered history repay its upkeep?"
+      },
+      {
+        "path": "fields/Proximity scoring.md",
+        "label": "How much should late reuse be discounted?"
+      }
+    ],
+    "S01": [
+      {
+        "path": "fields/Actor model and supervision.md",
+        "label": "Whose recurring mailbox is waiting?"
+      },
+      {
+        "path": "fields/Information foraging.md",
+        "label": "Which read is worth one more visit?"
+      },
+      {
+        "path": "fields/Result diversification.md",
+        "label": "Which work does repeated selection overlook?"
+      }
+    ],
+    "S02": [
+      {
+        "path": "fields/Zone maps and block-max indexes.md",
+        "label": "Which reads can safely wait through a scan?"
+      },
+      {
+        "path": "fields/Submodular maximization under a knapsack budget.md",
+        "label": "What does the next read add?"
+      },
+      {
+        "path": "fields/Leases and fencing tokens.md",
+        "label": "How long should a low-value request wait?"
+      }
+    ],
+    "S03": [
+      {
+        "path": "fields/Merge queues.md",
+        "label": "Which requests gain by getting ahead now?"
+      },
+      {
+        "path": "fields/Bulk synchronous parallel supersteps.md",
+        "label": "Which deadline arrives before the next barrier?"
+      },
+      {
+        "path": "fields/Universal Scalability Law.md",
+        "label": "When does crowding waste service capacity?"
+      }
+    ],
+    "S04": [
+      {
+        "path": "fields/Map tiles and level of detail.md",
+        "label": "Which region of interest just changed?"
+      },
+      {
+        "path": "fields/Bitemporal data model.md",
+        "label": "Which evidence of importance has expired?"
+      },
+      {
+        "path": "fields/Incremental view maintenance.md",
+        "label": "Which queued decisions deserve a fresh score?"
+      }
+    ],
+    "S05": [
+      {
+        "path": "fields/Query planning in databases.md",
+        "label": "What cheaper read can finish in time?"
+      },
+      {
+        "path": "fields/MapReduce re-execution and atomic commit.md",
+        "label": "Which costly retry would displace useful work?"
+      },
+      {
+        "path": "fields/Rent-or-buy decisions.md",
+        "label": "What gain justifies this large read now?"
+      }
+    ],
+    "S06": [
+      {
+        "path": "fields/Actor model and supervision.md",
+        "label": "Which mailbox receives another wave soon?"
+      },
+      {
+        "path": "fields/Sketches.md",
+        "label": "How much repetition is worth recording?"
+      },
+      {
+        "path": "fields/Leases and fencing tokens.md",
+        "label": "Can aging stop a second wave dominating?"
+      }
+    ],
+    "S07": [
+      {
+        "path": "fields/Information foraging.md",
+        "label": "Which rare patch repays an early visit?"
+      },
+      {
+        "path": "fields/Submodular maximization under a knapsack budget.md",
+        "label": "What fits after the valuable read?"
+      },
+      {
+        "path": "fields/Counterfactual learning to rank.md",
+        "label": "Whose value was hidden by the ordering?"
+      }
+    ],
+    "S08": [
+      {
+        "path": "fields/Append-only storage.md",
+        "label": "What does a late request still tell us?"
+      },
+      {
+        "path": "fields/Merge queues.md",
+        "label": "What changes if an old request runs now?"
+      },
+      {
+        "path": "fields/Provenance and lineage.md",
+        "label": "Which observed gain came from that read?"
+      }
+    ]
+  }
+}

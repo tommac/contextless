@@ -49,14 +49,18 @@ class BlindTest(unittest.TestCase):
                 for design in problem["designs"]:
                     self.assertEqual(set(design), {"id", "answer"})
 
-    def test_seeds_get_separate_ids_and_stay_out_of_answers(self):
+    def test_seeds_share_shuffled_ids_and_stay_out_of_answers(self):
         work = make_workdir()
         studytool.blind(PROTO, work, seeds=[s for s in seeds.make_seeds() if s["problem"] in "AB"])
         rows = json.loads((work / "answers.json").read_text())
         self.assertEqual(len(rows), 4)
         seed_meta = json.loads((work / "seeds.json").read_text())
         self.assertEqual(len(seed_meta), 6)
-        self.assertTrue(all(int(i) > studytool.SEED_BASE for i in seed_meta))
+        real_ids = {int(row["id"]) for row in rows}
+        seed_ids = set(map(int, seed_meta))
+        self.assertFalse(real_ids & seed_ids)
+        self.assertLess(min(seed_ids), max(real_ids))
+        self.assertLess(min(real_ids), max(seed_ids))
         packet = json.loads((work / "review0.json").read_text())
         total = sum(len(p["designs"]) for p in packet)
         self.assertEqual(total, 10)  # 4 real + 6 seeds

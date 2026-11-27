@@ -179,30 +179,9 @@ func (e *Engine) CheckStaleReceipts(newTurn vault.Turn, supersededFacts, superse
 	for _, did := range supersededDecisions {
 		pairs = append(pairs, [2]string{"decision", did})
 	}
-	// Also check any active absence predicates (small set of live receipts).
-	ids, err := e.S.MatchingReceiptIDs(newTurn.Seq, pairs)
+	candIDs, err := e.S.StaleReceiptCandidates(newTurn.Seq, pairs)
 	if err != nil {
 		return nil, err
-	}
-	live, err := e.S.ListReceipts("current")
-	if err != nil {
-		return nil, err
-	}
-	staleExisting, _ := e.S.ListReceipts("stale")
-	candSet := map[string]bool{}
-	for _, id := range ids {
-		candSet[id] = true
-	}
-	for _, r := range append(live, staleExisting...) {
-		if r.AsOfSeq > 0 || r.SnapshotSeq >= newTurn.Seq {
-			continue
-		}
-		for _, p := range r.Predicates {
-			if p.Kind == "absence" {
-				candSet[r.ID] = true
-				break
-			}
-		}
 	}
 
 	supFactSet := map[string]bool{}
@@ -216,11 +195,6 @@ func (e *Engine) CheckStaleReceipts(newTurn vault.Turn, supersededFacts, superse
 	turnVals := packet.Values(newTurn.Body)
 
 	var alerts []StaleAlert
-	candIDs := make([]string, 0, len(candSet))
-	for id := range candSet {
-		candIDs = append(candIDs, id)
-	}
-	sort.Strings(candIDs)
 
 	for _, id := range candIDs {
 		r, ok, err := e.S.GetReceipt(id)

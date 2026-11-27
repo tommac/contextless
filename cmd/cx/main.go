@@ -64,8 +64,12 @@ usage: cx [-config file] [-q] <command> [args]
   serve <name> [-mcp]                  run a stdio JSON-RPC 2.0 MCP server backed by this workspace
   ui <name> [-addr 127.0.0.1:8787]     serve a local web page for inspecting packets
   obsidian export <name> <out-dir>     export workspace to Obsidian Markdown (preserves human notes)
-  obsidian brief <board.canvas> [-vault DIR]
+  obsidian brief <board.canvas> [-vault DIR] [-creative] [-question-only|-without-labels] [-json]
                                        compile an Obsidian Canvas board into a deterministic verbatim brief
+  obsidian design <board.canvas> <design.json> [-vault DIR]    save a design revision with exact sources
+  obsidian review <board.canvas> [-edge ID] [-vault DIR]       compare saved choices to the edited board
+  obsidian source <board.canvas> <sha256> [-vault DIR]         reopen a complete historical source
+  demo creativity [-out DIR|-board CANVAS|-workload JSON|-evaluate|-scale]  replay designs or evaluate a prototype
   demo                                 walk the engine through a scripted conversation (no model)
   probe <name> <probes.jsonl> [-lanes exact,fulltext,value] [-granularity atoms|turns] [-budget N] [-whole N] [-arm A] [-adaptive]
                                        recovery probes: for each question with a known source turn, is that
@@ -690,20 +694,23 @@ func main() {
 			}
 			fmt.Printf("exported to %s: %d turns, %d threads, %d entities, %d facts, %d decisions, %d receipts (%d existing human note(s) preserved)\n",
 				rest[2], st.Turns, st.Threads, st.Entities, st.Facts, st.Decisions, st.Receipts, st.Preserved)
-		case "brief":
-			f := flag.NewFlagSet("obsidian brief", flag.ExitOnError)
-			vaultDir := f.String("vault", "", "vault root directory for relative file links (default: canvas directory)")
-			board := rest[1]
-			_ = f.Parse(rest[2:])
-			out, err := engine.CompileObsidianCanvas(board, *vaultDir)
-			if err != nil {
+		case "brief", "design", "review", "source":
+			if err := creativeObsidian(rest[0], rest[1:]); err != nil {
 				die(err)
 			}
-			fmt.Print(out)
 		default:
 			die(fmt.Errorf("obsidian: unknown subcommand %q (export, brief)", rest[0]))
 		}
 	case "demo":
+		if len(rest) > 0 {
+			if rest[0] != "creativity" {
+				die(fmt.Errorf("unknown demo %q", rest[0]))
+			}
+			if err := creativeDemo(rest[1:]); err != nil {
+				die(err)
+			}
+			return
+		}
 		res, err := engine.RunDemo()
 		if err != nil {
 			die(err)
